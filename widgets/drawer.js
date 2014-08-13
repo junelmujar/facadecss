@@ -18,8 +18,8 @@ drawerWidget.prototype = {
 
     // Event definitions
     events: {
-        //'click a.drawer-toggle' : 'toggle'
-        'click a.drawer-toggle' : '_toggle'
+        'resize window'        : '_update_height',
+        'click a.drawer-toggle': '_toggle'
     },
 
     // Initialize
@@ -48,12 +48,29 @@ drawerWidget.prototype = {
 
     },
 
+    _update_height: function() {
+
+        this.$elem.each(function() {
+            var toggler = $(this).find('.drawer-toggle');
+            var content = $(this).find('.drawer-content');
+            if (toggler.attr('data-state') == 'open') { 
+                content.css({ height: 'auto' });
+            } else {
+                
+            }
+            toggler.attr('data-drawer-height', content.outerHeight());
+        });
+    },
+
     _show: function() {
+        var that = this;
         this.target.attr('data-state', 'open');
         this.content.parent().css({'padding': 20});
         this.content.css({ display: 'block', height: 0}).
-            animate({ opacity:100, height: this.target.attr('data-drawer-height') }, 100);   
-        this.content.css({'pointer-events':'auto'}); 
+            velocity({ height: this.target.attr('data-drawer-height') }, 300, function() {
+                that.content.css({'pointer-events':'auto',opacity:100});         
+            });   
+        
     },
 
     _hide: function() {
@@ -82,13 +99,7 @@ drawerWidget.prototype = {
         }
     },
 
-    show: function(drawer) {
-        alert(drawer);
-    }
-
 }
 
 // Bind to elements with [data-widget=notice] attributes
 var drawer = new drawerWidget('[data-widget=drawer]');
-
-// drawer.show('test');
