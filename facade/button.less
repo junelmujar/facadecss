@@ -1,0 +1,228 @@
+.button_default_properties {
+	display         : inline-block !important;
+	*zoom           : 1; /* trigger hasLayout for IE7 and below */
+	*display        : inline; /* the star targets only IE7 and below */	
+	border          : 0px;
+	text-decoration : none;
+	.box-sizing;
+	i.fa {
+		font-size      : 14px;
+		line-height    : 1.25;
+		pointer-events : none;
+	}		
+}
+
+.button_clicked(@background) {
+	background : @background;
+	box-shadow    : inset 0 1px 0px darken(@background, 5%);	
+	.vertical-gradient(@background, lighten(@background, 5%));
+}
+
+.button(@background, @foreground) {
+	background    : @background;
+	padding       : 6px 15px;
+	color         : @foreground;
+	box-shadow    : inset 0 1px 0px lighten(saturate(@background, 25%), 15%);	
+	border        : 1px solid darken(@background, 20%);
+	border-radius : @border-radius;
+	font-weight   : bold;
+	text-shadow   : 1px 1px 0px darken(@background, 10%);
+	.vertical-gradient(lighten(@background, 5%), @background);
+}
+
+a[role=button],
+button,
+input[type=submit],
+input[type=reset] {
+	.button_default_properties;
+	.button(darken(@color-light, 5%), lighten(@color-default, 10%));	
+	text-shadow: 1px 1px 0px @color-light;
+}
+
+input[type=submit],
+input[type=reset] {
+	height: 36px;
+}
+
+a[role=button]:hover,
+button:hover,
+input[type=submit]:hover,
+input[type=reset]:hover {
+	.button(darken(@color-light, 10%), @color-default);	
+	text-shadow: 1px 1px 0px @color-light;
+}
+
+a[role=button]:active,
+button:active,
+input[type=submit]:active,
+input[type=reset]:active {
+	.button_clicked(darken(@color-light, 15%));
+}
+
+a[role=button].active,
+button.active,
+input[type=submit].active,
+input[type=reset].active {
+	.button_clicked(darken(@color-light, 15%));
+}
+
+
+// Primary
+a[role=button].button-primary,
+button.button-primary,
+input[type=submit].button-primary {
+	.button(@color-primary, @color-light);	
+}
+
+a[role=button].button-primary:hover,
+button.button-primary:hover,
+input[type=submit].button-primary:hover {
+	.button(lighten(@color-primary, 10%), @color-light);	
+}
+
+a[role=button].button-primary:active,
+button.button-primary:active,
+input[type=submit].button-primary:active {
+	.button_clicked(darken(@color-primary, 5%));
+}
+
+a[role=button].button-primary.active,
+button.button-primary.active,
+input[type=submit].button-primary.active {
+	.button_clicked(darken(@color-primary, 5%));
+}
+
+
+// Danger
+a[role=button].button-danger,
+button.button-danger,
+input[type=submit].button-danger {
+	.button(@color-danger, @color-light);	
+}
+
+a[role=button].button-danger:hover,
+button.button-danger:hover,
+input[type=submit].button-danger:hover {
+	.button(lighten(@color-danger, 5%), @color-light);	
+}
+
+a[role=button].button-danger:active,
+button.button-danger:active,
+input[type=submit].button-danger:active {
+	.button_clicked(darken(@color-danger, 5%));
+}
+
+a[role=button].button-danger.active,
+button.button-danger.active,
+input[type=submit].button-danger.active {
+	.button_clicked(darken(@color-danger, 5%));
+}
+
+
+
+
+// Success
+a[role=button].button-success,
+button.button-success,
+input[type=submit].button-success {
+	.button(@color-success, @color-light);	
+}
+
+a[role=button].button-success:hover,
+button.button-success:hover,
+input[type=submit].button-success:hover {
+	.button(lighten(@color-success, 5%), @color-light);	
+}
+
+a[role=button].button-success:active,
+button.button-success:active,
+input[type=submit].button-success:active {
+	.button_clicked(darken(@color-success, 5%));
+}
+
+a[role=button].button-success.active,
+button.button-success.active,
+input[type=submit].button-success.active {
+	.button_clicked(darken(@color-success, 5%));
+}
+
+
+// Info
+a[role=button].button-info,
+button.button-info,
+input[type=submit].button-info {
+	.button(@color-info, @color-light);	
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.25);
+}
+
+a[role=button].button-info:hover,
+button.button-info:hover,
+input[type=submit].button-info:hover {
+	.button(lighten(@color-info, 5%), @color-light);	
+}
+
+a[role=button].button-info:active,
+button.button-info:active,
+input[type=submit].button-info:active {
+	.button_clicked(darken(@color-info, 5%));
+}
+
+a[role=button].button-info.active,
+button.button-info.active,
+input[type=submit].button-info.active {
+	.button_clicked(darken(@color-info, 5%));
+}
+
+// Warning
+a[role=button].button-warning,
+button.button-warning,
+input[type=submit].button-warning {
+	.button(@color-warning, @color-light);	
+}
+
+a[role=button].button-warning:hover,
+button.button-warning:hover,
+input[type=submit].button-warning:hover {
+	.button(lighten(@color-warning, 5%), @color-light);	
+}
+
+a[role=button].button-warning:active,
+button.button-warning:active,
+input[type=submit].button-warning:active {
+	.button_clicked(darken(@color-warning, 5%));
+}
+
+a[role=button].button-warning.active,
+button.button-warning.active,
+input[type=submit].button-warning.active {
+	.button_clicked(darken(@color-warning, 5%));
+}
+
+
+a.button-split,
+.button-split {
+	position      : relative;
+	padding-right : 45px !important;
+	i.fa {
+		background                 : rgba(0, 0, 0, 0.05);
+		position                   : absolute;
+		top                        : -1px;
+		right                      : -1px;
+		bottom                     : -1px;
+		width                      : 35px;
+		text-align                 : center;
+		border-left                : 1px solid rgba(0, 0, 0, 0.15);
+		border-top-right-radius    : @border-radius;
+		border-bottom-right-radius : @border-radius;
+		padding-top                : 10px;
+		pointer-events             : none;
+	}
+}
+
+.button-small {
+	padding : 3px 10px !important;
+	height  : 32px !important;
+	i.fa {
+		pointer-events : none;	
+	}
+}

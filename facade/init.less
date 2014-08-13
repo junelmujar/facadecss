@@ -1,0 +1,110 @@
+body {
+	color       : @color-default;
+	font-size   : 14px;
+	line-height : 1.7;
+	background  : darken(@color-light, 2%);
+}
+
+a {
+	color: @color-links;
+	text-shadow: none;
+	display: inline-block;
+}
+a:hover {
+	color: lighten(@color-links, 20%);
+}
+a:active {
+	color: darken(@color-links, 20%);
+}
+
+h1, h2,  h3, h4, h5, h6 {
+	small {
+		color: lighten(@color-inverse, 40%);
+		font-size: 70%;
+	}
+}
+hr {
+	border-top    : 1px solid lighten(@color-border, 20%);
+	border-bottom : 0;
+	border-left   : 0;
+	border-right  : 0;
+	margin        : 0 0 1em;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.center {
+	display: inline-block !important;
+	margin: 0 auto !important;
+}
+
+.center-text {
+	text-align: center;
+}
+
+.sticky,
+.is_stuck {
+	z-index: 6000;
+	border-radius : 0 !important;
+}
+
+.title {
+	color: @color-secondary;	
+	font-weight: normal;
+	font-size: 18px;
+}
+
+.title-large {
+	font-size: 24px;
+}
+
+.clear {
+	overflow   : hidden;
+	clear      : both;
+}
+
+.box-sizing {
+	-moz-box-sizing    : border-box; 
+	-webkit-box-sizing : border-box; 
+	box-sizing         : border-box;
+}
+
+.stretch {
+	.box-sizing;
+	width : 100% !important;
+}
+
+.pull-right {
+	float: right;
+}
+
+.pull-left {
+	float: left;
+}
+
+.border-radius (@radii) {
+	-webkit-border-radius: @radii !important;
+	-moz-border-radius: @radii !important;
+	border-radius: @radii !important;
+}
+
+.margin-less {
+	margin: 0 !important;
+}
+
+.square-edge {
+	border-radius: 0 !important;
+}
+
+.vertical-gradient (@color-top, @color-bottom) {
+    background-color: mix(@color-top, @color-bottom, 60%);
+    background-image: -moz-linear-gradient(top, @color-top, @color-bottom); // FF 3.6+
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@color-top), to(@color-bottom)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(top, @color-top, @color-bottom); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(top, @color-top, @color-bottom); // Opera 11.10
+    background-image: linear-gradient(to bottom, @color-top, @color-bottom); // Standard, IE10
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@color-top),argb(@color-bottom))); // IE9 and down
+}

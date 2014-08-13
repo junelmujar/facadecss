@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Facade CSS</title>
+	
+    <!-- <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>  -->
+	
+	<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+	<link rel="stylesheet" href="vendor/font-awesome-4.1.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="vendor/normalize/normalize.css" />
+	<link rel="stylesheet" href="vendor/fluidable/fluidable-min.css" />
+	<link rel="stylesheet" href="facade.css" />
+	<link rel="stylesheet" href="selectize.css" />
+
+	<body>
+		
+		<div class="bar bar-inverse sticky">
+			<span class="bar-text"><strong>Facade CSS</strong> Widgets</span>
+			<a href="#" role="button">It's</a>
+			<a href="#" role="button" class="button-danger">Hot</a>
+		</div>
+
+		<div class="container">
+			<h2 class="title">Widgets <small>Training ground for our little heroes</small></h2>
+			<div class="col-group">
+				<div class="col-6">
+					<h3>Switch</h3>
+					<form action="#">
+						
+						These are regular checkbox converted to switch widget.
+						<br><br>
+
+						<div data-widget="switch">
+							<input type="checkbox"> <span>Sandwich</span>
+						</div>
+
+						<div data-widget="switch">
+							<input type="checkbox" checked> <span>Burger</span>
+						</div>
+
+						<div data-widget="switch">
+							<input type="checkbox"> <span>Pasta</span>
+						</div>
+
+						<br>
+						<hr>
+
+						<button type="reset">Reset</button>
+						<input type="submit" class="button-info pull-right">
+					</form>
+				</div>
+				<div class="col-6">
+					<h3>Select <small>(Optional)</small></h3>
+					<p>
+						Facade uses Selectize.js excellent plugin to render beautiful
+						dropdowns with filtering support & keyboard navigation
+					</p>
+
+					<div data-widget="selectize">
+						<select name="" id="">
+							<option value="1">This is an option 1</option>	
+							<option value="2">This is an option 2</option>	
+							<option value="3">This is an option 3</option>	
+							<option value="4">This is an option 4</option>	
+						</select>
+					</div>
+
+					<div data-widget="selectize">
+						<select name="" id="">
+							<option value="A">This is an option A</option>	
+							<option value="B">This is an option B</option>	
+							<option value="C">This is an option C</option>	
+							<option value="D">This is an option D</option>	
+						</select>
+					</div>
+					
+					<p>
+						If you want to utilize this plugin, include it your
+						document. By default it will convert all selects
+						with the data attribute [data-widget=selectize].
+					</p>
+
+
+				</div>
+			</div>
+			<div class="col-group">
+				<div class="col-6">
+					<h3>Accordion</h3>
+
+		            <div data-widget="accordion" class="accordion-widget" active-id="#one">
+		                <div class="accordion-item">
+		                    <a data-accordion-id="#one" href="#" rel='tooltip' title="An Accordion">
+		                        Accordion 1
+		                    </a>
+		                    <div class="accordion-body">
+		                    	<ul>
+		                    		<li><a href="#">This is link</a></li>
+		                    		<li><a href="#">This is another link</a></li>
+		                    		<li><a href="#">This is of course another link</a></li>
+		                    	</ul>
+		                    </div>
+		                </div>
+		                <div class="accordion-item">
+		                    <a data-accordion-id="#two" href="#" rel='tooltip' title="An Accordion?">
+		                        Accordion 2
+		                    </a>
+		                    <div class="accordion-body">
+		                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo autem hic atque numquam omnis id iste esse eius, officiis velit reprehenderit? Explicabo, optio placeat facere ratione architecto ad fugit consequuntur?
+		                    </div>
+		                </div>
+		                <div class="accordion-item">
+		                    <a data-accordion-id="#three" href="#" rel='tooltip' title="An Accordion Too">
+		                        Accordion 3
+		                    </a>
+		                    <div class="accordion-body">
+		                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo autem hic atque numquam omnis id iste esse eius, officiis velit reprehenderit? Explicabo, optio placeat facere ratione architecto ad fugit consequuntur?
+		                    </div>
+		                </div>		                
+		            </div>	
+	
+					<br>
+
+		            <div data-widget="accordion" class="accordion-widget" active-id="#one">
+		                <div class="accordion-item">
+		                    <a data-accordion-id="#one" href="#" rel='tooltip' title="An Accordion">
+		                        Accordion 1
+		                    </a>
+		                    <div class="accordion-body">
+		                    	<ul>
+		                    		<li><a href="#">This is link</a></li>
+		                    		<li><a href="#">This is another link</a></li>
+		                    		<li><a href="#">This is of course another link</a></li>
+		                    	</ul>
+		                    </div>
+		                </div>
+		                <div class="accordion-item">
+		                    <a data-accordion-id="#two" href="#" rel='tooltip' title="An Accordion?">
+		                        Accordion 2
+		                    </a>
+		                    <div class="accordion-body">
+		                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo autem hic atque numquam omnis id iste esse eius, officiis velit reprehenderit? Explicabo, optio placeat facere ratione architecto ad fugit consequuntur?
+		                    </div>
+		                </div>
+		                <div class="accordion-item">
+		                    <a data-accordion-id="#three" href="#" rel='tooltip' title="An Accordion Too">
+		                        Accordion 3
+		                    </a>
+		                    <div class="accordion-body">
+		                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo autem hic atque numquam omnis id iste esse eius, officiis velit reprehenderit? Explicabo, optio placeat facere ratione architecto ad fugit consequuntur?
+		                    </div>
+		                </div>		                
+		            </div>	
+
+				</div>
+				<div class="col-6">
+					<h3>Dropdown</h3>
+
+
+					<div data-widget="dropdown">
+						<a href="#" role="button" data-action="trigger" target="#dropdown-test-a">
+							Dropdown Test A <i class="fa fa-caret-down"></i>
+						</a>
+						<ul class="dropdown dropdown-menu" id="dropdown-test-a">
+							<li><a href="#">Item A <span class="pull-right"><i class="fa fa-times"></i></span></a></li>
+							<li><a href="#">Item B <span class="pull-right"><i class="fa fa-check"></i></span></a></li>
+							<li class="dropdown-seperator"></li>
+							<li><a href="#">Item D</a></li>
+						</ul>	
+					</div>
+
+					<div data-widget="dropdown">
+						<a href="#" role="button" data-action="trigger" target="#dropdown-test-b">
+							Dropdown Test A  <i class="fa fa-caret-down"></i>
+						</a>
+						<div class="dropdown dropdown-panel" hide-dropdown-onclick id="dropdown-test-b">
+							<h3>Panel</h3>
+							<form action="#" method="POST">
+								<input type="text">
+								<br><br>
+								<button type="reset">Reset</button>
+								<button type="submit" class="button-primary pull-right"><i class="fa fa-check"></i> Reset</button>
+							</form>
+						</div>		
+					</div>		
+
+					<h3>Table Sample</h3>
+
+					<div class="popover-panel popover-inverse hidden" id="popover_b">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quibusdam sint voluptates nam consectetur autem ut vero ea. 
+						</p>
+						<hr>
+						<a href="" role="button" class="button-info pull-right"><i class="fa fa-check"></i> Go</a>
+					</div>
+
+					<table class="table table-bordered-rows table-striped table-hover">
+						<thead>
+							<th colspan="2">This is a test</th>
+						</thead>
+						<tbody>
+						<tr>
+							<td id="record_1">Record 100</td>
+							<td width="100" class="center-text">
+								<div data-widget="popover">
+								<a href="#" role="button" class="button-small" data-action="trigger" data-target="#record_1" title="An Accordion"><i class="fa fa-times"></i> Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td id="record_2">Record 101</td>
+							<td class="center-text">
+								<div data-widget="popover">
+								<a href="#" role="button" data-overlay="show" class="button-small" data-action="trigger" data-target="#record_2" title="An Accordion"><i class="fa fa-times"></i> Edit</a></div>
+							</td>
+						</tr>		
+						<tr>
+							<td id="record_3">Record 102</td>
+							<td class="center-text">						
+								<div data-widget="popover">
+								<a href="#" role="button" class="button-small" data-action="trigger" data-target="#record_3" title="An Accordion"><i class="fa fa-times"></i> Edit</a></div>
+							</td>
+						</tr>										
+						</tbody>
+					</table>
+
+				</div>							
+			</div>
+
+			<div class="col-group">
+				<div class="col-6">
+					<h3>Modal</h3>
+
+					<div class="hidden" id="hidden_text">
+						<h3 class="title">This Is A Modal Content</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum ut, voluptatum, voluptate sapiente eum maiores. Explicabo recusandae nemo minus eaque, magni, facilis id esse sint nostrum dolor alias dolores quo.
+						</p>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum ut, voluptatum, voluptate sapiente eum maiores. Explicabo recusandae nemo minus eaque, magni, facilis id esse sint nostrum dolor alias dolores quo.
+						</p>		
+						<hr>	
+						<a href="#" data-widget-close='true' role="button">Close Me</a>			
+					</div>
+
+					<a href="#" role="button" data-widget-modal-target="#hidden_text" data-widget="modal" data-widget-modal-title="Hi Jason" data-widget-modal-overlay="show" class="stretch center-text">Launch Modal Window</a>
+
+				</div>
+				<div class="col-6">
+
+					<h3>Split Button</h3>
+
+					<a href="" role="button" class="button-split prepend"><i class="fa fa-search"></i> <span>A Split Button</span></a>
+
+					<div data-widget="dropdown">
+						<a href="#" role="button" class="button-success button-split" data-action="trigger" target="#dropdown-test-c">
+							Split Button Test  <i class="fa fa-caret-down"></i>
+						</a>
+						<ul class="dropdown dropdown-menu">
+							<li><a href="#">Item A</a></li>
+							<li><a href="#">Item B</a></li>
+							<li class="dropdown-seperator"></li>
+							<li><a href="#">Item D</a></li>
+						</ul>	
+					</div>
+
+					<h4>Note:</h4>
+
+					These are purely design based buttons and essentialy utilizes the dropdown
+					classes for display. It's the same as dropdown sample above with an additional 
+					<code>span</code> inside the link/button label.
+
+				</div>
+			</div>		
+
+		</div>		
+
+	</body>
+
+	<script src="lib/jquery-2.1.0.min.js"></script>
+	<script src="lib/jquery.eventralize.min.js"></script>
+	<!-- <script src="lib/jquery.selector.js"></script> -->
+	<script src="lib/jquery.md5.js"></script>
+	<script src="lib/velocity.min.js"></script>
+	<script src="lib/jquery.sticky-kit.min.js"></script>
+	<script src="vendor/selectize/selectize.js"></script>
+
+	<script src="widgets/accordion.js"></script>
+	<script src="widgets/modal.js"></script>
+	<script src="widgets/tooltip.js"></script>
+	<script src="widgets/dropdown.js"></script>
+	<script src="widgets/popover.js"></script>
+	<script src="widgets/switch.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			$(".sticky").stick_in_parent();
+
+			$('*[data-widget=selectize] select').selectize({
+				create: true,
+			    sortField: 'text'
+			});			
+		});
+	</script>
+
+</html>
+

@@ -1,0 +1,64 @@
+.modal-widget-overlay {
+	content          : "";
+	visibility       : hidden;
+	display          : block;
+	position         : fixed; /* could also be absolute */
+	top              : 0;
+	left             : 0;
+	height           : 100%;
+	width            : 100%;
+	z-index          : 9998 !important;
+	background-color : rgba(0,0,0,0.75);
+}
+
+.modal-widget {
+	visibility          : hidden;
+	display             : block;
+	width               : 600px;
+	position            : fixed;
+	top                 : 50%; 
+	left                : 50%;
+	margin-top          : -215px;
+	margin-left         : -300px;
+	background-color    : @color-light;
+	z-index             : 9999;
+	border-radius       : @border-radius;
+	--webkit-box-shadow : 2px 10px 30px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow     : 2px 10px 30px rgba(0, 0, 0, 0.5);
+	box-shadow          : 2px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-widget-content {
+	padding    : 20px;
+	min-height : 50px;
+	overflow   : auto;
+
+	// Typography enhancement, margin fix for headers inside modals;
+	h1, h2, h3, h4, h5, h6 {
+		margin : 0 0 1em;
+	}
+}
+
+.modal-widget-close {
+	display       : inline-block;
+	position      : absolute;
+	background    : @color-info;
+	color         : @color-light;
+	padding       : 6px 8px;
+	line-height   : 0;
+	top           : -12px;
+	right         : -12px;
+	border-radius : 100%;	
+	z-index       : 10000;
+	border        : 1px solid darken(@color-info, 10%);
+	text-shadow   : 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.modal-widget-close:hover {
+	background    : darken(@color-info, 10%);
+	color         : @color-light;
+}
+
+.modal-footer {
+	overflow : hidden;
+}

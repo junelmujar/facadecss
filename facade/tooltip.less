@@ -1,0 +1,53 @@
+#tooltip
+{
+	visibility   : hidden;
+	display      : none;
+	text-align   : center;
+	color        : @color-light;
+	background   : #000;
+	position     : absolute;
+	z-index      : 9999;
+	padding      : 5px 10px;
+	font-size    : 13px;
+	border-radius: @border-radius;
+}
+
+#tooltip.show {
+	visibility: visible;
+	display   : block;
+} 
+
+    #tooltip:after /* triangle decoration */
+    {
+		width        : 0;
+		height       : 0;
+		border-left  : 10px solid transparent;
+		border-right : 10px solid transparent;
+		border-top   : 10px solid #000;
+		content      : '';
+		position     : absolute;
+		left         : 50%;
+		bottom       : -8px;
+		margin-left  : -10px;
+    }
+ 
+        #tooltip.top:after
+        {
+			border-top-color : transparent;
+			border-bottom    : 10px solid #111;
+			top              : -20px;
+			bottom           : auto;
+        }
+ 
+        #tooltip.left:after
+        {
+			left   : 10px;
+			margin : 0;
+        }
+ 
+        #tooltip.right:after
+        {
+			right  : 10px;
+			left   : auto;
+			margin : 0;
+        }

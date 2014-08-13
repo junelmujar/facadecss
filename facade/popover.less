@@ -1,0 +1,174 @@
+.popover-overlay {
+	content          : "";
+	visibility       : hidden;
+	display          : block;
+	position         : fixed; /* could also be absolute */
+	top              : 0;
+	left             : 0;
+	height           : 100%;
+	width            : 100%;
+	z-index          : 9000 !important;
+	background-color : rgba(0,0,0,0.25);
+}
+
+.popover-overlay.show {
+	visibility       : visible;
+}
+
+.popover-container {
+	display       : none;
+	width         : 350px;
+	min-height    : 25px;
+	position      : absolute;
+	border        : 1px solid darken(@color-border, 10%);
+	background    : @color-light;
+	z-index       : 9001;
+	border-radius : @border-radius;
+	box-shadow    : 0px 10px 15px -5px rgba(0, 0, 0, 0.25);
+	padding       : 20px;
+	.popover-close {
+		top           : -15px;
+		right         : -15px;
+		position      : absolute;
+		display       : inline-block;
+		padding       : 6px 8px;
+		line-height   : 14px;
+		background    : darken(@color-inverse, 20%);
+		color         : @color-light;
+		border-radius : 100%;
+		text-shadow   : 1px 1px 3px rgba(0, 0, 0, 0.5);
+	}
+	.popover-close:hover {
+		background: darken(@color-info, 10%);
+	}
+}
+
+.popover-container.menu {
+	width: 250px;
+	padding: 0px;
+}
+
+.popover-menu {
+	display    : none;
+	visibility : hidden;
+	list-style : none;
+	margin     : 0;
+	padding    : 0;
+	li {
+		list-style: none;
+		a {
+			display         : block;
+			padding         : 8px 15px;
+			border-bottom   : 1px solid lighten(@color-border, 25%);
+			text-decoration : none;
+			color           : @color-default;
+			overflow        : hidden;
+		}
+		a:hover {
+			background : @color-primary;
+			color      : @color-light;
+		}
+	}
+	li:last-child a {
+		border: 0;
+	}	
+}
+
+
+.popover-container.show {
+	display: block;
+	.popover-menu {
+		display    : block;		
+		visibility : visible;
+	}
+}
+
+.popover-container.show:before {
+	position      : absolute;
+	content       : '';
+	left          : 15px;
+	top           : -10px;
+	border-bottom : 10px solid darken(@color-border, 10%);
+	border-left   : 10px solid transparent;
+	border-right  : 10px solid transparent;
+	z-index       : 8889;
+}
+
+.popover-container.show:after {
+	position      : absolute;
+	content       : '';
+	left          : 16px;
+	top           : -9px;
+	border-bottom : 9px solid @color-light;
+	border-left   : 9px solid transparent;
+	border-right  : 9px solid transparent;
+	z-index       : 8889;
+}
+
+.popover-container.tooltip-top-right {
+	.popover-close {
+		right: auto;
+		left: -15px;
+	}
+}
+
+.popover-container.tooltip-bottom-right {
+	.popover-close {
+		left: auto;
+		right: -15px;
+	}
+}
+
+
+.popover-container.tooltip-top-right.show:before {
+	left  : auto;
+	right : 14px;
+}
+
+.popover-container.tooltip-top-right.show:after {
+	left  : auto;
+	right : 15px;
+
+}
+
+.popover-container.tooltip-bottom-right.show:before {
+	top           : auto;
+	left          : auto;
+	right         : 14px;
+	bottom        : -10px;
+	border-bottom : 0;
+	border-top    : 10px solid darken(@color-border, 10%);
+	border-left   : 10px solid transparent;
+	border-right  : 10px solid transparent;
+}
+
+.popover-container.tooltip-bottom-right.show:after {
+	top           : auto;
+	left          : auto;
+	right         : 15px;
+	bottom        : -9px;
+	border-bottom : 0;
+	border-top    : 9px solid @color-light;
+	border-left   : 9px solid transparent;
+	border-right  : 9px solid transparent;		
+}
+
+.popover-container.tooltip-bottom-left.show:before {
+	top           : auto;
+	left          : 14px;
+	bottom        : -10px;
+	border-bottom : 0;
+	border-top    : 10px solid darken(@color-border, 10%);
+	border-left   : 10px solid transparent;
+	border-right  : 10px solid transparent;
+}
+
+.popover-container.tooltip-bottom-left.show:after {
+	top           : auto;
+	left          : 15px;
+	bottom        : -9px;
+	border-bottom : 0;
+	border-top    : 9px solid @color-light;
+	border-left   : 9px solid transparent;
+	border-right  : 9px solid transparent;		
+}

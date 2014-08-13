@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Facade CSS</title>
+	
+    <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'> 
+
+	<link rel="stylesheet" href="vendor/font-awesome-4.1.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="vendor/normalize/normalize.css" />
+	<link rel="stylesheet" href="vendor/fluidable/fluidable-min.css" />
+	<link rel="stylesheet" href="facade.css" />
+	<link rel="stylesheet" href="selectize.css" />
+	
+	<body>
+		
+		<div class="bar bar-inverse sticky">
+			<span class="bar-text"><strong>Facade CSS</strong></span>
+			<a href="#" role="button">It's</a>
+			<a href="#" role="button" class="button-success">Hot</a>
+		</div>
+
+		<div class="container">
+			<h2 class="title">Typography <small>Words are mightier than the sword</small></h2>
+			<div class="notice">
+				<div class="notice-title">Lorem Ipsum</div>
+				<div class="notice-text">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere suscipit architecto inventore repudiandae ipsa totam, esse aliquid? Pariatur consectetur sequi blanditiis iure dolorem voluptas vel saepe. Molestiae consequatur eum, maxime!
+				</div>
+			</div>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque totam, consequatur error doloribus nemo! Accusantium, <strong>optio debitis quam delectus facilis error non voluptates in minima ratione, inventore</strong> fugiat quia maxime?
+			</p>
+			<hr>
+			<h3>Lorem Is My <em>World</em></h3>
+			<p>
+				Lorem ipsum Velit irure pariatur sed eu eu quis reprehenderit sed Excepteur laborum veniam nulla ullamco velit cillum laboris consequat voluptate tempor do et ad dolore minim fugiat fugiat ullamco ad Excepteur est Ut est exercitation ullamco in in veniam eiusmod in ea id eu nostrud aliquip ut sint proident sint officia adipisicing culpa ut consequat laborum ut eu ea qui consequat ut laborum ea aliqua sit minim proident reprehenderit ut commodo labore sunt adipisicing commodo laborum ullamco nisi amet nisi Duis nulla nulla in velit enim incididunt ex esse ut in nulla irure dolore eiusmod ullamco magna elit et laboris ullamco sunt commodo incididunt magna enim eiusmod quis fugiat ut culpa sed ad dolore qui enim aliqua aliqua incididunt veniam quis in sit in irure deserunt elit pariatur eu sint cillum nulla nostrud sunt elit magna in culpa fugiat Ut quis adipisicing consequat aliqua proident anim eiusmod deserunt Excepteur ad quis ut aliqua do labore ea qui occaecat proident eiusmod nulla consequat minim id in occaecat commodo voluptate consectetur non labore nostrud ad occaecat quis in id consectetur minim proident irure sit dolore reprehenderit Duis sed id dolore laboris non minim magna tempor deserunt.
+			</p>
+		</div>		
+
+	</body>
+
+	<script src="lib/jquery-2.1.0.min.js"></script>
+	<script src="lib/velocity.min.js"></script>
+	<script src="lib/jquery.sticky-kit.min.js"></script>
+
+	<script src="vendor/selectize/selectize.js"></script>
+
+	<script src="widgets/accordion.js"></script>
+	<script src="widgets/modal.js"></script>
+	<script src="widgets/tooltip.js"></script>
+	<script src="widgets/dropdown.js"></script>
+	<script src="widgets/splitbutton.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			$(".sticky").stick_in_parent();
+
+			$('*[data-widget=selectize]').selectize({
+				create: true,
+			    sortField: 'text'
+			});			
+
+			  $('.split-btn').splitdropbutton({
+			    toggleDivContent: '<i class="fa fa-reorder"></i>' // optional html content for the clickable toggle div
+			  })			
+		});
+	</script>
+
+</html>

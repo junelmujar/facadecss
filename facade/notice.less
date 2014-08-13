@@ -1,0 +1,95 @@
+.notice_defaults(@background, @foreground) {
+	background    : @background;
+	box-shadow    : inset 0 1px 1px rgba(0, 0, 0, 0.1);
+	padding       : 20px;
+	margin        : 0 0 1.5em;
+	position      : relative;
+	border-radius : @border-radius;	
+	color         : @foreground;
+}
+
+.notice {
+	.notice_defaults(@color-default-fill, @color-default);
+	.notice-title {
+		font-size   : 18px;
+		font-weight : bold;
+		margin      : 0 0 0.8em;
+	}
+	.notice-remove {
+		font-family  : Fontawesome;
+		content      : '\f107';
+		display      : block;
+		position     : absolute;
+		background   : @color-inverse;
+		color        : @color-light;
+		top          : -12px;
+		right        : -12px;
+		line-height  : 12px;
+		padding      : 7px 8px;
+		text-align   : center;
+		border-radius: 100%;
+		font-weight  : normal;
+		i.fa {
+			line-height  : 0px;
+			font-size:14px;
+			pointer-events:none;
+		}
+	}
+	.notice-remove:hover {
+		background : @color-default;
+		color      : @color-light;
+	}
+}
+
+.notice.notice-danger,
+.notice.notice-info,
+.notice.notice-warning,
+.notice.notice-success {
+	a[role=button],
+	button,
+	input[type=submit],
+	input[type=reset] {	
+		border     : 0px;
+		box-shadow : 0px 0px 1px rgba(0, 0, 0, 1);
+	}		
+}
+
+.notice.notice-danger {
+	text-shadow : 1px 1px 0px rgba(0, 0, 0, 0.15);
+	.notice_defaults(@color-danger, @color-light);
+}
+
+.notice.notice-info {
+	text-shadow : 1px 1px 0px rgba(0, 0, 0, 0.15);
+	.notice_defaults(@color-info, @color-light);
+}
+
+.notice.notice-warning {
+	text-shadow : 1px 1px 0px rgba(0, 0, 0, 0.15);
+	.notice_defaults(@color-warning, @color-light);
+}
+
+.notice.notice-success {
+	text-shadow : 1px 1px 0px rgba(0, 0, 0, 0.15);
+	.notice_defaults(@color-success, @color-light);
+}
+
+// .notice:hover {
+// 	background: darken(@color-default-fill, 5%);
+// }
+
+// .notice.notice-danger:hover {
+// 	background: darken(@color-danger, 5%);
+// }
+
+// .notice.notice-info:hover {
+// 	background: darken(@color-info, 5%);
+// }
+
+// .notice.notice-warning:hover{
+// 	background: darken(@color-warning, 5%);
+// }
+
+// .notice.notice-success:hover {
+// 	background: darken(@color-success, 5%);
+// }

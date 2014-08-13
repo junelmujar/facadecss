@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Facade CSS</title>
+	
+    <!-- <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>  -->
+	
+	<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+	<link rel="stylesheet" href="vendor/font-awesome-4.1.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="vendor/normalize/normalize.css" />
+	<link rel="stylesheet" href="vendor/fluidable/fluidable-min.css" />
+	<link rel="stylesheet" href="facade.css" />
+	<link rel="stylesheet" href="selectize.css" />
+
+	<body>
+
+		<div class="bar bar-inverse margin-less square-edge">
+			<span class="bar-text"><strong>Facade CSS</strong> Dropdowns</span>
+			<a href="#" role="button">It's</a>
+			<a href="#" role="button" class="button-success">Hot</a>
+
+			<div data-widget="popover">
+				<a href="#" role="button" data-action="trigger" data-target="#popover_a">
+					Popover Test B <i class="fa fa-caret-down"></i>
+				</a>
+			</div>				
+
+		</div>
+
+		<div class="sticky">
+			<div data-widget="drawer" class="drawer square-edge margin-less" data-toggle-title="Hide/Show">
+				<a href="#" role="button" class="button-primary drawer-toggle">Toggle</a>
+				<div class="drawer-content">
+					<h2 class="margin-less">Hello, I'am Drawer</h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>				
+				</div>
+			</div>
+		</div>
+
+
+		<div class="popover-panel popover-inverse hidden" id="popover_a">
+			<form action="">
+				<label for="">Search Database:</label>
+				<input type="text" class="stretch" placeholder="Enter desired keyword...">	
+			</form>
+			<p>
+			<h4>Note:</h4>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quibusdam sint voluptates nam consectetur autem ut vero ea. Doloremque vel, at labore ipsum, beatae quisquam! Soluta asperiores aliquid beatae delectus. asfsa
+			</p>
+			<h3 class="title">Select Action:</h3>
+			<ul class="popover-menu">
+				<li><a href="">One</a></li>
+				<li><a href="">Two</a></li>
+				<li><a href="">Three</a></li>
+			</ul>			
+			<hr>
+			<a href="" role="button" class="button-info pull-right"><i class="fa fa-check"></i> Go</a>
+		</div>	
+
+
+		<div class="popover-panel popover-inverse hidden" id="popover_b">
+			<input type="text" class="stretch" placeholder="Enter desired keyword...">	
+			<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quibusdam sint voluptates nam consectetur autem ut vero ea. Doloremque vel, at labore ipsum, beatae quisquam! Soluta asperiores aliquid beatae delectus. asfsa
+			</p>
+			<hr>
+			<a href="" role="button" class="button-info pull-right"><i class="fa fa-check"></i> Go</a>
+		</div>
+		<div class="container">
+			<div class="col-group">
+				<div class="col-12">
+					<h3>Dropdown <small>Training ground for drodown widgets</small></h3>		
+				</div>
+			</div>
+
+			<div class="col-group">	
+				<div class="col-6">
+					<h3>Top Left</h3>
+
+					<div data-widget="dropdown">
+						<a href="#" role="button" data-action="trigger" target="#dropdown-test-a">
+							Dropdown Test A <i class="fa fa-caret-down"></i>
+						</a>
+						<ul class="dropdown dropdown-menu" id="dropdown-test-a">
+							<li><a href="#">Item A <span class="pull-right"><i class="fa fa-times"></i></span></a></li>
+							<li><a href="#">Item B <span class="pull-right"><i class="fa fa-check"></i></span></a></li>
+							<li class="dropdown-seperator"></li>
+							<li><a href="#">Item D</a></li>
+						</ul>	
+					</div>
+
+					<div data-widget="dropdown">
+						<a href="#" role="button" data-action="trigger" target="#dropdown-test-b">
+							Dropdown Test A  <i class="fa fa-caret-down"></i>
+						</a>
+						<div class="dropdown dropdown-panel" hide-dropdown-onclick id="dropdown-test-b">
+							<h3>Panel</h3>
+							<form action="#" method="POST">
+								<input type="text">
+								<br><br>
+								<button type="reset">Reset</button>
+								<button type="submit" class="button-primary pull-right"><i class="fa fa-check"></i> Reset</button>
+							</form>
+						</div>		
+					</div>				
+
+					<div data-widget="dropdown">
+						<a href="#" role="button" class="button-success button-split" data-action="trigger" target="#dropdown-test-c">
+							Dropdown Test A  <i class="fa fa-caret-down"></i>
+						</a>
+						<ul class="dropdown dropdown-menu" id="dropdown-test-c">
+							<li><a href="#">Item A</a></li>
+							<li><a href="#">Item B</a></li>
+							<li class="dropdown-seperator"></li>
+							<li><a href="#">Item D</a></li>
+						</ul>	
+					</div>
+
+					<div data-widget="drawer" class="drawer" data-state="open" data-toggle-title="Hide/Show">
+						<a href="#" role="button" class="drawer-toggle">Drawer 2</a>
+						<div class="drawer-content">
+							<h2 class="margin-less">Hello, I'am Drawer Too</h2>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>				
+						</div>
+					</div>
+		
+					<h3>Table Sample</h3>
+					<table class="table table-bordered-rows table-striped table-hover">
+						<thead>
+							<th colspan="2">This is a test</th>
+						</thead>
+						<tbody>
+						<tr>
+							<td id="record_1">Record 100</td>
+							<td width="100" class="center-text">
+								<div data-widget="popover">
+								<a href="#" role="button" class="button-small" data-action="trigger" data-target="#record_1" title="An Accordion"><i class="fa fa-times"></i> Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td id="record_2">Record 101</td>
+							<td class="center-text">
+								<div data-widget="popover">
+								<a href="#" role="button" data-overlay="show" class="button-small" data-action="trigger" data-target="#record_2" title="An Accordion"><i class="fa fa-times"></i> Edit</a></div>
+							</td>
+						</tr>		
+						<tr>
+							<td id="record_3">Record 102</td>
+							<td class="center-text">						
+								<div data-widget="popover">
+								<a href="#" role="button" class="button-small" data-action="trigger" data-target="#record_3" title="An Accordion"><i class="fa fa-times"></i> Edit</a></div>
+							</td>
+						</tr>										
+						</tbody>
+					</table>
+
+				</div>
+				<div class="col-6">
+					<h3>Top Right</h3>
+
+					<div data-widget="popover">
+						<a href="#" role="button" data-action="trigger" data-overlay="show"  data-target="#popover_b">
+							Popover Test B <i class="fa fa-caret-down"></i>
+						</a>
+					</div>				
+
+					<div data-widget="popover">
+						<a href="#" role="button" data-action="trigger" data-target="#popover-menu" data-mode="menu">
+							Popover Test B <i class="fa fa-caret-down"></i>
+						</a>
+						<div id="popover-menu">
+							<ul class="popover-menu">
+								<li><a href="">One</a></li>
+								<li><a href="">Two</a></li>
+								<li><a href="">Three</a></li>
+							</ul>
+						</div>
+					</div>		
+
+					<div data-widget="drawer" class="drawer" data-state="open" data-toggle-title="Hide/Show">
+						<a href="#" role="button" class="drawer-toggle">Drawer 1</a>
+						<div class="drawer-content">
+							<h2 class="margin-less">Hello, I'am Drawer Too</h2>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>				
+							<table class="table table-bordered-rows table-striped table-hover">
+								<thead>
+									<th colspan="2">This is a test</th>
+								</thead>
+								<tbody>
+								<tr>
+									<td id="record_1">Record 100</td>
+									<td width="100" class="center-text">
+										<div data-widget="popover">
+										<a href="#" role="button" class="button-small" data-action="trigger" data-target="#record_1" title="An Accordion"><i class="fa fa-times"></i> Edit</a></div>
+									</td>
+								</tr>
+								<tr>
+									<td id="record_2">Record 101</td>
+									<td class="center-text">
+										<div data-widget="popover">
+										<a href="#" role="button" data-overlay="show" class="button-small" data-action="trigger" data-target="#record_2" title="An Accordion"><i class="fa fa-times"></i> Edit</a></div>
+									</td>
+								</tr>		
+								<tr>
+									<td id="record_3">Record 102</td>
+									<td class="center-text">						
+										<div data-widget="popover">
+										<a href="#" role="button" class="button-small" data-action="trigger" data-target="#record_3" title="An Accordion"><i class="fa fa-times"></i> Edit</a></div>
+									</td>
+								</tr>										
+								</tbody>
+							</table>							
+						</div>
+					</div>
+		
+					<h3>Table Sample</h3>
+					<table class="table table-bordered-rows table-striped table-hover">
+						<thead>
+							<th colspan="2">This is a test</th>
+						</thead>
+						<tbody>
+						<tr>
+							<td id="record_1">Record 100</td>
+							<td width="100" class="center-text">
+								<div data-widget="popover">
+								<a href="#" role="button" class="button-small" data-action="trigger" data-target="#record_1" title="An Accordion"><i class="fa fa-times"></i> Edit</a></div>
+							</td>
+						</tr>
+						<tr>
+							<td id="record_2">Record 101</td>
+							<td class="center-text">
+								<div data-widget="popover">
+								<a href="#" role="button" data-overlay="show" class="button-small" data-action="trigger" data-target="#record_2" title="An Accordion"><i class="fa fa-times"></i> Edit</a></div>
+							</td>
+						</tr>		
+						<tr>
+							<td id="record_3">Record 102</td>
+							<td class="center-text">						
+								<div data-widget="popover">
+								<a href="#" role="button" class="button-small" data-action="trigger" data-target="#record_3" title="An Accordion"><i class="fa fa-times"></i> Edit</a></div>
+							</td>
+						</tr>										
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+
+			<div class="col-group">	
+				<div class="col-6">
+					<h3>Bottom Left</h3>
+				</div>
+				<div class="col-6">
+					<h3>Bottom Right</h3>
+				</div>
+			</div>
+		</div>		
+
+	</body>
+
+	<script src="lib/jquery-2.1.0.min.js"></script>
+	<script src="lib/velocity.min.js"></script>
+	<script src="lib/jquery.md5.js"></script>
+	<script src="lib/jquery.eventralize.min.js"></script>
+	<script src="lib/jquery.sticky-kit.min.js"></script>
+
+	<script src="widgets/dropdown.js"></script>
+	<script src="widgets/popover.js"></script>
+	<script src="widgets/drawer.js"></script>
+	<script>
+		$(document).ready(function() {
+			$(".sticky").stick_in_parent();
+		});
+	</script>
+</html>
+
