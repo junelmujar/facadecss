@@ -55,10 +55,14 @@ drawerWidget.prototype = {
             var content = $(this).find('.drawer-content');
             if (toggler.attr('data-state') == 'open') { 
                 content.css({ height: 'auto' });
+                toggler.attr('data-drawer-height', content.outerHeight());
             } else {
-                
+                var clone = content.clone();          
+                clone.appendTo('body');
+                clone.css({ height: 'auto', display: 'block', opacity: 0 });
+                toggler.attr('data-drawer-height', clone.outerHeight());
+                clone.remove();
             }
-            toggler.attr('data-drawer-height', content.outerHeight());
         });
     },
 
@@ -98,6 +102,7 @@ drawerWidget.prototype = {
             
         }
     },
+
 
 }
 
