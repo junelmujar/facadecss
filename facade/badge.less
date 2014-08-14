@@ -1,0 +1,41 @@
+.badge-defaults {
+	border-radius : 100%;
+	display       : inline-block;
+	line-height   : 12px;
+	font-size     : 11px;
+	text-align    : center;
+	font-weight   : bold !important;
+	padding       : 5px 5px 5px 4px;
+	min-width     : 16px;
+	background    : darken(@color-light, 10%);
+	color         : @color-default;	
+}
+
+.badge {
+	.badge-defaults
+}
+
+.badge.badge-inverse {
+	background    : @color-inverse;
+	color         : @color-light;
+}
+
+.badge.badge-success {
+	background    : @color-success;
+	color         : @color-light;
+}
+
+.badge.badge-warning {
+	background    : @color-warning;
+	color         : @color-light;
+}
+
+.badge.badge-danger {
+	background    : @color-danger;
+	color         : @color-light;
+}
+
+.badge.badge-info {
+	background    : @color-info;
+	color         : @color-light;
+}

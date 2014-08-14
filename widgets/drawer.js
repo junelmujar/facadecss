@@ -18,7 +18,6 @@ drawerWidget.prototype = {
 
     // Event definitions
     events: {
-        //'resize window'        : '_update_height',
         'click a.drawer-toggle': '_toggle'
     },
 
