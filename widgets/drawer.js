@@ -41,11 +41,13 @@ drawerWidget.prototype = {
     },
 
     _show: function() {
+        if (this.title) this.title.removeClass('close').addClass('open');
         this.target.attr('data-state', 'open');
         this.content.show();
     },
 
     _hide: function() {
+        if (this.title) this.title.removeClass('open').addClass('close');
         this.target.attr('data-state', 'close');
         this.content.hide();
     },
@@ -56,6 +58,7 @@ drawerWidget.prototype = {
 
         this.target  = $(event.target);
         this.content = this.target.parent().find('.drawer-content');
+        this.title   = this.target.parent().find('.drawer-title');
 
         var current_state = this.target.attr('data-state'); 
 
