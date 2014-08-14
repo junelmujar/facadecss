@@ -33,9 +33,9 @@
 
 		<div class="sticky">
 			<div data-widget="drawer" class="drawer square-edge margin-less" data-toggle-title="Hide/Show">
-				<a href="#" role="button" class="button-primary drawer-toggle">Toggle</a>
+				<a href="#" role="button" class="button-primary drawer-toggle">Hide/Show</a>
 				<div class="drawer-title">
-					Quick Settings
+					<i class="fa fa-wrench"></i> Quick Settings
 				</div>
 				<div class="drawer-content">
 					<h2 class="margin-less">Hello, I'am the Quick Settings drawer</h2>
@@ -91,10 +91,10 @@
 					<h3>Top Left</h3>
 
 					<div data-widget="dropdown">
-						<a href="#" role="button" data-action="trigger" target="#dropdown-test-a">
+						<a href="#" role="button">
 							Dropdown Test A <i class="fa fa-caret-down"></i>
 						</a>
-						<ul class="dropdown dropdown-menu" id="dropdown-test-a">
+						<ul class="dropdown dropdown-menu">
 							<li><a href="#">Item A <span class="pull-right"><i class="fa fa-times"></i></span></a></li>
 							<li><a href="#">Item B <span class="pull-right"><i class="fa fa-check"></i></span></a></li>
 							<li class="dropdown-seperator"></li>
@@ -103,10 +103,10 @@
 					</div>
 
 					<div data-widget="dropdown">
-						<a href="#" role="button" data-action="trigger" target="#dropdown-test-b">
+						<a href="#" role="button">
 							Dropdown Test A  <i class="fa fa-caret-down"></i>
 						</a>
-						<div class="dropdown dropdown-panel" hide-dropdown-onclick id="dropdown-test-b">
+						<div class="dropdown dropdown-panel">
 							<h3>Panel</h3>
 							<form action="#" method="POST">
 								<input type="text">
@@ -118,10 +118,10 @@
 					</div>				
 
 					<div data-widget="dropdown">
-						<a href="#" role="button" class="button-success button-split" data-action="trigger" target="#dropdown-test-c">
+						<a href="#" role="button" class="button-success button-split">
 							Dropdown Test A  <i class="fa fa-caret-down"></i>
 						</a>
-						<ul class="dropdown dropdown-menu" id="dropdown-test-c">
+						<ul class="dropdown dropdown-menu">
 							<li><a href="#">Item A</a></li>
 							<li><a href="#">Item B</a></li>
 							<li class="dropdown-seperator"></li>
@@ -130,7 +130,7 @@
 					</div>
 
 					<div data-widget="drawer" class="drawer" data-state="open" data-toggle-title="Hide/Show">
-						<a href="#" role="button" class="drawer-toggle">Drawer 2</a>
+						<a href="#" role="button" class="drawer-toggle">Hide/Show</a>
 						<div class="drawer-title">
 							This is a test!
 						</div>
@@ -143,7 +143,26 @@
 								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-							</p>				
+							</p>		
+							<form action="" class="form">
+								<div class="control-group">
+									<label for="">Setting A</label>
+									<input type="text" class="stretch" />
+								</div>
+								<div class="control-group">
+									<label for="">Setting A</label>
+									<input type="text" class="stretch" />
+								</div>
+								<div class="control-group">
+									<label for="">Setting A</label>
+									<input type="text" class="stretch" />
+								</div>		
+								<br>
+								<hr>
+								<div class="control-group">
+									<input type="submit" value="Submit" class="button-large pull-right">
+								</div>												
+							</form>		
 						</div>
 					</div>
 		
@@ -201,7 +220,7 @@
 					</div>		
 
 					<div data-widget="drawer" class="drawer" data-state="open" data-toggle-title="Hide/Show">
-						<a href="#" role="button" class="drawer-toggle">Drawer 1</a>
+						<a href="#" role="button" class="button-warning drawer-toggle">Hide/Show</a>
 						<div class="drawer-content">
 							<h2 class="margin-less">Hello, I'am Drawer Too</h2>
 							<p>
@@ -276,14 +295,6 @@
 				</div>
 			</div>
 
-			<div class="col-group">	
-				<div class="col-6">
-					<h3>Bottom Left</h3>
-				</div>
-				<div class="col-6">
-					<h3>Bottom Right</h3>
-				</div>
-			</div>
 		</div>		
 
 	</body>

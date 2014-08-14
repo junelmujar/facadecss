@@ -15,19 +15,20 @@
 .button_clicked(@background) {
 	background : @background;
 	box-shadow    : inset 0 1px 0px darken(@background, 5%);	
-	.vertical-gradient(@background, lighten(@background, 5%));
+	//.vertical-gradient(@background, lighten(@background, 5%));
 }
 
 .button(@background, @foreground) {
 	background    : @background;
 	padding       : 6px 15px;
 	color         : @foreground;
-	box-shadow    : inset 0 1px 0px lighten(saturate(@background, 25%), 15%);	
+	//box-shadow    : inset 0 1px 0px lighten(saturate(@background, 25%), 15%);	
+	box-shadow    : inset 0 -2px 0px darken(@background, 5%);
 	border        : 1px solid darken(@background, 20%);
 	border-radius : @border-radius;
 	font-weight   : bold;
 	text-shadow   : 1px 1px 0px darken(@background, 10%);
-	.vertical-gradient(lighten(@background, 5%), @background);
+	//.vertical-gradient(lighten(@background, 5%), @background);
 }
 
 a[role=button],
@@ -35,7 +36,7 @@ button,
 input[type=submit],
 input[type=reset] {
 	.button_default_properties;
-	.button(darken(@color-light, 5%), lighten(@color-default, 10%));	
+	.button(@color-light, lighten(@color-default, 15%));	
 	text-shadow: 1px 1px 0px @color-light;
 }
 
@@ -48,7 +49,8 @@ a[role=button]:hover,
 button:hover,
 input[type=submit]:hover,
 input[type=reset]:hover {
-	.button(darken(@color-light, 10%), @color-default);	
+	.button(lighten(@color-light, 2%), @color-default);	
+	box-shadow: none;
 	text-shadow: 1px 1px 0px @color-light;
 }
 
@@ -56,14 +58,14 @@ a[role=button]:active,
 button:active,
 input[type=submit]:active,
 input[type=reset]:active {
-	.button_clicked(darken(@color-light, 15%));
+	.button_clicked(darken(@color-light, 10%));
 }
 
 a[role=button].active,
 button.active,
 input[type=submit].active,
 input[type=reset].active {
-	.button_clicked(darken(@color-light, 15%));
+	.button_clicked(darken(@color-light, 10%));
 }
 
 
@@ -220,9 +222,16 @@ a.button-split,
 }
 
 .button-small {
-	padding : 3px 10px !important;
+	padding : 4px 10px !important;
 	height  : 32px !important;
 	i.fa {
 		pointer-events : none;	
 	}
+}
+
+.button-large {
+	padding     : 10px 15px;
+	font-size   : 24px;
+	font-weight : normal !important;
+	height      : 48px !important;
 }

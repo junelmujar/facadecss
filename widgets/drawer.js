@@ -32,9 +32,12 @@ drawerWidget.prototype = {
         this.$elem.each(function() {
             var toggler = $(this).find('.drawer-toggle');
             var content = $(this).find('.drawer-content');
+            var title   = $(this).find('.drawer-title');
             if ($(this).attr('data-state') == 'open') {
                 toggler.attr('data-state', 'open');
                 content.show();
+            } else {
+                if (title) title.removeClass('open').addClass('close');
             }
         });
 
