@@ -23,8 +23,16 @@
 			.vertical-gradient(@color-light, darken(@color-light, 5%));
 		}
 	}
+	.switch-button:after {
+		position    : absolute;
+		font-family : Fontawesome;
+		content     : '\f00d';
+		left       : 10px;
+		text-shadow : 1px 1px 0px rgba(0, 0, 0, 0.15);
+		color       : @color-light;		
+	}
 	.switch-button.toggle-open {
-		background : saturate(lighten(@color-primary, 25%), 50%);
+		background : @color-info;
 		box-shadow : inset 0px 0px 2px rgba(0, 0, 0, 0.5);
 		position: relative;
 		.switch-toggle {
@@ -36,6 +44,7 @@
 		position    : absolute;
 		font-family : Fontawesome;
 		content     : '\f00c';
+		left        : auto;
 		right       : 10px;
 		text-shadow : 1px 1px 0px rgba(0, 0, 0, 0.15);
 		color       : @color-light;

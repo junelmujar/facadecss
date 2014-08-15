@@ -8,7 +8,7 @@
 	
     <!-- <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>  -->
 	
-	<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="vendor/font-awesome-4.1.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="vendor/normalize/normalize.css" />
@@ -32,13 +32,13 @@
 		</div>
 
 		<div class="sticky">
-			<div data-widget="drawer" class="drawer square-edge margin-less" data-toggle-title="Hide/Show">
-				<a href="#" role="button" class="button-primary drawer-toggle">Hide/Show</a>
+			<div data-widget="drawer" class="drawer drawer-inverse square-edge margin-less" data-toggle-title="Hide/Show">
+				<a href="#" class="drawer-toggle"><i class="fa fa-reorder"></i></a>
 				<div class="drawer-title">
 					<i class="fa fa-wrench"></i> Quick Settings
 				</div>
 				<div class="drawer-content">
-					<h2 class="margin-less">Hello, I'am the Quick Settings drawer</h2>
+					<h2 class="margin-less color-info text-shadow">Hello, I'am the Quick Settings drawer</h2>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -46,7 +46,21 @@
 						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>				
+					</p>		
+					<p>
+
+						<div data-widget="switch">
+							<input type="checkbox"> <span>Sandwich</span>
+						</div>
+
+						<div data-widget="switch">
+							<input type="checkbox" checked> <span>Burger</span>
+						</div>
+
+						<div data-widget="switch">
+							<input type="checkbox"> <span>Pasta</span>
+						</div>						
+					</p>		
 				</div>
 			</div>
 		</div>
@@ -133,13 +147,42 @@
 						</ul>	
 					</div>
 
-					<div data-widget="drawer" class="drawer" data-state="open" data-toggle-title="Hide/Show">
-						<a href="#" role="button" class="drawer-toggle">Hide/Show</a>
+					<div data-widget="drawer" class="drawer drawer-inverse1" data-state="open" data-toggle-title="Hide/Show">
+						<a href="#" class="drawer-toggle"><i class="fa fa-reorder"></i></a>
 						<div class="drawer-title">
 							This is a test!
 						</div>
 						<div class="drawer-content">
+							
 							<h2 class="margin-less">Hello, I'am Drawer Too</h2>
+
+							<div class="tab-container">
+								<ul class="tabs" data-widget="tabs">
+									<li class="active"><a href="#" data-target="#tab1"><i class="fa fa-cog"></i> Cog</a></li>
+									<li><a href="#" data-target="#tab2"><i class="fa fa-wrench"></i> Wrench</a></li>
+									<li><a href="#" data-target="#tab3"><i class="fa fa-reorder"></i> Burger</a></li>
+									<li><a href="#" data-target="#tab4"><i class="fa fa-money"></i> Money</a></li>
+								</ul>
+								<div class="tab-content" id="tab1">
+									<h2 class="margin-less">A</h2>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta accusamus magni rem officiis voluptates culpa laborum nesciunt fugiat ex placeat, ullam voluptate quis qui, facere rerum quam, hic impedit commodi.
+								</div>
+								<div class="tab-content" id="tab2">
+									<h2 class="margin-less">B</h2>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta accusamus magni rem officiis voluptates culpa laborum nesciunt fugiat ex placeat, ullam voluptate quis qui, facere rerum quam, hic impedit commodi.
+								</div>
+								<div class="tab-content" id="tab3">
+									<h2 class="margin-less">C</h2>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta accusamus magni rem officiis voluptates culpa laborum nesciunt fugiat ex placeat, ullam voluptate quis qui, facere rerum quam, hic impedit commodi.
+								</div>
+								<div class="tab-content" id="tab4">
+									<h2 class="margin-less">D</h2>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta accusamus magni rem officiis voluptates culpa laborum nesciunt fugiat ex placeat, ullam voluptate quis qui, facere rerum quam, hic impedit commodi.
+								</div>								
+							</div>	
+					
+							<hr>
+
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -223,8 +266,29 @@
 						</div>
 					</div>		
 
+					<div class="tab-container">
+						<ul class="tabs" data-widget="tabs">
+							<li class="active"><a href="#" data-target="#tab11">Cog</a></li>
+							<li><a href="#" data-target="#tab22">Wrench</a></li>
+							<li><a href="#" data-target="#tab33">Hammer</a></li>
+						</ul>
+						<div class="tab-content" id="tab11">
+							<h2 class="margin-less">A</h2>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta accusamus magni rem officiis voluptates culpa laborum nesciunt fugiat ex placeat, ullam voluptate quis qui, facere rerum quam, hic impedit commodi.
+						</div>
+						<div class="tab-content" id="tab22">
+							<h2 class="margin-less">B</h2>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta accusamus magni rem officiis voluptates culpa laborum nesciunt fugiat ex placeat, ullam voluptate quis qui, facere rerum quam, hic impedit commodi.
+						</div>
+						<div class="tab-content" id="tab33">
+							<h2 class="margin-less">C</h2>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta accusamus magni rem officiis voluptates culpa laborum nesciunt fugiat ex placeat, ullam voluptate quis qui, facere rerum quam, hic impedit commodi.
+						</div>
+					</div>	
+
 					<div data-widget="drawer" class="drawer" data-state="open" data-toggle-title="Hide/Show">
-						<a href="#" role="button" class="button-warning drawer-toggle">Hide/Show</a>
+						<a href="#" class="drawer-toggle"><i class="fa fa-reorder"></i></a>
+						<div class="drawer-title">This is a drawer title</div>
 						<div class="drawer-content">
 							<h2 class="margin-less">Hello, I'am Drawer Too</h2>
 							<p>
@@ -267,6 +331,7 @@
 					</div>
 		
 					<h3>Table Sample</h3>
+					<div class="panel">
 					<table class="table table-bordered-rows table-striped table-hover">
 						<thead>
 							<th colspan="2">This is a test</th>
@@ -295,7 +360,7 @@
 						</tr>										
 						</tbody>
 					</table>
-
+					</div>
 				</div>
 			</div>
 
@@ -312,6 +377,9 @@
 	<script src="widgets/dropdown.js"></script>
 	<script src="widgets/popover.js"></script>
 	<script src="widgets/drawer.js"></script>
+	<script src="widgets/tabs.js"></script>
+	<script src="widgets/switch.js"></script>
+	
 	<script>
 		$(document).ready(function() {
 			$(".sticky").stick_in_parent();

@@ -9,7 +9,7 @@
 	}
 	tbody {
 		tr td {
-			padding: 5px;
+			padding: 5px 10px;
 			position: relative;
 		}
 	}
@@ -36,17 +36,14 @@
 }
 
 .table.table-bordered-rows {
-	border-radius : @border-radius !important;
-	border        : 1px solid @color-border;
 	thead {
 		tr th {
 			border-bottom: none;
-			.vertical-gradient(@color-light, lighten(@color-default-fill, 5%));
 		}
 	}
 	tbody {
 		tr td {
-			border-top: 1px solid @color-border;
+			border-top: 1px solid lighten(@color-border, 15%);
 		}
 	}
 }
@@ -55,7 +52,7 @@
 .table.table-striped {
 	tbody {
 		tr:nth-child(odd) td {
-			background: darken(@color-light, 3%);
+			background: darken(@color-light, 2%);
 		}
 	}
 }
