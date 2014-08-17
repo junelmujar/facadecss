@@ -21,6 +21,8 @@ drawerWidget.prototype = {
         'click a.drawer-toggle': '_toggle'
     },
 
+    registry: [],
+
     // Initialize
     init: function(elem){
 
@@ -28,18 +30,33 @@ drawerWidget.prototype = {
         this.$elem = $(elem).eventralize(this.events, this, 'facade');
 
         var that = this;
+
+        //this.registry = {};
+
         this.$elem.each(function() {
-            var toggler = $(this).find('.drawer-toggle');
-            var content = $(this).find('.drawer-content');
-            var title   = $(this).find('.drawer-title');
+            
+            var toggler     = $(this).find('.drawer-toggle');
+            var content     = $(this).find('.drawer-content');
+            var title       = $(this).find('.drawer-title');
+            var drawer_name = $(this).attr('data-widget-name');
+
+            // If drawer's initial state is open; show it!
             if ($(this).attr('data-state') == 'open') {
                 toggler.attr('data-state', 'open');
                 content.show();
             } else {
                 if (title) title.removeClass('open').addClass('close');
             }
+
+            // Save it to our registry
+            if (drawer_name) {
+                that.registry.push (drawer_name);
+            }
+
         });
 
+
+        console.log(this.registry);
     },
 
     _show: function() {
@@ -71,6 +88,36 @@ drawerWidget.prototype = {
             
         }
     },
+
+    _find_drawer: function(name) {
+        var drawer_exists = false;
+        if (name) {
+            if ($.inArray(name, this.registry) != -1) {
+                drawer_exists = true;
+            }
+        }
+        return drawer_exists;
+    },
+
+    _show_drawer: function(name) {
+        var drawer      = $('[data-widget-name=' + name + ']');
+        var toggler     = drawer.find('.drawer-toggle');
+        var content     = drawer.find('.drawer-content');
+        var title       = drawer.find('.drawer-title');
+
+        drawer.attr('data-state', 'open')
+        toggler.attr('data-state', 'open');
+        if (title) title.removeClass('close').addClass('open');
+        content.show();
+    },
+
+    show: function(name) {
+        if (this._find_drawer(name)) {
+            this._show_drawer(name);
+        } else {
+            alert('Facade CSS: Drawer does not exist!')
+        }
+    }
 }
 
 // Bind to elements with [data-widget=notice] attributes

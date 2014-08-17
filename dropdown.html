@@ -32,7 +32,7 @@
 		</div>
 
 		<div class="sticky">
-			<div data-widget="drawer" class="drawer drawer-inverse square-edge margin-less" data-toggle-title="Hide/Show">
+			<div data-widget="drawer" data-widget-name="quick_settings" class="drawer drawer-inverse square-edge margin-less" data-toggle-title="Hide/Show">
 				<a href="#" class="drawer-toggle"><i class="fa fa-reorder"></i></a>
 				<div class="drawer-title">
 					<i class="fa fa-wrench"></i> Quick Settings
@@ -266,6 +266,10 @@
 						</div>
 					</div>		
 
+					<a href="#" role="button" id="quick_settings">
+						Toggle Quick Settings
+					</a>
+
 					<div class="tab-container">
 						<ul class="tabs" data-widget="tabs">
 							<li class="active"><a href="#" data-target="#tab11">Cog</a></li>
@@ -286,7 +290,7 @@
 						</div>
 					</div>	
 
-					<div data-widget="drawer" class="drawer" data-state="open" data-toggle-title="Hide/Show">
+					<div data-widget="drawer" data-widget-name="drawer_c" class="drawer" data-state="close" data-toggle-title="Hide/Show">
 						<a href="#" class="drawer-toggle"><i class="fa fa-reorder"></i></a>
 						<div class="drawer-title">This is a drawer title</div>
 						<div class="drawer-content">
@@ -383,6 +387,12 @@
 	<script>
 		$(document).ready(function() {
 			$(".sticky").stick_in_parent();
+			
+			$('#quick_settings').click(function(event) {
+				event.preventDefault();
+				drawer.show('quick_settings');	
+				drawer.show('drawer_c');	
+			});
 		});
 	</script>
 </html>

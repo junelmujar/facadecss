@@ -36,8 +36,7 @@ tabWidget.prototype = {
     toggle: function(event) {
         event.preventDefault();
         if (event) {
-            var tab = $(event.target);
-            tab.parent().siblings().removeClass('active');
+            var tab = $(event.target); tab.parent().siblings().removeClass('active');
             tab.parent().addClass('active');
             tab.parent().parent().siblings().hide();
             tab.parent().parent().siblings().each(function() {
