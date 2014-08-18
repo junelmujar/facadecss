@@ -56,7 +56,7 @@ drawerWidget.prototype = {
         });
 
 
-        console.log(this.registry);
+        //console.log(this.registry);
     },
 
     _show: function() {

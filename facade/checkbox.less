@@ -1,0 +1,27 @@
+[data-widget~=checkbox] {
+	margin-bottom: 10px;
+	.checkbox-toggle {
+		display        : inline-block;
+		width          : 24px;
+		background     : lighten(@color-inverse, 50%);
+		box-shadow     : inset 0px 0px 2px rgba(0, 0, 0, 0.5);
+		position       : relative;
+		height         : 24px;
+		vertical-align : middle;
+		margin-right   : 10px;
+		border-radius  : @border-radius;
+
+	}
+	.checkbox-toggle.checked {
+		background: @color-info;
+	}
+	.checkbox-toggle.checked:after {
+		width       : 100%;
+		text-align  : center;
+		position    : absolute;
+		font-family : Fontawesome;
+		content     : '\f00c';
+		text-shadow : 1px 1px 0px rgba(0, 0, 0, 0.15);
+		color       : @color-light;		
+	}
+}

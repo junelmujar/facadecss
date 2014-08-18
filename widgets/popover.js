@@ -47,9 +47,9 @@ popoverWidget.prototype = {
     
     // Event definitions
     events: {
-      'click a[data-action=trigger]' : 'toggle',
-      'resize window, scroll window' : 'reposition',
-      'keydown(esc) document' : 'hide',
+      'click a[data-action=trigger]'            : 'toggle',
+      'resize window, scroll window'            : 'reposition',
+      'keydown(esc) document, click document'   : 'hide',
     },
 
     overlay_events: {
@@ -81,30 +81,35 @@ popoverWidget.prototype = {
         this.popover_bottom_edge = 0;        
         this.popover_mode        = 'panel'; // default mode
         this.container           = $('.popover-container');
+        this.popover_overlay     = $('.popover-overlay');
 
         // Bind events to popover overlay
-        $('.popover-overlay').eventralize(this.overlay_events, this, 'facade');
+        this.popover_overlay.eventralize(this.overlay_events, this, 'facade');
     },
 
-    // Hide all dropdowns
+    // Hide all popups
     hide: function(event) {
         
-        // Check if event is an object;
-        if (event) {
-            event.preventDefault();
-        }
-        
-        // Remove active class on trigger
-        this.trigger.removeClass('active').attr('last-active', false);
-        $('body').removeAttr('data-popover-active');
+        var target = event.target || event.srcElement || event.originalTarget;
 
-        if (!$(event.target).attr('data-action')) {
-            if (this.overlay == 'show') {
-                $('.popover-overlay').removeClass('show');
+        event.preventDefault();
+        event.stopPropagation();
+        
+        if (!this.overlay_persistent || this.overlay_persistent == "false" || $(target).hasClass('popover-close')) {
+            if ($(target).attr('data-action') != "trigger") {
+
+                var that = this;
+                $('body').removeAttr('data-popover-active');
+
+                if (this.overlay == 'show') {
+                    this.popover_overlay.removeClass('show');
+                }            
+
+                $('[data-widget=popover]').each(function() {
+                    $(this).find('a').attr('data-popover-state', false).removeClass('active');
+                    that.container.removeClass('show').empty();
+                });
             }
-            this.container.attr('data-popover-state', false).removeClass('show').empty();
-        } else {
-            this.container.attr('data-popover-state', false).removeClass('show').empty();
         }
     },
 
@@ -172,6 +177,7 @@ popoverWidget.prototype = {
     toggle: function(event) {
         
         event.preventDefault();
+        event.stopPropagation();
 
         this.hide_dropdowns();
         this.clear_tips();
@@ -199,6 +205,7 @@ popoverWidget.prototype = {
         
         // Get/set overlay mode [show/hide]
         this.overlay             = trigger.attr('data-overlay');
+        this.overlay_persistent  = trigger.attr('data-overlay-persistent');
         
         // Get initial x & y position;
         this.pos_y               = trigger.offset().top + trigger.outerHeight() + 10;
@@ -270,7 +277,10 @@ popoverWidget.prototype = {
                 this.container.addClass('tooltip-top-right');
             }
         }
+        
+        $('.popover-close i.fa').css('pointer-events', 'none');
 
+        
         // Set popover position
         this.container.css({ left: this.pos_x, top: this.pos_y });
 
