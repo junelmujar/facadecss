@@ -54,7 +54,7 @@
 		</div>
 
 		<div class="sticky">
-			<div data-widget="drawer" data-state="open" data-widget-name="quick_settings" class="drawer square-edge margin-less" data-toggle-title="Hide/Show" style="border-top: none !important;">
+			<div data-widget="drawer" data-widget-name="quick_settings" class="drawer square-edge margin-less" data-toggle-title="Hide/Show" style="border-top: none !important;">
 				<a href="#" class="drawer-toggle"><i class="fa fa-reorder"></i></a>
 				<div class="drawer-title">
 					<i class="fa fa-wrench"></i> Administration
@@ -247,7 +247,67 @@
 								Top Ten Users
 							</div>
 							<div class="panel-content">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio error deleniti provident veniam quas consequuntur facilis numquam aliquam, perspiciatis aliquid, consequatur non ullam. Provident voluptatem, nam porro possimus eos aliquid.
+								<div id="placeholder3" style="height: 400px;"></div>
+							<script>
+	$(document).ready(function() {
+
+		var d1 = [];
+		for (var i = 0; i <= 10; i += 1) {
+			d1.push([i, parseInt(Math.random() * 30)]);
+		}
+
+		var d2 = [];
+		for (var i = 0; i <= 10; i += 1) {
+			d2.push([i, parseInt(Math.random() * 30)]);
+		}
+
+		var d3 = [];
+		for (var i = 0; i <= 10; i += 1) {
+			d3.push([i, parseInt(Math.random() * 30)]);
+		}
+
+		var stack = 0,
+			bars = true,
+			lines = false,
+			steps = false;
+
+		function plotWithOptions() {
+			$.plot("#placeholder3", [ d1, d2, d3 ], {
+				series: {
+					stack: stack,
+					lines: {
+						show: lines,
+						fill: true,
+						steps: steps
+					},
+					bars: {
+						show: bars,
+						barWidth: 0.6
+					}
+				}
+			});
+		}
+
+		plotWithOptions();
+
+		$(".stackControls button").click(function (e) {
+			e.preventDefault();
+			stack = $(this).text() == "With stacking" ? true : null;
+			plotWithOptions();
+		});
+
+		$(".graphControls button").click(function (e) {
+			e.preventDefault();
+			bars = $(this).text().indexOf("Bars") != -1;
+			lines = $(this).text().indexOf("Lines") != -1;
+			steps = $(this).text().indexOf("steps") != -1;
+			plotWithOptions();
+		});
+
+
+	});
+
+	</script>
 							</div>
 							<div class="panel-footer">
 								<a href="#" role="button" class="pull-left">Button</a>	
@@ -259,10 +319,23 @@
 
 						<div class="panel">
 							<div class="panel-title">
-								Usage Graph
+								Form Sample
 							</div>
 							<div class="panel-content">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio error deleniti provident veniam quas consequuntur facilis numquam aliquam, perspiciatis aliquid, consequatur non ullam. Provident voluptatem, nam porro possimus eos aliquid.
+								<form action="" class="form">
+									<div class="control-group">
+										<label for="">Label 1</label>
+										<input type="text" class="stretch">
+									</div>
+									<div class="control-group">
+										<label for="">Label 2</label>
+										<input type="text" class="stretch">
+									</div>		
+									<div class="control-group">
+										<label for="">Description</label>
+										<textarea class="stretch" name="" id="" cols="30" rows="5"></textarea>
+									</div>																
+								</form>
 							</div>
 							<div class="panel-footer">
 								<a href="#" role="button" class="pull-left">Button</a>	
