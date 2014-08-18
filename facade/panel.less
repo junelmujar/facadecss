@@ -1,7 +1,7 @@
 .panel {
 	border        : 1px solid @color-border;
 	border-radius : @border-radius;
-	background: @color-light;
+	background    : @color-light;
 	.panel-title {
 		border-bottom : 1px solid @color-border;
 		padding       : 15px;
@@ -20,5 +20,67 @@
 	.table {
 		margin-top: 1px !important;
 		margin-bottom: 1px !important;
+	}
+}
+
+
+.list-menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	li {
+		a {
+			display: block;
+			padding: 5px 0px;
+			border-bottom: 1px solid @color-border;
+			text-decoration: none;
+		}
+	}
+}
+
+.layout {
+	// position: absolute;
+	// top: 0;
+	// left: 0;
+	// bottom: 0;
+	// right: 0;
+	.nav {
+		width: 225px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background: @color-inverse;
+		border-right: 1px solid @color-border;
+		.nav-accordion {
+			border: 0px;
+			border-radius: 0px !important;
+			.accordion-item > a {
+				color: @color-light !important;
+				border: 0px !important;
+				border-radius: 0px !important;
+			}
+			.accordion-item > a:hover {
+				color: @color-success !important;
+			}
+			.accordion-item > a[data-accordion-mode=open] {
+				border: 0px !important;
+				background: lighten(@color-inverse, 20%);
+			}
+			.accordion-body {
+				background: lighten(@color-inverse, 10%);
+				color: @color-light !important; 
+				border-radius: 0px !important;	
+			}
+		}
+	}
+	.content {
+		left:225px;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		position: absolute;
+		overflow-y: auto;
 	}
 }

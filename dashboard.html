@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Facade CSS</title>
+	
+    <!-- <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>  -->
+	
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="vendor/font-awesome-4.1.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="vendor/normalize/normalize.css" />
+	<link rel="stylesheet" href="vendor/fluidable/fluidable-min.css" />
+	<link rel="stylesheet" href="facade.css" />
+	<link rel="stylesheet" href="selectize.css" />
+	<script src="lib/jquery-2.1.0.min.js"></script>
+	<script src="vendor/flot/jquery.flot.min.js"></script>
+	<script src="vendor/flot/jquery.flot.categories.min.js"></script>
+	<script src="vendor/flot/jquery.flot.resize.min.js"></script>
+
+	<body>
+
+		<div class="bar bar-inverse1 margin-less square-edge">
+
+			<span class="bar-text pull-left" style="padding: 0px 10px;"><h2 class="margin-less">LCS <small>v3.5</small></h2></span>
+
+			<ul class="bar-menu">
+				<li class="active"><a href="">Dashboard</a></li>
+				<li><a href="">Administration</a></li>
+				<li><a href="">Maintenance</a></li>
+				<li><a href="">Reports</a></li>
+				<li><a href="">About</a></li>
+			</ul>
+
+			<div data-widget="popover" class="pull-right">
+				<a href="#" role="button" class="button-split" data-mode="menu" data-action="trigger" data-target="#popover_a">
+					Administrator <i class="fa fa-caret-down"></i>
+				</a>
+				<div id="popover_a" class="hidden">
+					<ul class="popover-menu">
+						<li><a href=""><i class="fa fa-pencil"></i> Edit Account</a></li>
+						<li class="popover-seperator"></li>
+						<li><a href="">Site 1</a></li>
+						<li><a href="">Site 2</a></li>
+						<li><a href="">Site 3</a></li>
+						<li class="popover-seperator"></li>
+						<li><a href=""><i class="fa fa-sign-out"></i> Logout</a></li>
+					</ul>
+				</div>
+			</div>				
+
+		</div>
+
+		<div class="sticky">
+			<div data-widget="drawer" data-widget-name="quick_settings" class="drawer square-edge margin-less" data-toggle-title="Hide/Show" style="border-top: none !important;">
+				<a href="#" class="drawer-toggle"><i class="fa fa-reorder"></i></a>
+				<div class="drawer-title">
+					<i class="fa fa-wrench"></i> Administration
+				</div>
+				<div class="drawer-content">
+					<div class="container">
+					<div class="col-group">
+						<div class="col-3">
+							<h3 class="margin-less">Home</h3>
+							<ul>
+								<li>Item</li>
+								<li>Item</li>
+								<li>Item</li>
+								<li>Item</li>
+							</ul>
+						</div>
+						<div class="col-3">
+							<h3 class="margin-less">Home</h3>
+							<ul>
+								<li>Item</li>
+								<li>Item</li>
+								<li>Item</li>
+								<li>Item</li>
+							</ul>
+						</div>
+						<div class="col-3">
+							<h3 class="margin-less">Home</h3>
+							<ul>
+								<li>Item</li>
+								<li>Item</li>
+								<li>Item</li>
+								<li>Item</li>
+							</ul>
+						</div>	
+						<div class="col-3">
+							<h3 class="margin-less">Home</h3>
+							<ul>
+								<li>Item</li>
+								<li>Item</li>
+								<li>Item</li>
+								<li>Item</li>
+							</ul>
+						</div>															
+					</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+		<div class="col-group">
+
+			<div class="col-12">
+				
+				<div class="col-group">
+					<div class="col-12">
+						<h2>Welcome to LCS <small>v3.5</small></h2>	
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero voluptatem architecto necessitatibus illo amet consequatur praesentium quas. Voluptatum corrupti aut non dolores, dignissimos magnam quam quis incidunt ea, adipisci porro!	
+						<br><br>
+						<a href="#" role="button" class="button-small">Read More</a>
+					</div>
+				</div>
+					
+				<br>
+				<div class="col-group">
+					<div class="col-6">
+						<div class="panel">
+							<div class="panel-title">
+								Top Ten Callers
+							</div>
+							<div class="panel-content">
+							<div id="placeholder" style="height: 400px;"></div>
+							<script>
+								$(document).ready(function() {
+								var d1 = [];
+								for (var i = 0; i < 14; i += 0.5) {
+									d1.push([i, Math.sin(i)]);
+								}
+
+								var d2 = [[0, 3], [4, 8], [8, 5], [9, 13]];
+
+								var d3 = [];
+								for (var i = 0; i < 14; i += 0.5) {
+									d3.push([i, Math.cos(i)]);
+								}
+
+								var d4 = [];
+								for (var i = 0; i < 14; i += 0.1) {
+									d4.push([i, Math.sqrt(i * 10)]);
+								}
+
+								var d5 = [];
+								for (var i = 0; i < 14; i += 0.5) {
+									d5.push([i, Math.sqrt(i)]);
+								}
+
+								var d6 = [];
+								for (var i = 0; i < 14; i += 0.5 + Math.random()) {
+									d6.push([i, Math.sqrt(2*i + Math.sin(i) + 5)]);
+								}
+
+								$.plot("#placeholder", [{
+									data: d1,
+									lines: { show: true, fill: true }
+								}, {
+									data: d2,
+									bars: { show: true }
+								}, {
+									data: d3,
+									points: { show: true }
+								}, {
+									data: d4,
+									lines: { show: true }
+								}, {
+									data: d5,
+									lines: { show: true },
+									points: { show: true }
+								}, {
+									data: d6,
+									lines: { show: true, steps: true }
+								}]);
+							});
+
+							</script>
+							</div>
+							<div class="panel-footer">
+								<a href="#" role="button" class="pull-left">Hide</a>	
+								<a href="#" role="button" class="button-primary pull-right">Button</a>	
+							</div>
+						</div>					
+					</div>
+					<div class="col-6">
+
+						<div class="panel">
+							<div class="panel-title">
+								Call Type Usage
+							</div>
+							<div class="panel-content">
+								<div id="placeholder2" style="height: 400px;"></div>
+							<script>
+								$(document).ready(function() {
+								var d1 = [];
+								for (var i = 0; i < 14; i += 0.5) {
+									d1.push([i, Math.sin(i)]);
+								}
+
+								var d2 = [[0, 3], [4, 8], [8, 5], [9, 13]];
+
+								var d3 = [];
+								for (var i = 0; i < 14; i += 0.5) {
+									d3.push([i, Math.cos(i)]);
+								}
+
+								var d4 = [];
+								for (var i = 0; i < 14; i += 0.1) {
+									d4.push([i, Math.sqrt(i * 10)]);
+								}
+
+								var d5 = [];
+								for (var i = 0; i < 14; i += 0.5) {
+									d5.push([i, Math.sqrt(i)]);
+								}
+
+								var d6 = [];
+								for (var i = 0; i < 14; i += 0.5 + Math.random()) {
+									d6.push([i, Math.sqrt(2*i + Math.sin(i) + 5)]);
+								}
+
+								$.plot("#placeholder2", [{
+									data: d2,
+									bars: { show: true }
+								}]);
+							});
+
+							</script>
+							</div>
+							<div class="panel-footer">
+								<a href="#" role="button" class="pull-left">Button</a>	
+								<a href="#" role="button" class="button-primary pull-right">Button</a>	
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<br>
+				<div class="col-group">
+					<div class="col-6">
+						<div class="panel">
+							<div class="panel-title">
+								Top Ten Users
+							</div>
+							<div class="panel-content">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio error deleniti provident veniam quas consequuntur facilis numquam aliquam, perspiciatis aliquid, consequatur non ullam. Provident voluptatem, nam porro possimus eos aliquid.
+							</div>
+							<div class="panel-footer">
+								<a href="#" role="button" class="pull-left">Button</a>	
+								<a href="#" role="button" class="button-primary pull-right">Button</a>	
+							</div>
+						</div>					
+					</div>
+					<div class="col-6">
+
+						<div class="panel">
+							<div class="panel-title">
+								Usage Graph
+							</div>
+							<div class="panel-content">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio error deleniti provident veniam quas consequuntur facilis numquam aliquam, perspiciatis aliquid, consequatur non ullam. Provident voluptatem, nam porro possimus eos aliquid.
+							</div>
+							<div class="panel-footer">
+								<a href="#" role="button" class="pull-left">Button</a>	
+								<a href="#" role="button" class="button-primary pull-right">Button</a>	
+							</div>
+						</div>
+						
+					</div>
+				</div>
+
+			</div>
+		</div>
+		</div>
+
+	</body>
+
+
+	<script src="lib/jquery.eventralize.min.js"></script>
+	<script src="lib/jquery.md5.js"></script>
+	<script src="lib/velocity.min.js"></script>
+	<script src="lib/jquery.sticky-kit.min.js"></script>
+	<script src="vendor/selectize/selectize.js"></script>
+
+	<script src="widgets/accordion.js"></script>
+	<script src="widgets/popover.js"></script>
+	<script src="widgets/switch.js"></script>
+	<script src="widgets/drawer.js"></script>
+	<script src="widgets/layout.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			$(".sticky").stick_in_parent();
+		});
+	</script>
+
+</html>
+
