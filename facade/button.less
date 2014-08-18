@@ -23,7 +23,6 @@
 	padding       : 6px 15px;
 	color         : @foreground;
 	box-shadow    : inset 0 1px 0px lighten(@background, 15%);	
-	//box-shadow    : 0 1px 2px rgba(0, 0, 0, 0.15);
 	border        : 1px solid darken(@background, 20%);
 	border-radius : @border-radius;
 	font-weight   : bold;
@@ -221,8 +220,10 @@ a.button-split,
 }
 
 .button-small {
-	padding : 4px 10px !important;
-	height  : 32px !important;
+	padding     : 4px 10px !important;
+	height      : 32px !important;
+	font-size   : 13px;
+	font-weight : normal !important;
 	i.fa {
 		pointer-events : none;	
 	}

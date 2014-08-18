@@ -27,15 +27,15 @@
 			<span class="bar-text pull-left" style="padding: 0px 10px;"><h2 class="margin-less">LCS <small>v3.5</small></h2></span>
 
 			<ul class="bar-menu">
-				<li class="active"><a href="">Dashboard</a></li>
-				<li><a href="">Administration</a></li>
-				<li><a href="">Maintenance</a></li>
-				<li><a href="">Reports</a></li>
-				<li><a href="">About</a></li>
+				<li class="active"><a href="dashboard.html">Dashboard</a></li>
+				<li><a href="admin.html">Administration</a></li>
+				<li><a href="maint.html">Maintenance</a></li>
+				<li><a href="reports.html">Reports</a></li>
+				<li><a href="about.html">About</a></li>
 			</ul>
 
 			<div data-widget="popover" class="pull-right">
-				<a href="#" role="button" class="button-split" data-mode="menu" data-action="trigger" data-target="#popover_a">
+				<a href="#" role="button" class="popover button-split" data-mode="menu" data-action="trigger" data-target="#popover_a">
 					Administrator <i class="fa fa-caret-down"></i>
 				</a>
 				<div id="popover_a" class="hidden">
@@ -57,7 +57,7 @@
 			<div data-widget="drawer" data-widget-name="quick_settings" class="drawer square-edge margin-less" data-toggle-title="Hide/Show" style="border-top: none !important;">
 				<a href="#" class="drawer-toggle"><i class="fa fa-reorder"></i></a>
 				<div class="drawer-title">
-					<i class="fa fa-wrench"></i> Administration
+					<i class="fa fa-dashboard"></i> Dashboard
 				</div>
 				<div class="drawer-content">
 					<div class="container">
@@ -114,7 +114,7 @@
 						<h2>Welcome to LCS <small>v3.5</small></h2>	
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero voluptatem architecto necessitatibus illo amet consequatur praesentium quas. Voluptatum corrupti aut non dolores, dignissimos magnam quam quis incidunt ea, adipisci porro!	
 						<br><br>
-						<a href="#" role="button" class="button-small">Read More</a>
+						<a href="about.html" role="button" class="button-small">Read More</a>
 					</div>
 				</div>
 					
@@ -122,63 +122,63 @@
 				<div class="col-group">
 					<div class="col-6">
 						<div class="panel">
-							<div class="panel-title">
-								Top Ten Callers
+							<div class="panel-title panel-title-small">
+								<i class="fa fa-mobile"></i> Top Ten Callers
 							</div>
 							<div class="panel-content">
-							<div id="placeholder" style="height: 400px;"></div>
-							<script>
-								$(document).ready(function() {
-								var d1 = [];
-								for (var i = 0; i < 14; i += 0.5) {
-									d1.push([i, Math.sin(i)]);
-								}
+								<div id="placeholder" style="height: 400px;"></div>
+								<script>
+									$(document).ready(function() {
+									var d1 = [];
+									for (var i = 0; i < 14; i += 0.5) {
+										d1.push([i, Math.sin(i)]);
+									}
 
-								var d2 = [[0, 3], [4, 8], [8, 5], [9, 13]];
+									var d2 = [[0, 3], [4, 8], [8, 5], [9, 13]];
 
-								var d3 = [];
-								for (var i = 0; i < 14; i += 0.5) {
-									d3.push([i, Math.cos(i)]);
-								}
+									var d3 = [];
+									for (var i = 0; i < 14; i += 0.5) {
+										d3.push([i, Math.cos(i)]);
+									}
 
-								var d4 = [];
-								for (var i = 0; i < 14; i += 0.1) {
-									d4.push([i, Math.sqrt(i * 10)]);
-								}
+									var d4 = [];
+									for (var i = 0; i < 14; i += 0.1) {
+										d4.push([i, Math.sqrt(i * 10)]);
+									}
 
-								var d5 = [];
-								for (var i = 0; i < 14; i += 0.5) {
-									d5.push([i, Math.sqrt(i)]);
-								}
+									var d5 = [];
+									for (var i = 0; i < 14; i += 0.5) {
+										d5.push([i, Math.sqrt(i)]);
+									}
 
-								var d6 = [];
-								for (var i = 0; i < 14; i += 0.5 + Math.random()) {
-									d6.push([i, Math.sqrt(2*i + Math.sin(i) + 5)]);
-								}
+									var d6 = [];
+									for (var i = 0; i < 14; i += 0.5 + Math.random()) {
+										d6.push([i, Math.sqrt(2*i + Math.sin(i) + 5)]);
+									}
 
-								$.plot("#placeholder", [{
-									data: d1,
-									lines: { show: true, fill: true }
-								}, {
-									data: d2,
-									bars: { show: true }
-								}, {
-									data: d3,
-									points: { show: true }
-								}, {
-									data: d4,
-									lines: { show: true }
-								}, {
-									data: d5,
-									lines: { show: true },
-									points: { show: true }
-								}, {
-									data: d6,
-									lines: { show: true, steps: true }
-								}]);
-							});
+									$.plot("#placeholder", [{
+										data: d1,
+										lines: { show: true, fill: true }
+									}, {
+										data: d2,
+										bars: { show: true }
+									}, {
+										data: d3,
+										points: { show: true }
+									}, {
+										data: d4,
+										lines: { show: true }
+									}, {
+										data: d5,
+										lines: { show: true },
+										points: { show: true }
+									}, {
+										data: d6,
+										lines: { show: true, steps: true }
+									}]);
+								});
 
-							</script>
+								</script>
 							</div>
 							<div class="panel-footer">
 								<a href="#" role="button" class="pull-left">Hide</a>	
@@ -189,125 +189,125 @@
 					<div class="col-6">
 
 						<div class="panel">
-							<div class="panel-title">
-								Call Type Usage
+							<div class="panel-title panel-title-small">
+								<i class="fa fa-bar-chart-o"></i> Call Type Usage
 							</div>
 							<div class="panel-content">
 								<div id="placeholder2" style="height: 400px;"></div>
-							<script>
-								$(document).ready(function() {
-								var d1 = [];
-								for (var i = 0; i < 14; i += 0.5) {
-									d1.push([i, Math.sin(i)]);
-								}
+								<script>
+									$(document).ready(function() {
+									var d1 = [];
+									for (var i = 0; i < 14; i += 0.5) {
+										d1.push([i, Math.sin(i)]);
+									}
 
-								var d2 = [[0, 3], [4, 8], [8, 5], [9, 13]];
+									var d2 = [[0, 3], [4, 8], [8, 5], [9, 13]];
 
-								var d3 = [];
-								for (var i = 0; i < 14; i += 0.5) {
-									d3.push([i, Math.cos(i)]);
-								}
+									var d3 = [];
+									for (var i = 0; i < 14; i += 0.5) {
+										d3.push([i, Math.cos(i)]);
+									}
 
-								var d4 = [];
-								for (var i = 0; i < 14; i += 0.1) {
-									d4.push([i, Math.sqrt(i * 10)]);
-								}
+									var d4 = [];
+									for (var i = 0; i < 14; i += 0.1) {
+										d4.push([i, Math.sqrt(i * 10)]);
+									}
 
-								var d5 = [];
-								for (var i = 0; i < 14; i += 0.5) {
-									d5.push([i, Math.sqrt(i)]);
-								}
+									var d5 = [];
+									for (var i = 0; i < 14; i += 0.5) {
+										d5.push([i, Math.sqrt(i)]);
+									}
 
-								var d6 = [];
-								for (var i = 0; i < 14; i += 0.5 + Math.random()) {
-									d6.push([i, Math.sqrt(2*i + Math.sin(i) + 5)]);
-								}
+									var d6 = [];
+									for (var i = 0; i < 14; i += 0.5 + Math.random()) {
+										d6.push([i, Math.sqrt(2*i + Math.sin(i) + 5)]);
+									}
 
-								$.plot("#placeholder2", [{
-									data: d2,
-									bars: { show: true }
-								}]);
-							});
+									$.plot("#placeholder2", [{
+										data: d2,
+										bars: { show: true }
+									}]);
+								});
 
-							</script>
+								</script>
 							</div>
 							<div class="panel-footer">
 								<a href="#" role="button" class="pull-left">Button</a>	
 								<a href="#" role="button" class="button-primary pull-right">Button</a>	
 							</div>
 						</div>
-						
+							
 					</div>
-				</div>
-				<br>
-				<div class="col-group">
-					<div class="col-6">
-						<div class="panel">
-							<div class="panel-title">
-								Top Ten Users
-							</div>
-							<div class="panel-content">
-								<div id="placeholder3" style="height: 400px;"></div>
-							<script>
-	$(document).ready(function() {
+					</div>
+					<div class="col-group">
+						<div class="col-6">
+							<div class="panel">
+								<div class="panel-title panel-title-small">
+									<i class="fa fa-user"></i> Top Ten Users
+								</div>
+								<div class="panel-content">
+									<div id="placeholder3" style="height: 400px;"></div>
+								<script>
+									$(document).ready(function() {
 
-		var d1 = [];
-		for (var i = 0; i <= 10; i += 1) {
-			d1.push([i, parseInt(Math.random() * 30)]);
-		}
+										var d1 = [];
+										for (var i = 0; i <= 10; i += 1) {
+											d1.push([i, parseInt(Math.random() * 30)]);
+										}
 
-		var d2 = [];
-		for (var i = 0; i <= 10; i += 1) {
-			d2.push([i, parseInt(Math.random() * 30)]);
-		}
+										var d2 = [];
+										for (var i = 0; i <= 10; i += 1) {
+											d2.push([i, parseInt(Math.random() * 30)]);
+										}
 
-		var d3 = [];
-		for (var i = 0; i <= 10; i += 1) {
-			d3.push([i, parseInt(Math.random() * 30)]);
-		}
+										var d3 = [];
+										for (var i = 0; i <= 10; i += 1) {
+											d3.push([i, parseInt(Math.random() * 30)]);
+										}
 
-		var stack = 0,
-			bars = true,
-			lines = false,
-			steps = false;
+										var stack = 0,
+											bars = true,
+											lines = false,
+											steps = false;
 
-		function plotWithOptions() {
-			$.plot("#placeholder3", [ d1, d2, d3 ], {
-				series: {
-					stack: stack,
-					lines: {
-						show: lines,
-						fill: true,
-						steps: steps
-					},
-					bars: {
-						show: bars,
-						barWidth: 0.6
-					}
-				}
-			});
-		}
+										function plotWithOptions() {
+											$.plot("#placeholder3", [ d1, d2, d3 ], {
+												series: {
+													stack: stack,
+													lines: {
+														show: lines,
+														fill: true,
+														steps: steps
+													},
+													bars: {
+														show: bars,
+														barWidth: 0.6
+													}
+												}
+											});
+										}
 
-		plotWithOptions();
+										plotWithOptions();
 
-		$(".stackControls button").click(function (e) {
-			e.preventDefault();
-			stack = $(this).text() == "With stacking" ? true : null;
-			plotWithOptions();
-		});
+										$(".stackControls button").click(function (e) {
+											e.preventDefault();
+											stack = $(this).text() == "With stacking" ? true : null;
+											plotWithOptions();
+										});
 
-		$(".graphControls button").click(function (e) {
-			e.preventDefault();
-			bars = $(this).text().indexOf("Bars") != -1;
-			lines = $(this).text().indexOf("Lines") != -1;
-			steps = $(this).text().indexOf("steps") != -1;
-			plotWithOptions();
-		});
+										$(".graphControls button").click(function (e) {
+											e.preventDefault();
+											bars = $(this).text().indexOf("Bars") != -1;
+											lines = $(this).text().indexOf("Lines") != -1;
+											steps = $(this).text().indexOf("steps") != -1;
+											plotWithOptions();
+										});
 
 
-	});
+									});
 
-	</script>
+								</script>
+
 							</div>
 							<div class="panel-footer">
 								<a href="#" role="button" class="pull-left">Button</a>	
@@ -318,8 +318,8 @@
 					<div class="col-6">
 
 						<div class="panel">
-							<div class="panel-title">
-								Form Sample
+							<div class="panel-title panel-title-small">
+								<i class="fa fa-file-o"></i> Form Sample
 							</div>
 							<div class="panel-content">
 								<form action="" class="form">

@@ -92,9 +92,6 @@ popoverWidget.prototype = {
         
         var target = event.target || event.srcElement || event.originalTarget;
 
-        event.preventDefault();
-        event.stopPropagation();
-        
         if (!this.overlay_persistent || this.overlay_persistent == "false" || $(target).hasClass('popover-close')) {
             if ($(target).attr('data-action') != "trigger") {
 

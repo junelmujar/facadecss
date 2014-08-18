@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Facade CSS</title>
+	
+    <!-- <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>  -->
+	
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="vendor/font-awesome-4.1.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="vendor/normalize/normalize.css" />
+	<link rel="stylesheet" href="vendor/fluidable/fluidable-min.css" />
+	<link rel="stylesheet" href="facade.css" />
+	<link rel="stylesheet" href="selectize.css" />
+	<script src="lib/jquery-2.1.0.min.js"></script>
+	<script src="vendor/flot/jquery.flot.min.js"></script>
+	<script src="vendor/flot/jquery.flot.categories.min.js"></script>
+	<script src="vendor/flot/jquery.flot.resize.min.js"></script>
+
+	<body>
+
+		<div class="bar bar-inverse1 margin-less square-edge">
+
+			<span class="bar-text pull-left" style="padding: 0px 10px;"><h2 class="margin-less">LCS <small>v3.5</small></h2></span>
+
+			<ul class="bar-menu">
+				<li><a href="dashboard.html">Dashboard</a></li>
+				<li><a href="admin.html">Administration</a></li>
+				<li class="active"><a href="maint.html">Maintenance</a></li>
+				<li><a href="reports.html">Reports</a></li>
+				<li><a href="about.html">About</a></li>
+			</ul>
+
+			<div data-widget="popover" class="pull-right">
+				<a href="#" role="button" class="button-split" data-mode="menu" data-action="trigger" data-target="#popover_a">
+					Administrator <i class="fa fa-caret-down"></i>
+				</a>
+				<div id="popover_a" class="hidden">
+					<ul class="popover-menu">
+						<li><a href=""><i class="fa fa-pencil"></i> Edit Account</a></li>
+						<li class="popover-seperator"></li>
+						<li><a href="">Site 1</a></li>
+						<li><a href="">Site 2</a></li>
+						<li><a href="">Site 3</a></li>
+						<li class="popover-seperator"></li>
+						<li><a href=""><i class="fa fa-sign-out"></i> Logout</a></li>
+					</ul>
+				</div>
+			</div>				
+
+		</div>
+
+		<div class="sticky">
+			<div data-widget="drawer" data-widget-name="quick_settings" class="drawer square-edge margin-less" data-toggle-title="Hide/Show" style="border-top: none !important;">
+				<a href="#" class="drawer-toggle"><i class="fa fa-reorder"></i></a>
+				<div class="drawer-title">
+					<i class="fa fa-wrench"></i> Maintenance
+				</div>
+				<div class="drawer-content">
+					<div class="container">
+					<div class="col-group">
+						<div class="col-3">
+							<h3 class="margin-less">Standard Reports</h3>
+							<ul class="list-bordered">
+								<li><a href="">Item</a></li>
+								<li><a href="">Item</a></li>
+								<li><a href="">Item</a></li>
+								<li><a href="">Item</a></li>
+							</ul>
+						</div>
+						<div class="col-3">
+							<h3 class="margin-less">Scheduled Reports</h3>
+							<ul class="list-bordered">
+								<li><a href="">Item</a></li>
+								<li><a href="">Item</a></li>
+								<li><a href="">Item</a></li>
+								<li><a href="">Item</a></li>
+							</ul>
+						</div>
+						<div class="col-3">
+							<h3 class="margin-less">Customized Reports</h3>
+							<ul class="list-bordered">
+								<li><a href="">Item</a></li>
+								<li><a href="">Item</a></li>
+								<li><a href="">Item</a></li>
+								<li><a href="">Item</a></li>
+							</ul>
+						</div>	
+						<div class="col-3">
+							<h3 class="margin-less">Graphical Reports</h3>
+							<ul class="list-bordered">
+								<li><a href="">Item</a></li>
+								<li><a href="">Item</a></li>
+								<li><a href="">Item</a></li>
+								<li><a href="">Item</a></li>
+							</ul>
+						</div>															
+					</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+
+		<div class="container">
+			<div class="col-group">
+				<div class="col-12">
+
+					<div class="panel">
+						<div class="panel-title">
+							<i class="fa fa-user"></i> User Management
+							<div class="pull-right">
+								<a href="#" role="button" class="button-small"><i class="fa fa-plus"></i> Add User</a>
+								<a href="#" role="button" class="button-primary button-small"><i class="fa fa-search"></i></a>
+							</div>
+						</div>
+						<div class="panel-content">
+							<table class="table table-striped table-hover table-bordered-rows">
+							<thead>
+								<tr>
+									<th>Col 1</th>
+									<th>Col 2</th>
+									<th>Col 3</th>
+									<th>Col 4</th>
+									<th width="80">Col 5</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>
+										<a href="#" role="button" class="button-small"><i class="fa fa-times"></i></a>
+										<a href="#" role="button" class="button-small"><i class="fa fa-pencil"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>
+										<a href="#" role="button" class="button-small"><i class="fa fa-times"></i></a>
+										<a href="#" role="button" class="button-small"><i class="fa fa-pencil"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>
+										<a href="#" role="button" class="button-small"><i class="fa fa-times"></i></a>
+										<a href="#" role="button" class="button-small"><i class="fa fa-pencil"></i></a>
+									</td>
+								</tr>	
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>
+										<a href="#" role="button" class="button-small"><i class="fa fa-times"></i></a>
+										<a href="#" role="button" class="button-small"><i class="fa fa-pencil"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>
+										<a href="#" role="button" class="button-small"><i class="fa fa-times"></i></a>
+										<a href="#" role="button" class="button-small"><i class="fa fa-pencil"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>
+										<a href="#" role="button" class="button-small"><i class="fa fa-times"></i></a>
+										<a href="#" role="button" class="button-small"><i class="fa fa-pencil"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>
+										<a href="#" role="button" class="button-small"><i class="fa fa-times"></i></a>
+										<a href="#" role="button" class="button-small"><i class="fa fa-pencil"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>
+										<a href="#" role="button" class="button-small"><i class="fa fa-times"></i></a>
+										<a href="#" role="button" class="button-small"><i class="fa fa-pencil"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>
+										<a href="#" role="button" class="button-small"><i class="fa fa-times"></i></a>
+										<a href="#" role="button" class="button-small"><i class="fa fa-pencil"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>
+										<a href="#" role="button" class="button-small"><i class="fa fa-times"></i></a>
+										<a href="#" role="button" class="button-small"><i class="fa fa-pencil"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>
+										<a href="#" role="button" class="button-small"><i class="fa fa-times"></i></a>
+										<a href="#" role="button" class="button-small"><i class="fa fa-pencil"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>
+										<a href="#" role="button" class="button-small"><i class="fa fa-times"></i></a>
+										<a href="#" role="button" class="button-small"><i class="fa fa-pencil"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>
+										<a href="#" role="button" class="button-small"><i class="fa fa-times"></i></a>
+										<a href="#" role="button" class="button-small"><i class="fa fa-pencil"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>
+										<a href="#" role="button" class="button-small"><i class="fa fa-times"></i></a>
+										<a href="#" role="button" class="button-small"><i class="fa fa-pencil"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>
+										<a href="#" role="button" class="button-small"><i class="fa fa-times"></i></a>
+										<a href="#" role="button" class="button-small"><i class="fa fa-pencil"></i></a>
+									</td>
+								</tr>																													
+							</tbody>
+							</table>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+
+
+	<script src="lib/jquery.eventralize.min.js"></script>
+	<script src="lib/jquery.md5.js"></script>
+	<script src="lib/velocity.min.js"></script>
+	<script src="lib/jquery.sticky-kit.min.js"></script>
+	<script src="vendor/selectize/selectize.js"></script>
+
+	<script src="widgets/accordion.js"></script>
+	<script src="widgets/popover.js"></script>
+	<script src="widgets/switch.js"></script>
+	<script src="widgets/drawer.js"></script>
+	<script src="widgets/layout.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			$(".sticky").stick_in_parent();
+		});
+	</script>
+
+</html>
+
