@@ -18,7 +18,7 @@ drawerWidget.prototype = {
 
     // Event definitions
     events: {
-        'click a.drawer-toggle': '_toggle'
+        'click a.drawer-toggle, click .drawer-title': '_toggle'
     },
 
     registry: [],
@@ -45,7 +45,10 @@ drawerWidget.prototype = {
                 toggler.attr('data-state', 'open');
                 content.show();
             } else {
-                if (title) title.removeClass('open').addClass('close');
+                if (title) title.removeClass('open')
+                            .addClass('close')
+                            .css('cursor', 'pointer')
+                            .attr('title', 'Click to Toggle');
             }
 
             // Save it to our registry
