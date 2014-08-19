@@ -49,7 +49,7 @@ popoverWidget.prototype = {
     events: {
       'click a[data-action=trigger]'            : 'toggle',
       'resize window, scroll window'            : 'reposition',
-      'keydown(esc) document, click document'   : 'hide',
+      'keydown(esc) document'   : 'hide',
     },
 
     overlay_events: {
@@ -91,6 +91,10 @@ popoverWidget.prototype = {
     hide: function(event) {
         
         var target = event.target || event.srcElement || event.originalTarget;
+        
+        event.preventDefault();
+
+        // console.log($(target).parents(".popover-container").last().hasClass('popover-container'));
 
         if (!this.overlay_persistent || this.overlay_persistent == "false" || $(target).hasClass('popover-close')) {
             if ($(target).attr('data-action') != "trigger") {
@@ -185,6 +189,8 @@ popoverWidget.prototype = {
         var state                = this.container.attr('data-popover-state');
         var content              = this.popover_close + $(target).html();
         var mode                 = trigger.attr('data-mode') == "menu" ? "menu" : "panel";
+
+        console.log(trigger);
 
         if (mode == "menu") {
             this.container.addClass('menu');

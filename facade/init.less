@@ -10,6 +10,9 @@ a {
 	color: @color-links;
 	text-shadow: none;
 	display: inline-block;
+	* {
+		pointer-events:none;
+	}
 }
 a:hover {
 	color: lighten(@color-links, 20%);
