@@ -196,11 +196,10 @@
 
 	</body>
 
-
 	<script src="lib/jquery.eventralize.min.js"></script>
 	<script src="lib/jquery.md5.js"></script>
 	<script src="lib/velocity.min.js"></script>
-	<script src="lib/jquery.sticky-kit.min.js"></script>
+	<script src="lib/jquery.sticky.js"></script>
 	<script src="vendor/selectize/selectize.js"></script>
 
 	<script src="widgets/accordion.js"></script>
@@ -211,7 +210,7 @@
 
 	<script>
 		$(document).ready(function() {
-			$(".sticky").stick_in_parent();
+			$(".sticky").sticky({topSpacing:0, responsiveWidth:true});
 		});
 	</script>
 
