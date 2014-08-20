@@ -49,7 +49,7 @@ popoverWidget.prototype = {
     events: {
       'click a[data-action=trigger]'            : 'toggle',
       'resize window, scroll window'            : 'reposition',
-      'keydown(esc) document'   : 'hide',
+      'keydown(esc) document, click document'   : 'hide',
     },
 
     overlay_events: {
@@ -91,27 +91,25 @@ popoverWidget.prototype = {
     hide: function(event) {
         
         var target = event.target || event.srcElement || event.originalTarget;
-        
-        event.preventDefault();
+        var parent = $(event.target).closest('.popover-container');
 
-        // console.log($(target).parents(".popover-container").last().hasClass('popover-container'));
+        if (!parent.hasClass('popover-container') || (parent.hasClass('popover-container') && $(target).hasClass('popover-close')) ) {
 
-        if (!this.overlay_persistent || this.overlay_persistent == "false" || $(target).hasClass('popover-close')) {
-            if ($(target).attr('data-action') != "trigger") {
+            var that = this;
+            $('body').removeAttr('data-popover-active');
 
-                var that = this;
-                $('body').removeAttr('data-popover-active');
+            if (this.overlay == 'show') {
+                this.popover_overlay.removeClass('show');
+            }            
 
-                if (this.overlay == 'show') {
-                    this.popover_overlay.removeClass('show');
-                }            
-
-                $('[data-widget=popover]').each(function() {
-                    $(this).find('a').attr('data-popover-state', false).removeClass('active');
-                    that.container.removeClass('show').empty();
-                });
-            }
+            $('[data-widget=popover]').each(function() {
+                $(this).find('a').attr('data-popover-state', false).removeClass('active');
+                that.container.removeClass('show').empty();
+            });            
         }
+
+        // Prevent the event from bubbling up
+        event.stopImmediatePropagation();
     },
 
     clear_tips: function() {
@@ -189,8 +187,6 @@ popoverWidget.prototype = {
         var state                = this.container.attr('data-popover-state');
         var content              = this.popover_close + $(target).html();
         var mode                 = trigger.attr('data-mode') == "menu" ? "menu" : "panel";
-
-        console.log(trigger);
 
         if (mode == "menu") {
             this.container.addClass('menu');
