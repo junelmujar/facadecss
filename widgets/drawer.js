@@ -58,6 +58,7 @@ drawerWidget.prototype = {
 
         });
 
+        $.proxy(this.mouseClick, this);
 
         //console.log(this.registry);
     },

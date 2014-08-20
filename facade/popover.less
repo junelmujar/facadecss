@@ -55,26 +55,8 @@
 	display    : none;
 	visibility : hidden;
 	list-style : none;
-	margin     : 0;
+	margin     : 5px 0px;
 	padding    : 0;
-	// li {
-	// 	list-style: none;
-	// 	a {
-	// 		display         : block;
-	// 		padding         : 8px 15px;
-	// 		border-bottom   : 1px solid lighten(@color-border, 25%);
-	// 		text-decoration : none;
-	// 		color           : @color-default;
-	// 		overflow        : hidden;
-	// 	}
-	// 	a:hover {
-	// 		background : @color-primary;
-	// 		color      : @color-light;
-	// 	}
-	// }
-	// li:last-child a {
-	// 	border: 0;
-	// }	
 	li {
 		list-style: none;
 		a {
@@ -85,7 +67,7 @@
 			overflow        : hidden;
 		}
 		a:hover {
-			background : @color-info;
+			background : lighten(@color-default-fill, 25%);
 			color      : @color-light;
 		}
 	}
