@@ -95,7 +95,12 @@
 			</div>
 		</div>
 		<br>
-
+		<div class="hidden" id="hidden_text">
+			<h1 class="title margin-less">Delete Record?</h1>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur unde earum nisi distinctio delectus aliquid atque quidem doloremque, reiciendis assumenda. Beatae eligendi voluptas cupiditate natus facere harum rem nesciunt molestias?
+			</p>
+		</div>
 		<div class="container">
 			<div class="col-group">
 				<div class="col-12">
@@ -105,9 +110,34 @@
 							<i class="fa fa-user"></i> Employee Management
 							<div class="pull-right">
 								<a href="#" role="button" class="button-small"><i class="fa fa-plus"></i> Add Employee</a>
-								<a href="#" role="button" class="button-primary button-small"><i class="fa fa-search"></i></a>
 							</div>
 						</div>
+
+						<div data-widget="drawer" data-state="open" data-widget-name="filters" class="drawer square-edge margin-less border-less" style="background: #fafafa; border-bottom: 1px solid #ccc !important">
+							<a href="#" class="drawer-toggle"><i class="fa fa-search"></i></a>
+							<div class="drawer-title">
+								<i class="fa fa-cog"></i> Data Filters
+							</div>
+							<div class="drawer-content">
+								<form action="" class="form">
+									Keyword  &nbsp; <input type="text" placeholder="Keyword...">
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									Filter A &nbsp;
+									<select name="" id="">
+										<option value="">1</option>
+										<option value="">2</option>
+									</select>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									Filter A &nbsp;
+									<select name="" id="">
+										<option value="">1</option>
+										<option value="">2</option>
+									</select>
+									<button class="button-primary pull-right">Submit</button>									
+								</form>
+							</div>
+						</div>						
+
 						<div class="panel-content">
 							<table class="table table-striped table-hover table-bordered-rows">
 							<thead>
@@ -126,7 +156,7 @@
 									<td>3</td>
 									<td>4</td>
 									<td>
-										<a href="#" role="button" class="button-small"><i class="fa fa-times"></i></a>
+										<a href="#" role="button" data-widget-modal-target="#hidden_text" data-widget="modal" data-widget-modal-overlay="show" class="button-small"><i class="fa fa-times"></i></a>
 										<a href="#" role="button" class="button-small"><i class="fa fa-pencil"></i></a>
 									</td>
 								</tr>
@@ -294,6 +324,7 @@
 	<script src="widgets/switch.js"></script>
 	<script src="widgets/drawer.js"></script>
 	<script src="widgets/layout.js"></script>
+	<script src="widgets/modal.js"></script>
 
 	<script>
 		$(document).ready(function() {

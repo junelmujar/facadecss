@@ -3,7 +3,7 @@ body {
 	font-size   : 14px;
 	line-height : 1.7;
 	font-family : 'Open Sans';
-	background  : darken(@color-light, 5%);
+	background  : darken(@color-light, 15%);
 }
 
 a {
@@ -97,12 +97,19 @@ hr {
 	margin: 0 !important;
 }
 
+.border-less {
+	border: 0 !important;
+}
+
 .square-edge {
 	border-radius: 0 !important;
 }
 
 .sticky {
 	width: 100%;
+	.drawer {
+		z-index: 9600;
+	}
 }
 
 .vertical-gradient (@color-top, @color-bottom) {
