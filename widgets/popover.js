@@ -56,10 +56,6 @@ popoverWidget.prototype = {
         'click': 'hide'
     },
 
-    container_events: {
-        'click .popover-close': 'hide'
-    },
-
     // Initialize
     init: function(elem){
         
@@ -209,16 +205,16 @@ popoverWidget.prototype = {
         // Get initial x & y position;
         this.pos_y               = trigger.offset().top + trigger.outerHeight() + 10;
         this.pos_x               = trigger.offset().left;
-
+        
         // Assign class attribute value for trigger;
         this.trigger             = trigger;
-
+        
         // Get active popover & create unique hash of trigger
-        var active = $('body').attr('data-popover-active');
-
+        var active               = $('body').attr('data-popover-active');
+        
         // Create a unique hash for the current clicked trigger
         // to be used to hiding active popovers
-        var hash   = $.md5(this.trigger.getPath());
+        var hash                 = $.md5(this.trigger.getPath());
 
         // Show popover overlay if mode == show;
         if (this.overlay == 'show') {
@@ -241,12 +237,28 @@ popoverWidget.prototype = {
         // Check if popover is the active one
         if (active == hash) {
             if (!state || state == "false") {
-                this.container.html(content).addClass('show');
-                this.container.attr('data-popover-state', true);
+
+                this
+                    .container
+                    .html(content)
+                    .addClass('show');
+
+                this
+                    .container
+                    .attr('data-popover-state', true);
+
             } else {
+
                 $('body').removeAttr('data-popover-active');
-                this.trigger.removeClass('active');
-                this.container.attr('data-popover-state', false).removeClass('show').empty();
+                this
+                    .trigger
+                    .removeClass('active');
+                this
+                    .container
+                    .attr('data-popover-state', false)
+                    .removeClass('show')
+                    .empty();
+
             }
         } else {
             this.container.html(content).addClass('show');
@@ -277,7 +289,7 @@ popoverWidget.prototype = {
             }
         }
         
-        $('.popover-close i.fa').css('pointer-events', 'none');
+        $('.popover-close i').css('pointer-events', 'none');
 
         
         // Set popover position

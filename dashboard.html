@@ -126,8 +126,8 @@
 							<div class="panel-title panel-title-small">
 								<i class="fa fa-mobile"></i> Top Ten Callers
 								<span class="pull-right">
-									<div data-widget="popover">
-										<a href="#" data-action="trigger" data-target="#filter">
+									<div data-widget="popover" >
+										<a href="#" data-overlay="show"  data-action="trigger" data-target="#filter">
 											<small>Graph Filter</small>
 										</a>
 										<div id="filter" class="hidden">
@@ -433,6 +433,9 @@
 	<script>
 		$(document).ready(function() {
 			$(".sticky").sticky({topSpacing:0, responsiveWidth:true});
+			$(this).on('popover-show', function() {
+				alert('hey!');
+			});
 		});
 	</script>
 
