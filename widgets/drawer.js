@@ -30,9 +30,6 @@ drawerWidget.prototype = {
         this.$elem = $(elem).eventralize(this.events, this, 'facade');
 
         var that = this;
-
-        //this.registry = {};
-
         this.$elem.each(function() {
             
             var toggler     = $(this).find('.drawer-toggle');
@@ -59,8 +56,6 @@ drawerWidget.prototype = {
         });
 
         $.proxy(this.mouseClick, this);
-
-        //console.log(this.registry);
     },
 
     _show: function() {
@@ -104,6 +99,7 @@ drawerWidget.prototype = {
     },
 
     _show_drawer: function(name) {
+
         var drawer      = $('[data-widget-name=' + name + ']');
         var toggler     = drawer.find('.drawer-toggle');
         var content     = drawer.find('.drawer-content');
