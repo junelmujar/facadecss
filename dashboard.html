@@ -22,7 +22,7 @@
 
 	<body>
 
-		<div class="bar bar-inverse1 margin-less square-edge">
+		<div class="bar margin-less square-edge">
 
 			<span class="bar-text pull-left" style="padding: 0px 10px;"><h2 class="margin-less">LCS <small>v3.5</small></h2></span>
 
@@ -54,7 +54,7 @@
 		</div>
 
 		<div class="sticky">
-			<div data-widget="drawer" data-widget-name="quick_settings" class="drawer square-edge margin-less" data-toggle-title="Hide/Show" style="border-top: none !important;">
+			<div data-widget="drawer" data-widget-name="quick_settings" class="drawer square-edge margin-less" style="border-top: none !important;">
 				<a href="#" class="drawer-toggle"><i class="fa fa-reorder"></i></a>
 				<div class="drawer-title">
 					<i class="fa fa-dashboard"></i> Dashboard
@@ -104,22 +104,18 @@
 			</div>
 		</div>
 
-		<div class="container">
+		<div class="container-app">
 		<div class="col-group">
 
 			<div class="col-12">
 				
-				<div class="col-group">
-					<div class="col-12">
-						<div class="notice">
-							<h2 class="margin-less">Welcome to LCS <small>v3.5</small></h2>	
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero voluptatem architecto necessitatibus illo amet consequatur praesentium quas. Voluptatum corrupti aut non dolores, dignissimos magnam quam quis incidunt ea, adipisci porro!	
-							<br><br>
-							<a href="about.html" role="button" class="button-small">Read More</a>
-						</div>
-					</div>
+				<div class="notice" data-widget="notice" style="margin-bottom: 0px;">
+					<h2 class="margin-less">Welcome to LCS <small>v3.5</small></h2>	
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero voluptatem architecto necessitatibus illo amet consequatur praesentium quas. Voluptatum corrupti aut non dolores, dignissimos magnam quam quis incidunt ea, adipisci porro!	
+					<br><br>
+					<a href="about.html" role="button" class="button-small">Read More</a>
 				</div>
-					
+
 				<div class="col-group">
 					<div class="col-6">
 						<div class="panel">
@@ -158,7 +154,34 @@
 									</div>	
 								</span>
 							</div>
+
+							<div class="tab-container">
+								<ul class="tabs" data-widget="tabs">
+									<li class="active"><a href="#" data-target="#tab1"><i class="fa fa-cog"></i> Cog</a></li>
+									<li><a href="#" data-target="#tab2"><i class="fa fa-wrench"></i> Wrench</a></li>
+									<li><a href="#" data-target="#tab3"><i class="fa fa-reorder"></i> Burger</a></li>
+									<li><a href="#" data-target="#tab4"><i class="fa fa-money"></i> Money</a></li>
+								</ul>
+								<div class="tab-content" id="tab1">
+									<h2 class="margin-less">A</h2>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta accusamus magni rem officiis voluptates culpa laborum nesciunt fugiat ex placeat, ullam voluptate quis qui, facere rerum quam, hic impedit commodi.
+								</div>
+								<div class="tab-content" id="tab2">
+									<h2 class="margin-less">B</h2>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta accusamus magni rem officiis voluptates culpa laborum nesciunt fugiat ex placeat, ullam voluptate quis qui, facere rerum quam, hic impedit commodi.
+								</div>
+								<div class="tab-content" id="tab3">
+									<h2 class="margin-less">C</h2>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta accusamus magni rem officiis voluptates culpa laborum nesciunt fugiat ex placeat, ullam voluptate quis qui, facere rerum quam, hic impedit commodi.
+								</div>
+								<div class="tab-content" id="tab4">
+									<h2 class="margin-less">D</h2>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta accusamus magni rem officiis voluptates culpa laborum nesciunt fugiat ex placeat, ullam voluptate quis qui, facere rerum quam, hic impedit commodi.
+								</div>								
+							</div>	
+
 							<div class="panel-content">
+
 								<div id="placeholder" style="height: 400px;"></div>
 								<script>
 									$(document).ready(function() {
@@ -429,6 +452,8 @@
 	<script src="widgets/switch.js"></script>
 	<script src="widgets/drawer.js"></script>
 	<script src="widgets/layout.js"></script>
+	<script src="widgets/tabs.js"></script>
+	<script src="widgets/notice.js"></script>
 
 	<script>
 		$(document).ready(function() {

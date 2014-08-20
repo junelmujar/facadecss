@@ -22,7 +22,7 @@
 
 	<body>
 
-		<div class="bar bar-inverse1 margin-less square-edge">
+		<div class="bar margin-less square-edge">
 
 			<span class="bar-text pull-left" style="padding: 0px 10px;"><h2 class="margin-less">LCS <small>v3.5</small></h2></span>
 
@@ -54,7 +54,7 @@
 		</div>
 
 		<div class="sticky">
-			<div data-widget="drawer" data-widget-name="quick_settings" class="drawer square-edge margin-less" data-toggle-title="Hide/Show" style="border-top: none !important;">
+			<div data-widget="drawer" data-widget-name="quick_settings" class="drawer square-edge margin-less" style="border-top: none !important;">
 				<a href="#" class="drawer-toggle"><i class="fa fa-reorder"></i></a>
 				<div class="drawer-title">
 					<i class="fa fa-cog"></i> Administration
@@ -94,16 +94,23 @@
 				</div>
 			</div>
 		</div>
-		<br>
+
 		<div class="hidden" id="hidden_text">
 			<h1 class="title margin-less">Delete Record?</h1>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur unde earum nisi distinctio delectus aliquid atque quidem doloremque, reiciendis assumenda. Beatae eligendi voluptas cupiditate natus facere harum rem nesciunt molestias?
 			</p>
 		</div>
-		<div class="container">
+
+
+		<div class="container-app">
+
 			<div class="col-group">
 				<div class="col-12">
+
+					<div class="notice" data-widget="notice">
+						<h4 class="margin-less"><i class="fa fa-check"></i> Employee Denmark Aquino successfully added to the database!</h4>
+					</div>
 
 					<div class="panel">
 						<div class="panel-title">
@@ -325,6 +332,7 @@
 	<script src="widgets/drawer.js"></script>
 	<script src="widgets/layout.js"></script>
 	<script src="widgets/modal.js"></script>
+	<script src="widgets/notice.js"></script>
 
 	<script>
 		$(document).ready(function() {
