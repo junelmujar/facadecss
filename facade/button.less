@@ -14,7 +14,7 @@
 
 .button_clicked(@background) {
 	background : @background;
-	box-shadow    : inset 1px 1px 0px darken(@background, 5%);	
+	box-shadow : inset 1px 1px 0px darken(@background, 5%);	
 	.vertical-gradient(@background, lighten(@background, 5%));
 }
 
@@ -72,6 +72,9 @@ a[role=button].button-primary,
 button.button-primary,
 input[type=submit].button-primary {
 	.button(@color-primary, @color-light);	
+	i.fa {
+		color: @color-light;
+	}
 }
 
 a[role=button].button-primary:hover,
