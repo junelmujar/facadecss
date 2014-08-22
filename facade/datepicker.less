@@ -1,0 +1,122 @@
+
+.datepicker {
+	
+	display          : inline-block;
+	border           : 1px solid @color-border;
+	border-radius    : @border-radius;
+	margin-top       : 10px;
+	background-color : darken(@color-light, 10%);
+	box-shadow       : 0px 10px 15px -5px rgba(0, 0, 0, 0.25);
+	box-sizing       : border-box;
+	width            : 320px !important;
+
+	.datepicker_header {
+		
+		padding: 5px 0px;
+		user-select   : none;
+		border-bottom : 1px solid @color-border;
+		
+		span,
+		a {
+			user-select : none;
+			display     : inline-block;
+			margin      : 0px 15px;
+			cursor      : pointer;
+		}
+
+	}
+
+	.datepicker_inner_container {
+
+		border-radius : 0;
+		overflow      : hidden;
+		clear         : both;
+		padding       : 0px 0px 3px;
+
+
+		.datepicker_calendar {
+
+			float         : left;
+			width         : 250px;
+			background    : @color-light;
+			border-bottom : 1px solid @color-border;
+
+			table {
+
+				width        : 100%;
+
+				tr > th {
+					border-bottom : 1px solid @color-border;
+				}
+				tr { 
+					th,
+					td {
+						padding     : 6px 5px;
+						text-align  : center;
+						user-select : none;
+						cursor      : pointer;
+					}
+					td.today {
+						background  : @color-warning;
+						color       : @color-light;
+						font-weight : bold;
+					}
+					td.wday_sat {
+						color:	darken(@color-info, 15%);
+					}
+					td.wday_sun {
+						color:	@color-danger;
+					}
+					td.day_another_month {
+						color  : @color-border;
+					}
+					td.day_in_past,
+					td.day_in_unallowed,
+					td.out_of_range {
+						cursor : default;
+						color  : @color-border;
+					}
+					td.active {
+						color: @color-light;
+						background-color: @color-default-fill;
+					}
+					td.hover {
+						color: @color-inverse;
+						background-color: @color-border;
+					}
+
+				}
+			}
+		}	
+		.datepicker_timelist {
+			float         : left;
+			width         : 67px;
+			overflow      : auto;
+			overflow-x    : hidden; 
+			border-left   : 1px solid @color-border;
+			border-bottom : 1px solid @color-border;
+			.timelist_item {
+				padding       : 5px 8px;
+				user-select   : none;
+				cursor        : pointer;
+			}
+			.timelist_item.time_in_past {
+				cursor : default;
+				color  : @color-border;
+			}
+			.timelist_item.out_of_range {
+				cursor : default;
+				color  : @color-border;
+			}
+			.timelist_item.active {
+				color: @color-light;
+				background-color: @color-default-fill;
+			}
+			.timelist_item.hover {
+				color: @color-inverse;
+				background-color: @color-border;
+			}
+		}
+	}
+
+}

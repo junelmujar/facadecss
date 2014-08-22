@@ -20,6 +20,9 @@
 	<script src="vendor/flot/jquery.flot.categories.min.js"></script>
 	<script src="vendor/flot/jquery.flot.resize.min.js"></script>
 
+	<link rel="stylesheet" href="vendor/datepicker/simple-datetimepicker.css" />
+	<script src="vendor/datepicker/simple-datetimepicker.js"></script>
+
 	<body>
 
 		<div class="bar margin-less square-edge">
@@ -120,7 +123,7 @@
 							</div>
 						</div>
 
-						<div data-widget="drawer" data-widget-name="filters" class="drawer square-edge margin-less border-less" style="background: #fafafa; border-bottom: 1px solid #ccc !important">
+						<div data-widget="drawer" data-state="open" data-widget-name="filters" class="drawer square-edge margin-less border-less" style="background: #fafafa; border-bottom: 1px solid #ccc !important">
 							<a href="#" class="drawer-toggle"><i class="fa fa-search"></i></a>
 							<div class="drawer-title">
 								<i class="fa fa-cog"></i> Data Filters
@@ -130,17 +133,16 @@
 									Keyword  &nbsp; <input type="text" placeholder="Keyword...">
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									Filter A &nbsp;
-									<select name="" id="">
-										<option value="">1</option>
-										<option value="">2</option>
-									</select>
+									<input type="text" name="date" placeholder="Keyword...">
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									Filter A &nbsp;
-									<select name="" id="">
-										<option value="">1</option>
-										<option value="">2</option>
-									</select>
-									<button class="button-primary pull-right">Submit</button>									
+									<input type="text" name="date" placeholder="Keyword...">
+									<button class="button-primary pull-right">Submit</button>						
+									<script type="text/javascript">
+									$(function(){
+										$('*[name=date]').appendDtpicker({dateOnly:false, closeOnSelected:true, calendarMouseScroll: false});
+									});
+								</script>			
 								</form>
 							</div>
 						</div>						
