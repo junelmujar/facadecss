@@ -65,13 +65,13 @@ drawerWidget.prototype = {
 
     _show: function() {
         if (this.title) this.title.removeClass('close').addClass('open');
-        this.target.attr('data-state', 'open');
+        this.target.parent().attr('data-state', 'open');
         this.content.show();
     },
 
     _hide: function() {
         if (this.title) this.title.removeClass('open').addClass('close');
-        this.target.attr('data-state', 'close');
+        this.target.parent().attr('data-state', 'close');
         this.content.hide();
     },
 
@@ -83,7 +83,7 @@ drawerWidget.prototype = {
         this.content = this.target.parent().find('.drawer-content');
         this.title   = this.target.parent().find('.drawer-title');
 
-        var current_state = this.target.attr('data-state'); 
+        var current_state = this.target.parent().attr('data-state'); 
 
         if (!current_state || current_state == 'close') {
             this._show();
