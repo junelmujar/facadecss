@@ -41,6 +41,11 @@ drawerWidget.prototype = {
             if ($(this).attr('data-state') == 'open') {
                 toggler.attr('data-state', 'open');
                 content.show();
+                if (title) title.removeClass('close')
+                            .addClass('open')
+                            .css('cursor', 'pointer')
+                            .attr('title', 'Click to Toggle');
+
             } else {
                 if (title) title.removeClass('open')
                             .addClass('close')
