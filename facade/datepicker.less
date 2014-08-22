@@ -1,27 +1,37 @@
 
 .datepicker {
 	
-	display          : inline-block;
-	border           : 1px solid @color-border;
-	border-radius    : @border-radius;
-	margin-top       : 10px;
-	background-color : darken(@color-light, 10%);
-	box-shadow       : 0px 10px 15px -5px rgba(0, 0, 0, 0.25);
-	box-sizing       : border-box;
-	width            : 320px !important;
+	display                    : inline-block;
+	border                     : 1px solid @color-border;
+	border-radius              : @border-radius;
+	border-bottom-left-radius  : 0;
+	border-bottom-right-radius : 0;
+	margin-top                 : 10px;
+	background-color           : darken(@color-light, 10%);
+	box-shadow                 : 0px 10px 15px -5px rgba(0, 0, 0, 0.25);
+	box-sizing                 : border-box;
+	width                      : 320px !important;
 
 	.datepicker_header {
 		
 		padding: 5px 0px;
 		user-select   : none;
 		border-bottom : 1px solid @color-border;
-		
+		border-top-left-radius  : 2px;
+		border-top-right-radius : 2px;
+
+		.vertical-gradient(@color-light, darken(@color-light, 8%));
+
 		span,
 		a {
 			user-select : none;
 			display     : inline-block;
 			margin      : 0px 15px;
 			cursor      : pointer;
+		}
+
+		span {
+			font-weight: bold;
 		}
 
 	}
@@ -31,7 +41,6 @@
 		border-radius : 0;
 		overflow      : hidden;
 		clear         : both;
-		padding       : 0px 0px 3px;
 
 
 		.datepicker_calendar {
@@ -39,7 +48,6 @@
 			float         : left;
 			width         : 250px;
 			background    : @color-light;
-			border-bottom : 1px solid @color-border;
 
 			table {
 
@@ -89,12 +97,13 @@
 			}
 		}	
 		.datepicker_timelist {
+
 			float         : left;
 			width         : 67px;
 			overflow      : auto;
 			overflow-x    : hidden; 
 			border-left   : 1px solid @color-border;
-			border-bottom : 1px solid @color-border;
+
 			.timelist_item {
 				padding       : 5px 8px;
 				user-select   : none;
@@ -109,12 +118,12 @@
 				color  : @color-border;
 			}
 			.timelist_item.active {
-				color: @color-light;
-				background-color: @color-default-fill;
+				color      : @color-light;
+				background : @color-default-fill;
 			}
 			.timelist_item.hover {
-				color: @color-inverse;
-				background-color: @color-border;
+				color      : @color-inverse;
+				background : @color-border;
 			}
 		}
 	}
