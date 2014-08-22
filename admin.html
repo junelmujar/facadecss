@@ -133,18 +133,23 @@
 									Keyword  &nbsp; <input type="text" placeholder="Keyword...">
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									Filter A &nbsp;
-									<input type="text" name="date" placeholder="Keyword...">
+									<input type="text" name="date1" placeholder="Keyword...">
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									Filter A &nbsp;
-									<input type="text" name="date" placeholder="Keyword...">
+									<input type="text" name="date2" placeholder="Keyword...">
 									<button class="button-primary pull-right">Submit</button>						
 									<script type="text/javascript">
 										$(function(){
-											$('*[name=date]').appendDtpicker({
+											$('*[name=date1]').appendDtpicker({
 												dateOnly            : false, 
-												//closeOnSelected     : true, 
+												closeOnSelected     : true, 
 												calendarMouseScroll : false
 											});
+											$('*[name=date2]').appendDtpicker({
+												dateOnly            : true, 
+												closeOnSelected     : true, 
+												calendarMouseScroll : false
+											});											
 										});
 									</script>			
 								</form>
