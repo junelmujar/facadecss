@@ -139,10 +139,14 @@
 									<input type="text" name="date" placeholder="Keyword...">
 									<button class="button-primary pull-right">Submit</button>						
 									<script type="text/javascript">
-									$(function(){
-										$('*[name=date]').appendDtpicker({dateOnly:false, closeOnSelected:true, calendarMouseScroll: false});
-									});
-								</script>			
+										$(function(){
+											$('*[name=date]').appendDtpicker({
+												dateOnly            : true, 
+												closeOnSelected     : true, 
+												calendarMouseScroll : false
+											});
+										});
+									</script>			
 								</form>
 							</div>
 						</div>						

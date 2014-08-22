@@ -850,6 +850,7 @@
 		if ($picker.data("dateOnly") === true) {
 			/* dateOnly mode */
 			$timelist.css("display", "none");
+			$(".datepicker_calendar", $picker).width('100%');
 		} else {
 			/* Timelist ----- */
 			$timelist.children().remove();
