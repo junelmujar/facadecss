@@ -1,6 +1,7 @@
 
 .datepicker {
 	
+	position                   : relative;
 	display                    : inline-block;
 	border                     : 1px solid @color-border;
 	border-radius              : @border-radius;
@@ -12,7 +13,7 @@
 	box-sizing                 : border-box;
 	width                      : 320px !important;
 	user-select                : none;
-	
+
 	.datepicker_header {
 		
 		padding                 : 10px 0px;
@@ -154,4 +155,26 @@
 		}
 	}
 
+}
+
+.datepicker:before {
+	position      : absolute;
+	content       : '';
+	left          : 9px;
+	top           : -10px;
+	border-bottom : 10px solid darken(@color-border, 10%);
+	border-left   : 10px solid transparent;
+	border-right  : 10px solid transparent;
+	z-index       : 8889;
+}
+
+.datepicker:after {
+	position      : absolute;
+	content       : '';
+	left          : 10px;
+	top           : -9px;
+	border-bottom : 9px solid @color-light;
+	border-left   : 9px solid transparent;
+	border-right  : 9px solid transparent;
+	z-index       : 8889;
 }
