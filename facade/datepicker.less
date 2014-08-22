@@ -59,15 +59,22 @@
 				tr { 
 					th,
 					td {
-						padding     : 6px 5px;
 						text-align  : center;
 						user-select : none;
 						cursor      : pointer;
+						span {
+							display : block;
+							padding : 6px 5px;
+							border-radius: @border-radius;
+						}
 					}
 					td.today {
-						background  : @color-info;
-						color       : @color-light;
-						font-weight : bold;
+						span {
+							background  : @color-info;
+							color       : @color-light;
+							font-weight : bold;
+							text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.15);
+						}
 					}
 					td.wday_sat {
 						color:	darken(@color-info, 15%);
@@ -85,14 +92,29 @@
 						color  : @color-border;
 					}
 					td.active {
-						color: @color-light;
-						background-color: @color-default-fill;
+						span {
+							color: @color-light;
+							background-color: @color-default-fill;
+						}
 					}
-					td.hover {
-						color: @color-inverse;
-						background-color: @color-border;
+					td:hover {
+						span {
+							color: @color-inverse;
+							background-color: @color-border;
+						}
 					}
-
+					td.active:hover {
+						span {
+							color: @color-light;
+							background-color: lighten(@color-default-fill, 10%);
+						}
+					}
+					td.today:hover {
+						span {
+							color: @color-light;
+							background  : lighten(@color-info, 10%);
+						}
+					}
 				}
 			}
 		}	

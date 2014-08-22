@@ -763,7 +763,7 @@
 				realDayObj.setMonth(dateBeforeMonth.getMonth() );
 				realDayObj.setYear(dateBeforeMonth.getFullYear() );
 			} else if (i < firstWday + lastDay) {/* Now months day */
-				$td.text(realDay);
+				$td.html('<span>' + realDay + '</span>');
 				$td.data("dateStr", (date.getFullYear()) + "/" + (date.getMonth() + 1) + "/" + realDay);
 				realDayObj.setDate( realDay );
 				realDayObj.setMonth( date.getMonth()  );
@@ -792,11 +792,11 @@
 
 			/* Set a special mark class */
 			if (realDay == date.getDate()) { /* selected day */
-				$td.addClass('active');
+				$td.addClass('active').attr('title','Selected');
 			}
 
 			if (isCurrentMonth && realDay == todayDate.getDate()) { /* today */
-				$td.addClass('today');
+				$td.addClass('today').attr('title','Today');
 			}
 
 			var realDayObjMN =  new Date(realDayObj.getTime());
