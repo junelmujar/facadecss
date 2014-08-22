@@ -48,7 +48,7 @@
 		.datepicker_calendar {
 
 			float      : left;
-			width      : 250px;
+			width      : 230px;
 			background : @color-light;
 
 			table {
@@ -126,15 +126,17 @@
 		.datepicker_timelist {
 
 			float         : left;
-			width         : 67px;
+			width         : 87px;
 			overflow      : auto;
 			overflow-x    : hidden; 
 			border-left   : 1px solid @color-border;
 
 			.timelist_item {
-				padding       : 5px 8px;
-				user-select   : none;
-				cursor        : pointer;
+				padding     : 5px;
+				font-size   : 13px;
+				user-select : none;
+				cursor      : pointer;
+				text-align  : right !important;
 			}
 			.timelist_item.time_in_past {
 				cursor : default;
