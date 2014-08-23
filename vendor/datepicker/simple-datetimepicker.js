@@ -158,6 +158,7 @@
 		var $input = this.$inputObject;
 
 		$picker.show();
+		$picker.attr('isInline', true);
 
 		ActivePickerId = $input.data('pickerId');
 
@@ -171,6 +172,7 @@
 	PickerHandler.prototype.hide = function(){
 		var $picker = this.$pickerObject;
 		var $input = this.$inputObject;
+		$picker.removeAttr('isInline');
 		$picker.hide();
 	};
 
@@ -209,6 +211,7 @@
 		var $input = this.$inputObject;
 		
 		if ($input != null && $picker.data('isInline') === false) { // Float mode
+
 			// Move position of a picker - vertical
 			var input_outer_height = $input.outerHeight({'margin': true});
 			if (!isObj('Number', input_outer_height)) {
@@ -226,9 +229,11 @@
 			if(parseInt($(window).height()) <=  ($input.offset().top - $(document).scrollTop() + input_outer_height + picker_outer_height) ){
 				// Display to top of an input-field
 				$picker.parent().css('top', ($input.offset().top - (input_outer_height / 2) - picker_outer_height) + 'px');
+				$picker.addClass('top');
 			} else {
 				// Display to bottom of an input-field
 				$picker.parent().css('top', ($input.offset().top + input_outer_height) + 'px');
+				$picker.removeClass('top');
 			}
 			// Move position of a picker - horizontal
 			if($picker.parent().width() + $input.offset().left > $(window).width()) {
@@ -850,6 +855,7 @@
 		if ($picker.data("dateOnly") === true) {
 			/* dateOnly mode */
 			$timelist.css("display", "none");
+			//$picker.css('width','250px !important');
 			$(".datepicker_calendar", $picker).width('100%');
 		} else {
 			/* Timelist ----- */
@@ -1283,7 +1289,10 @@
 				$picker.hide();
 				
 				/* Set onClick event handler for input-field */
-				$(input).on('click, focus',function(){
+				$(input).on('click, focus',function() {
+
+					console.log(1);
+
 					var $input = $(this);
 					var $picker = $(PickerObjects[$input.data('pickerId')]);
 
@@ -1433,6 +1442,18 @@
 				}
 			}
 		});
+
+		$('body').on('keyup', function(e) {
+			if (e.keyCode == 27) {
+				for(var i=0;i<PickerObjects.length;i++){
+					var $picker = $(PickerObjects[i]);
+					if ($picker.attr('isInline') == 'true') {
+						$picker.hide();
+					}
+				}
+			}
+		});
+
 	});
 
 })(jQuery);
