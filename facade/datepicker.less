@@ -8,7 +8,7 @@
 	border-bottom-left-radius  : 0;
 	border-bottom-right-radius : 0;
 	margin-top                 : 10px;
-	background-color           : darken(@color-light, 10%);
+	background-color           : @color-light;
 	box-shadow                 : 0px 10px 15px -5px rgba(0, 0, 0, 0.25);
 	box-sizing                 : border-box;
 	width                      : 320px !important;
@@ -23,8 +23,6 @@
 		border-top-right-radius : @border-radius - 1;
 		user-select             : none;
 		text-align              : center;
-
-		.vertical-gradient(@color-light, darken(@color-light, 8%));
 
 		a {
 			.button_default_properties;
@@ -129,15 +127,14 @@
 			width         : 87px;
 			overflow      : auto;
 			overflow-x    : hidden; 
-			border-left   : 1px solid lighten(@color-border, 10%);
+			border-left   : 1px solid @color-border;
 
 			.timelist_item {
-				padding       : 5px 8px;
+				padding       : 7px;
 				font-size     : 13px;
 				user-select   : none;
 				cursor        : pointer;
 				text-align    : right !important;
-				border-bottom : 1px solid lighten(@color-border, 15%);
 			}
 			.timelist_item.time_in_past {
 				cursor : default;

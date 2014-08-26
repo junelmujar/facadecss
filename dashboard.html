@@ -22,38 +22,37 @@
 
 	<body>
 
-		<div class="bar margin-less square-edge">
-
-			<span class="bar-text pull-left" style="padding: 0px 10px;"><h2 class="margin-less">LCS <small>v3.5</small></h2></span>
-
-			<ul class="bar-menu">
-				<li class="active"><a href="dashboard.html">Dashboard</a></li>
-				<li><a href="admin.html">Administration</a></li>
-				<li><a href="maint.html">Maintenance</a></li>
-				<li><a href="reports.html">Reports</a></li>
-				<li><a href="about.html">About</a></li>
-			</ul>
-
-			<div data-widget="popover" class="pull-right">
-				<a href="#" role="button" class="popover button-split" data-mode="menu" data-action="trigger" data-target="#popover_a">
-					Administrator <i class="fa fa-caret-down"></i>
-				</a>
-				<div id="popover_a" class="hidden">
-					<ul class="popover-menu">
-						<li><a href=""><i class="fa fa-pencil"></i> Edit Account</a></li>
-						<li class="popover-seperator"></li>
-						<li><a href="">Site 1</a></li>
-						<li><a href="">Site 2</a></li>
-						<li><a href="">Site 3</a></li>
-						<li class="popover-seperator"></li>
-						<li><a href=""><i class="fa fa-sign-out"></i> Logout</a></li>
-					</ul>
-				</div>
-			</div>				
-
-		</div>
-
 		<div class="sticky">
+			<div class="bar margin-less square-edge">
+
+				<span class="bar-text pull-left" style="padding: 0px 10px;"><h2 class="margin-less">LCS <small>v3.5</small></h2></span>
+
+				<ul class="bar-menu">
+					<li class="active"><a href="dashboard.html">Dashboard</a></li>
+					<li><a href="admin.html">Administration</a></li>
+					<li><a href="maint.html">Maintenance</a></li>
+					<li><a href="reports.html">Reports</a></li>
+					<li><a href="about.html">About</a></li>
+				</ul>
+
+				<div data-widget="popover" class="pull-right">
+					<a href="#" role="button" class="popover button-split" data-mode="menu" data-action="trigger" data-target="#popover_a">
+						Administrator <i class="fa fa-caret-down"></i>
+					</a>
+					<div id="popover_a" class="hidden">
+						<ul class="popover-menu">
+							<li><a href=""><i class="fa fa-pencil"></i> Edit Account</a></li>
+							<li class="popover-seperator"></li>
+							<li><a href="">Site 1</a></li>
+							<li><a href="">Site 2</a></li>
+							<li><a href="">Site 3</a></li>
+							<li class="popover-seperator"></li>
+							<li><a href=""><i class="fa fa-sign-out"></i> Logout</a></li>
+						</ul>
+					</div>
+				</div>				
+			</div>
+
 			<div data-widget="drawer" data-widget-name="quick_settings" class="drawer square-edge margin-less" style="border-top: none !important;">
 				<a href="#" class="drawer-toggle"><i class="fa fa-reorder"></i></a>
 				<div class="drawer-title">
@@ -281,43 +280,23 @@
 								</span>								
 							</div>
 							<div class="panel-content">
-								<div id="placeholder2" style="height: 400px;"></div>
-								<script>
-									$(document).ready(function() {
-									var d1 = [];
-									for (var i = 0; i < 14; i += 0.5) {
-										d1.push([i, Math.sin(i)]);
-									}
+								<!--
+									data-mode     = single or null|multi 	-> Determines the select action
+									data-selected = true|false or null 		-> Added via js
 
-									var d2 = [[0, 3], [4, 8], [8, 5], [9, 13]];
-
-									var d3 = [];
-									for (var i = 0; i < 14; i += 0.5) {
-										d3.push([i, Math.cos(i)]);
-									}
-
-									var d4 = [];
-									for (var i = 0; i < 14; i += 0.1) {
-										d4.push([i, Math.sqrt(i * 10)]);
-									}
-
-									var d5 = [];
-									for (var i = 0; i < 14; i += 0.5) {
-										d5.push([i, Math.sqrt(i)]);
-									}
-
-									var d6 = [];
-									for (var i = 0; i < 14; i += 0.5 + Math.random()) {
-										d6.push([i, Math.sqrt(2*i + Math.sin(i) + 5)]);
-									}
-
-									$.plot("#placeholder2", [{
-										data: d2,
-										bars: { show: true }
-									}]);
-								});
-
-								</script>
+								-->
+								<div data-widget='selectlist' class="selectlist" data-mode='single' data-height='400'>
+									<input type="hidden" role="data-container" name="test" />
+									<ul>
+										<li><a href="#" data-value='A'>This is an item 1</a></li>
+										<li><a href="#" data-value='B'>This is an item 2</a></li>
+										<li><a href="#" data-value='C'>This is an item 3</a></li>
+										<li><a href="#" data-value='D'>This is an item 4</a></li>
+										<li><a href="#" data-value='E'>This is an item 5</a></li>
+										<li><a href="#" data-value='F'>This is an item 6</a></li>
+										<li><a href="#" data-value='G'>This is an item 7</a></li>
+									</ul>
+								</div>
 							</div>
 							<div class="panel-footer">
 								<a href="#" role="button" class="pull-left">Button</a>	
@@ -454,6 +433,7 @@
 	<script src="widgets/layout.js"></script>
 	<script src="widgets/tabs.js"></script>
 	<script src="widgets/notice.js"></script>
+	<script src="widgets/selectlist.js"></script>
 
 	<script>
 		$(document).ready(function() {

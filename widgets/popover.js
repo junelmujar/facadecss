@@ -1,13 +1,8 @@
 // -------------------------------------
-// 
 //  Author  : Junel Mujar
 //  Email   : junelmujar@gmail.com
-//  Company : http://cheekybebeshop.com
-// 
 // -------------------------------------
-// 
 //  Widget: Popover Widget
-//
 // -------------------------------------
 
 jQuery.fn.extend({
@@ -47,9 +42,9 @@ popoverWidget.prototype = {
     
     // Event definitions
     events: {
-      'click a[data-action=trigger]'            : 'toggle',
-      'resize window, scroll window'            : 'reposition',
-      'keydown(esc) document, click document'   : 'hide',
+      'click a[data-action=trigger]' : 'toggle',
+      'resize window, scroll window' : 'reposition',
+      'keydown(esc) document, click document, scroll window' : 'hide',
     },
 
     overlay_events: {

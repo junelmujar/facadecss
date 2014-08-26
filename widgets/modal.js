@@ -1,11 +1,6 @@
 // -------------------------------------
-// 
 //  Author  : Junel Mujar
 //  Email   : junelmujar@gmail.com
-//  Company : http://cheekybebeshop.com
-// 
-// -------------------------------------
-
 // -------------------------------------
 //  
 //  Widget: Modal Widget
@@ -127,4 +122,4 @@ modalWidget.prototype = {
 }
 
 // Bind to elements with [data-widget=notice] attributes
-var modal = new modalWidget('[data-widget=modal]');
+var facadeModal = new modalWidget('[data-widget=modal]');

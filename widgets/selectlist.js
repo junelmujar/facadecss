@@ -6,17 +6,17 @@
 // -------------------------------------
 
 // Define our widget object
-var baseWidget = function( element ){
+var selectlistWidget = function( element ){
     this.init(element);
 }
 
 // Define widget functionality
-baseWidget.prototype = {
+selectlistWidget.prototype = {
 
     // Event definitions
     events: {
-      'click a, click a[data-state=closed]' : 'show',
-      'click a[data-state=open]' : 'hide',
+      'click a' : 'check',
+      'click a.checked' : 'uncheck',
     },
 
     // Initialize
@@ -25,14 +25,18 @@ baseWidget.prototype = {
         this.$elem = $(elem).eventralize(this.events, this, 'facade');
     },
 
-    hide: function(event) {
+    uncheck: function(event) {
         event.preventDefault();
+        var target = $(event.target);
+        if (target.hasClass('checked')) $(event.target).removeClass('checked');
     },    
 
-    show: function(event) {
+    check: function(event) {
         event.preventDefault();
+        var target = $(event.target);
+        if (!target.hasClass('checked')) $(event.target).addClass('checked');
     }    
 }
 
 // Bind to elements with [data-widget=notice] attributes
-var widget = new baseWidget('[widget]');
+var facadeSelectList = new selectlistWidget('[data-widget=selectlist]');

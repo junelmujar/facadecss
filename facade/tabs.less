@@ -5,7 +5,7 @@
 	overflow      : hidden;
 	display       : block;
 	border-bottom : 1px solid @color-border;
-	text-align: center;
+	.center-text;
 	li {
 		float:left;
 		display: inline-block;
@@ -15,8 +15,8 @@
 			text-decoration         : none;
 			margin-right            : 5px;
 			font-weight             : bold;
-			color                   : darken(@color-border, 25%);
-			background              : lighten(@color-border, 20%);
+			color                   : darken(@color-border, 15%);
+			background              : darken(@color-light, 5%);
 			border-top-left-radius  : @border-radius;
 			border-top-right-radius : @border-radius;
 			border-top              : 1px solid @color-border;
