@@ -18,7 +18,8 @@ drawerWidget.prototype = {
 
     // Event definitions
     events: {
-        'click a.drawer-toggle, click .drawer-title': '_toggle'
+        'click a.drawer-toggle, click .drawer-title': '_toggle',
+        'keydown(esc) document': '_hide'
     },
 
     registry: [],

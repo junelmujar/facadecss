@@ -101,6 +101,7 @@ popoverWidget.prototype = {
 
         // Prevent the event from bubbling up
         event.stopImmediatePropagation();
+        //event.preventDefault();
     },
 
     clear_tips: function() {

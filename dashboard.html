@@ -5,9 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<title>Facade CSS</title>
-	
-<!--     <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'> 
- -->	
+
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="vendor/font-awesome-4.1.0/css/font-awesome.min.css">
@@ -22,8 +20,8 @@
 
 	<body>
 
-		<div class="sticky">
-			<div class="bar margin-less square-edge">
+		
+			<div class="bar margin-less border-less square-edge">
 
 				<span class="bar-text pull-left" style="padding: 0px 10px;"><h2 class="margin-less">LCS <small>v3.5</small></h2></span>
 
@@ -53,7 +51,9 @@
 				</div>				
 			</div>
 
-			<div data-widget="drawer" data-widget-name="quick_settings" class="drawer square-edge margin-less" style="border-top: none !important;">
+		<div class="sticky">
+			<div data-widget="drawer" data-widget-name="quick_settings" class="drawer square-edge margin-less border-less"
+				style="border-top:1px solid #ddd !important">
 				<a href="#" class="drawer-toggle"><i class="fa fa-reorder"></i></a>
 				<div class="drawer-title">
 					<i class="fa fa-dashboard"></i> Dashboard
@@ -104,15 +104,16 @@
 		</div>
 
 		<div class="container-app">
+		
 		<div class="col-group">
 
 			<div class="col-12">
 				
 				<div class="notice" data-widget="notice" style="margin-bottom: 0px;">
-					<h2 class="margin-less">Welcome to LCS <small>v3.5</small></h2>	
+					<h2>Welcome to LCS <small>v3.5</small></h2>	
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero voluptatem architecto necessitatibus illo amet consequatur praesentium quas. Voluptatum corrupti aut non dolores, dignissimos magnam quam quis incidunt ea, adipisci porro!	
 					<br><br>
-					<a href="about.html" role="button" class="button-small">Read More</a>
+					<a href="about.html" role="button" class="button-success">Read More</a>
 				</div>
 
 				<div class="col-group">
@@ -280,14 +281,13 @@
 								</span>								
 							</div>
 							<div class="panel-content">
-								<!--
-									data-mode     = single or null|multi 	-> Determines the select action
-									data-selected = true|false or null 		-> Added via js
-
-								-->
-								<div data-widget='selectlist' class="selectlist" data-mode='single' data-height='400'>
-									<input type="hidden" role="data-container" name="test" />
-									<ul>
+								<div class  ="selectlist" 
+									data-widget ='selectlist'  
+									data-mode   ='multi' 
+									data-height ='200'
+									data-width  ='300'>
+									<input type="hidden" role="data-value" name="test" value='E' />
+									<ul role="list">
 										<li><a href="#" data-value='A'>This is an item 1</a></li>
 										<li><a href="#" data-value='B'>This is an item 2</a></li>
 										<li><a href="#" data-value='C'>This is an item 3</a></li>
@@ -297,6 +297,28 @@
 										<li><a href="#" data-value='G'>This is an item 7</a></li>
 									</ul>
 								</div>
+
+								<div class="nav-list">
+									<ul>
+										<li><a href="#">
+											<p>
+												<i class="fa fa-check"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis magnam exercitationem maiores totam quasi, ipsum excepturi ex qui.
+											</p>
+											<p>
+												<small>This is a small text...</small>
+											</p>
+										</a></li>
+										<li><a href="#">
+											<h3 class="title">This is an item</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis magnam exercitationem maiores totam quasi, ipsum excepturi ex qui.</p>
+										</a></li>
+										<li><a href="#">
+											<h3 class="title">This is an item</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis magnam exercitationem maiores totam quasi, ipsum excepturi ex qui.</p>
+										</a></li>																	
+									</ul>
+								</div>
+
 							</div>
 							<div class="panel-footer">
 								<a href="#" role="button" class="pull-left">Button</a>	

@@ -1,0 +1,27 @@
+.nav-list {
+	ul {
+		margin        : 0;
+		padding       : 1px 0;
+		list-style    : none;
+		border        : 1px solid @color-border;
+		border-radius : @border-radius;
+
+		li {
+			a {
+				display         : block;
+				position        : relative;
+				padding         : 12px 25px 15px;
+				border-bottom   : 1px solid lighten(@color-border, 10%);
+				text-decoration : none;
+				color           : @color-default;
+			}
+			a:hover {
+				background : darken(@color-light, 5%);
+				color      : @color-links;
+			}
+		}
+		li:last-child a {
+			border-bottom: none;
+		}
+	}
+}
