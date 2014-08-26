@@ -60,8 +60,6 @@ drawerWidget.prototype = {
             }
 
         });
-
-        $.proxy(this.mouseClick, this);
     },
 
     _show: function() {

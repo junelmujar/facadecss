@@ -22,79 +22,94 @@ selectlistWidget.prototype = {
     // Initialize
     init: function(elem){
 
+        var that = this;
+
         // Bind our events, context, namespace;
-		this.$elem          = $(elem).eventralize(this.events, this, 'facade');
-		this.mode           = this.$elem.attr('data-mode');
-		this.widgetHeight   = this.$elem.attr('data-height');
-		this.itemsList      = this.$elem.find('ul[role=list]');
-		this.selectedValues = this.$elem.find('input[role=data-value]');
+        this.$elem = $(elem).eventralize(this.events, this, 'facade');
 
-		// Default to single selection mode;
-		if (!this.mode) this.mode = 'single';
+        this.$elem.each(function() {
+            
+            var name           = $(this).attr('data-widget-name');
+            var mode           = $(this).attr('data-mode');
+            var widgetHeight   = $(this).attr('data-height');
+            var widgetWidth    = $(this).attr('data-width');       
+            var itemsList      = $(this).find('ul[role=list]');
 
-		// Set height if data-height is not empty;
-		if (this.widgetHeight) this.itemsList.css({height: this.widgetHeight});
+            // Default to single selection mode;
+            if (!mode) mode = 'single';
 
-		// If has preselected value(s), check them;
-		if (this.selectedValues.val()) {
-			// We expect a comma separated value;
-			var values = this.selectedValues.val().split(',');
-			if (values.length > 0) {
-				this.checkSelectedValues(values);
-				this.getSelectedValues();
-			} else {
-				console.log('a')
-			}
-		}
+            if (mode == 'multi') {
+                itemsList.find('li > a').addClass('multi');
+            }
+
+            // Set height if data-height is not empty;
+            if (widgetHeight) itemsList.css({height: widgetHeight});
+            
+            // Set parent width if data-width is not empty;
+            if (widgetWidth) $(this).css({width: widgetWidth});                 
+
+            // If has preselected value(s), check them;
+            that.checkSelectedValues($(this));
+
+            // Update hidden field
+            that.getSelectedValues($(this));
+
+        });
     },
 
-    clear: function() {
-    	this.itemsList.find('li').each( function() {
-    		$(this).children('a').removeClass('checked');
-    	});
+    clear: function(obj) {
+    	obj.find('li > a').removeClass('checked');
     },
 
-    checkSelectedValues: function(values) {
-
-    	if (this.mode == 'single') values = values[0];
-
-    	this.itemsList.find('li').each( function() {
-			var link, value;
+    checkSelectedValues: function(obj) {
+        var checked, field;
+        field  = obj.find('input[role=data-value]');
+        checked = field.val().split(',');
+    	if (obj.attr('data-mode') == 'single') checked = checked[0];
+    	obj.find('li').each( function() {
+			var link, val;
 			link  = $(this).find('a');
 			value = link.attr('data-value');
-			if ($.inArray(value, values) > -1) link.addClass('checked');
+			if ($.inArray(value, checked) > -1) link.addClass('checked');
     	});    		
     },
 
-    getSelectedValues: function() {
-    	var temp = [];
-    	this.itemsList.find('li').each( function() {
-    		var link, value;
-    		link = $(this).find('a');
-    		if (link.hasClass('checked')) {
-    			value = link.attr('data-value');
-    			if (value) {
-    				temp.push(value);
-    			}
-    		};
-    	});    		
-    	this.selectedValues.val(temp);
+    getSelectedValues: function(obj) {
+        var temp, value, items, field;
+        temp = [];
+        items= obj.find('li > a');
+        field= obj.find('input[role=data-value]');
+        $.each(items, function(key, value) {
+            if ($(this).hasClass('checked')) {
+                value = $(this).attr('data-value');
+                if (value) temp.push(value);
+            };
+        });
+        field.val(temp);
     },
 
     uncheck: function(event) {
         event.preventDefault();
-        var target = $(event.target);
+        var target, parent;
+        target= $(event.target);
+        parent= $(target.closest('[data-widget=selectlist]'));
         if (target.hasClass('checked')) $(event.target).removeClass('checked');
-        this.getSelectedValues();
+        this.getSelectedValues(parent);
     },    
 
     check: function(event) {
+
         event.preventDefault();
-        var target = $(event.target);
-        if (this.mode == 'single') this.clear();
+        var target, parent;
+        
+        target= $(event.target);
+        parent= $(target.closest('[data-widget=selectlist]'));
+        
+        if (parent.attr('data-mode') == 'single') this.clear(parent);
+
         if (!target.hasClass('checked')) {
         	$(event.target).addClass('checked');
-        	this.getSelectedValues();
+        	this.getSelectedValues(parent);
         }
     }    
 }
