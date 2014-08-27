@@ -1,6 +1,6 @@
 body {
 	color       : @color-default;
-	font        : 300 14px/22px 'Noto Sans','Open Sans', arial ;
+	font        : @font-size;
 	background  : darken(@color-light, 10%);
 }
 
@@ -139,4 +139,10 @@ hr {
 	li:first-child {
 		border-top : 1px solid @color-secondary;
 	}
+}
+
+.app-title {
+	margin: 0 20px 0 10px;
+	font-size: 20px;
+	line-height: 36px;
 }

@@ -25,7 +25,9 @@ selectlistWidget.prototype = {
         var that = this;
 
         // Bind our events, context, namespace;
-        this.$elem = $(elem).eventralize(this.events, this, 'facade');
+        //this.$elem = $(elem).eventralize(this.events, this, 'facadeSelectList');
+        
+        this.$elem = $(elem);
 
         this.$elem.each(function() {
             
@@ -34,6 +36,8 @@ selectlistWidget.prototype = {
             var widgetHeight   = $(this).attr('data-height');
             var widgetWidth    = $(this).attr('data-width');       
             var itemsList      = $(this).find('ul[role=list]');
+
+            $(this).eventralize(that.events, that, 'facadeSelectList');
 
             // Default to single selection mode;
             if (!mode) mode = 'single';
@@ -55,6 +59,8 @@ selectlistWidget.prototype = {
             that.getSelectedValues($(this));
 
         });
+
+    
     },
 
     clear: function(obj) {
@@ -91,20 +97,21 @@ selectlistWidget.prototype = {
     uncheck: function(event) {
         event.preventDefault();
         var target, parent;
+
         target= $(event.target);
         parent= $(target.closest('[data-widget=selectlist]'));
+
         if (target.hasClass('checked')) $(event.target).removeClass('checked');
         this.getSelectedValues(parent);
     },    
 
     check: function(event) {
-
         event.preventDefault();
         var target, parent;
         
         target= $(event.target);
         parent= $(target.closest('[data-widget=selectlist]'));
-        
+
         if (parent.attr('data-mode') == 'single') this.clear(parent);
 
         if (!target.hasClass('checked')) {

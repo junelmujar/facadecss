@@ -1,28 +1,31 @@
+
 .bar {
+
 	position      : relative;
 	background    : darken(@color-light, 2%);
 	border        : 1px solid @color-border;
 	border-radius : @border-radius;
 	margin-bottom : 1.5em;
 	padding       : 10px;
-	overflow      : hidden;
-	min-height    : 50px;
-	.box-sizing;
-	.clear;
-	* {
-		margin: 0 !important;
-	}
+
+	// min-height    : 60px;
+	// .box-sizing;
+	// * {
+	// 	margin: 0 !important;
+	// }
+
 	a[role=button],
 	button,
 	input[type=submit],
 	input[type=reset] {
 		height : 36px;
 	}		
+
 	.bar-menu {
 		float      : left;
 		display    : inline-block;
 		padding    : 0;
-		margin     : 0 20px;
+		margin     : 0;
 		list-style : none;
 		li {
 			float        : left;
@@ -51,6 +54,18 @@
 	}
 }
 
+/* Micro Clearfix via CSS-Tricks */
+.bar:before,
+.bar:after {
+    content: "";
+    display: table;
+} 
+.bar:after {
+    clear: both;
+}
+.bar {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
 
 .bar.bar-inverse {
 	background: @color-inverse;

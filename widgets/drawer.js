@@ -63,15 +63,19 @@ drawerWidget.prototype = {
     },
 
     _show: function() {
-        if (this.title) this.title.removeClass('close').addClass('open');
-        this.target.parent().attr('data-state', 'open');
-        this.content.show();
+        if (this.target) {
+            if (this.title) this.title.removeClass('close').addClass('open');
+            this.target.parent().attr('data-state', 'open');
+            this.content.show();
+        }
     },
 
     _hide: function() {
-        if (this.title) this.title.removeClass('open').addClass('close');
-        this.target.parent().attr('data-state', 'close');
-        this.content.hide();
+        if (this.target) {
+            if (this.title) this.title.removeClass('open').addClass('close');
+            this.target.parent().attr('data-state', 'close');
+            this.content.hide();
+        }
     },
 
     _toggle: function(event) {

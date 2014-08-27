@@ -20,6 +20,7 @@
 	position : absolute;
 	top      : 0;
 	left     : 0;
+	z-index: 10000;
 	li {
 		list-style: none;
 		a {
@@ -43,8 +44,10 @@
 }
 
 .dropdown.dropdown-panel {
-	width   : 250px;
-	padding : 20px 25px;
+	width       : 250px;
+	padding     : 20px 25px;
+	font-size   : @font-size;
+	z-index     : 10000;
 	h1, h2, h3, h4, h5, h6 {
 		color       : @color-secondary;
 		font-weight : normal;

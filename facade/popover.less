@@ -34,18 +34,17 @@
 	.popover-close {
 		display       : inline-block;
 		position      : absolute;
-		background    : darken(@color-light, 5%);
-		color         : @color-inverse;
+		background    : @color-default-fill;
+		color         : @color-light;
 		padding       : 5px 7px;
 		line-height   : 0;
-		top           : 5px;
-		right         : 5px;
+		top           : -13px;
+		right         : -12px;
 		z-index       : 10000;
-		border        : 1px solid @color-border;
-		border-radius : @border-radius;
+		border-radius : 100%;
 	}
 	.popover-close:hover {
-		color         : @color-default-fill;
+		background : lighten(@color-inverse, 20%);
 	}
 }
 
@@ -116,7 +115,7 @@
 .popover-container.tooltip-top-right {
 	.popover-close {
 		right: auto;
-		left: 5px;
+		left: -14px;
 	}
 }
 

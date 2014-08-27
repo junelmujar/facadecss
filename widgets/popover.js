@@ -44,8 +44,10 @@ popoverWidget.prototype = {
     events: {
       'click a[data-action=trigger]' : 'toggle',
       'resize window, scroll window' : 'reposition',
-      'keydown(esc) document, click document, scroll window' : 'hide',
+      'keydown(esc) document, click document' : 'hide',
     },
+
+    //, scroll window
 
     overlay_events: {
         'click': 'hide'
@@ -76,6 +78,8 @@ popoverWidget.prototype = {
 
         // Bind events to popover overlay
         this.popover_overlay.eventralize(this.overlay_events, this, 'facade');
+
+        $.proxy(this.mouseClick, this);
     },
 
     // Hide all popups

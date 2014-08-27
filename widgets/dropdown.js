@@ -50,20 +50,20 @@ dropdownWidget.prototype = {
 
     // Hide all dropdowns
     hide: function(event) {
-
-        if (!event || !$(event.target).attr('data-action')) {
-            // Inform that there is no active dropdown widget
-            $('body').removeAttr('has-dropdown-active');
-
-            // Find active popup and remove state and active class
-            this.$elem.find('a[data-popup-state=true]').
-                attr('data-popup-state', false).
-                removeClass('active');
-
-            // Find active dropdown and remove show class
-            this.$elem.find('.dropdown[last-active=true]').
-                attr('last-active', false).
-                removeClass('show');
+        var target;
+        if (event) {
+            target = $(event.target);
+            if (target.closest('.dropdown.dropdown-panel') || target.closest('.dropdown.dropdown-menu')) {
+                $('body').removeAttr('has-dropdown-active');
+                // Find active popup and remove state and active class
+                this.$elem.find('a[data-popup-state=true]').
+                    attr('data-popup-state', false).
+                    removeClass('active');
+                // Find active dropdown and remove show class
+                this.$elem.find('.dropdown[last-active=true]').
+                    attr('last-active', false).
+                    removeClass('show');                
+            }
         }
     },
 
