@@ -21,17 +21,19 @@ dropdownWidget.prototype = {
     // Event definitions
     events: {
       'click a'                               : 'toggle',
-      'click .dropdown.dropdown-panel'        : 'stop_event',
+      //'click .dropdown.dropdown-panel'        : 'stop_event',
       'keydown(esc) document, click document' : 'hide',
     },
 
     // Initialize
     init: function(elem){
         // Bind our events, context, namespace
-        this.$elem = $(elem).eventralize(this.events, this, 'facade');
+        this.$elem = $(elem);
 
         // Add data-action attribute if there's none
+        var that = this;
         this.$elem.each(function() {
+            $(this).eventralize(that.events, that, 'facade');
             $(this).children('a').each(function() {
                 if (!$(this).attr('data-action')) {
                     $(this).attr('data-action', 'trigger');
@@ -39,32 +41,58 @@ dropdownWidget.prototype = {
             });
         });
 
+        this.widget_clicked   = $.Event( "facade.widget-clicked" );
+        this.dropdown_clicked = $.Event( "dropdown-clicked" );
+        this.dropdown_opened  = $.Event( "dropdown-opened" );
+        this.dropdown_closed  = $.Event( "dropdown-closed" );
+
+        this.$document = $(document);
+    
+
     },
 
     // Stop event from propagating to top;
     // For dropdown-panels, this effectively
     // make them stick unless Esc or a document click is met
-    stop_event: function(event) {
-        event.stopPropagation();
-    }, 
+    // stop_event: function(event) {
+    //     event.stopPropagation();
+    // }, 
 
     // Hide all dropdowns
     hide: function(event) {
-        var target;
+
+        var target, is_parent, widget_clicked;
+
+        is_parent = false;
         if (event) {
             target = $(event.target);
-            if (target.closest('.dropdown.dropdown-panel') || target.closest('.dropdown.dropdown-menu')) {
-                $('body').removeAttr('has-dropdown-active');
-                // Find active popup and remove state and active class
-                this.$elem.find('a[data-popup-state=true]').
-                    attr('data-popup-state', false).
-                    removeClass('active');
-                // Find active dropdown and remove show class
-                this.$elem.find('.dropdown[last-active=true]').
-                    attr('last-active', false).
-                    removeClass('show');                
+            if (target) {
+                is_parent = target.closest('[data-widget=dropdown]').length > 0 ? true : false;
             }
+        } else {
+            //console.log(1);
         }
+        this.$document.on('click.facade', function(e) {
+            console.log(e.target);
+        });     
+        
+        //console.log(this.$document);
+        widget_clicked = '';
+
+
+        // if (!parent_found || event == 'undefined') {
+        //     console.log(event);
+        //     $('body').removeAttr('has-dropdown-active');
+        //     // Find active popup and remove state and active class
+        //     this.$elem.find('a[data-popup-state=true]').
+        //         attr('data-popup-state', false).
+        //         removeClass('active');
+        //     // Find active dropdown and remove show class
+        //     this.$elem.find('.dropdown[last-active=true]').
+        //         attr('last-active', false).
+        //         removeClass('show');                 
+        // }
+
     },
 
     hide_popovers: function() {
@@ -84,6 +112,7 @@ dropdownWidget.prototype = {
         this.hide_popovers();
 
         var trigger  = $(event.target);
+        var parent   = trigger.parent();
         var dropdown = trigger.siblings('.dropdown');
         var state    = trigger.attr('data-popup-state');
 
@@ -92,24 +121,34 @@ dropdownWidget.prototype = {
         this.hide();
 
         if (!state || state == "false") {
+            
             $('body').attr('data-popup-active', trigger.attr('target')).attr('has-dropdown-active', true);
+            
             dropdown.
                 css({ top: this.pos_y }).
                 addClass('show').
                 attr('last-active', true);
             trigger.attr('data-popup-state', true)
                 .addClass('active');
+            
+            $( document ).trigger( this.dropdown_opened, parent );
+
         } else {
+            
             dropdown.
                 removeClass('show').
                 attr('last-active', false);
+            
             trigger.
                 attr('data-popup-state', false).
                 removeClass('active');
+
+            $( document ).trigger( this.dropdown_closed, parent );
         }
 
+        $( document ).trigger( this.widget_clicked );
     } 
 }
 
 // Bind to elements with [data-widget=notice] attributes
-var notice = new dropdownWidget('[data-widget=dropdown]');
+var facadeNotice = new dropdownWidget('[data-widget=dropdown]');

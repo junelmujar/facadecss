@@ -37,7 +37,7 @@ selectlistWidget.prototype = {
             var widgetWidth    = $(this).attr('data-width');       
             var itemsList      = $(this).find('ul[role=list]');
 
-            $(this).eventralize(that.events, that, 'facadeSelectList');
+            $(this).eventralize(that.events, that, 'facade');
 
             // Default to single selection mode;
             if (!mode) mode = 'single';
@@ -60,7 +60,10 @@ selectlistWidget.prototype = {
 
         });
 
-    
+        this.widget_clicked       = $.Event( "facade.widget-clicked" );
+        this.selectlist_clicked   = $.Event( "facade.selectlist-clicked" );
+        this.selectlist_checked   = $.Event( "facade.selectlist-checked" );
+        this.selectlist_unchecked = $.Event( "facade.selectlist-unchecked" );    
     },
 
     clear: function(obj) {
@@ -95,6 +98,7 @@ selectlistWidget.prototype = {
     },
 
     uncheck: function(event) {
+
         event.preventDefault();
         var target, parent;
 
@@ -106,6 +110,7 @@ selectlistWidget.prototype = {
     },    
 
     check: function(event) {
+
         event.preventDefault();
         var target, parent;
         

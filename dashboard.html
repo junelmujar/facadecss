@@ -17,6 +17,7 @@
 	<script src="vendor/flot/jquery.flot.min.js"></script>
 	<script src="vendor/flot/jquery.flot.categories.min.js"></script>
 	<script src="vendor/flot/jquery.flot.resize.min.js"></script>
+	<script src="vendor/datepicker/simple-datetimepicker.js"></script>
 
 	<body>
 
@@ -136,7 +137,7 @@
 								<i class="fa fa-mobile"></i> Top Ten Callers
 								<span class="pull-right">
 
-									<div data-widget="dropdown">
+									<div data-widget="dropdown" data-widget-name="filter_a">
 										
 										<a href="#">
 											<small>Graph Filter</small>
@@ -145,12 +146,12 @@
 										<div class="dropdown dropdown-panel">
 											<h3>Panel</h3>
 											<form action="#" method="POST">
-												<div class  ="selectlist" 
-													data-widget     ='selectlist'
-													data-widget-name='option_c'  
-													data-mode       ='multi' 
-													data-height     ='150'
-													data-width      ='100%'>
+												<div class       	 = "selectlist" 
+													data-widget      = 'selectlist'
+													data-widget-name = 'option_c'  
+													data-mode        = 'multi' 
+													data-height      = '150'
+													data-width       = '100%'>
 													<input type="hidden" role="data-value" name="test3" value='A,B' />
 													<ul role="list">
 														<li><a href="#" data-value='A'>This is an item 1</a></li>
@@ -171,6 +172,31 @@
 												<div data-widget="switch">
 													<input type="checkbox"> <span>Pasta</span>
 												</div>	
+
+
+												<input type="text" name="date2" placeholder="Keyword..." class="stretch">
+												
+												
+
+												<script type="text/javascript">
+													$(function(){
+														$('*[name=date1]').appendDtpicker({
+															dateOnly            : false, 
+															closeOnSelected     : true, 
+															calendarMouseScroll : false,
+															amPmInTimeList      : true
+														});
+														$('*[name=date2]').appendDtpicker({
+															dateOnly            : true, 
+															closeOnSelected     : true, 
+															calendarMouseScroll : false
+														});											
+													});
+												</script>	
+												<br>
+												<br>
+												<button class="button-primary pull-right">Submit</button>	
+
 											</form>
 										</div>		
 									</div>	
@@ -499,6 +525,22 @@
 			$(this).on('popover-show', function() {
 				alert('hey!');
 			});
+			$(this).on('click.facade', function(e, obj) {
+
+				console.log(e.namespace);
+			});			
+			// $(this).on('dropdown-clicked', function(e, obj) {
+			// 	console.log(obj);
+			// 	console.log('Clicked');
+			// });	
+			// $(this).on('dropdown-opened', function(e, obj) {
+			// 	console.log(obj);
+			// 	console.log('Opened');
+			// });	
+			// $(this).on('dropdown-closed', function(e, obj) {
+			// 	console.log(obj);
+			// 	console.log('Closed');
+			// });							
 		});
 	</script>
 
