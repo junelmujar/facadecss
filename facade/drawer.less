@@ -22,14 +22,29 @@
 		.border-radius(0 0 @border-radius @border-radius);
 	}
 	.drawer-toggle:active {
-		color: @color-danger;
+		color: @color-primary;
 	}
 	.drawer-content {
 		display: none;
 		padding: 20px;
 	}
+	
+	/* Micro Clearfix via CSS-Tricks */
+	.drawer-content:before,
+	.drawer-content:after {
+	    content: "";
+	    display: table;
+	} 
+	.drawer-content:after {
+	    clear: both;
+	}
+	.drawer-content {
+	    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+	}	
+
 	.drawer-title.open,
 	.drawer-title {
+		color               : @color-primary;
 		padding             : 5px 10px;
 		border-bottom       : 1px solid lighten(@color-border, 15%);
 		-moz-user-select    : none;
@@ -62,4 +77,12 @@
 	.drawer-title.close {
 		border-bottom : 0px;
 	}	
+}
+
+.drawer.drawer-inline {
+	border: 0;
+	.drawer-title,
+	.drawer-content {
+		border-bottom : 1px solid @color-border;	
+	}
 }

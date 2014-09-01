@@ -61,37 +61,25 @@ dropdownWidget.prototype = {
     // Hide all dropdowns
     hide: function(event) {
 
-        var target, is_parent, widget_clicked;
-
-        is_parent = false;
-        if (event) {
-            target = $(event.target);
-            if (target) {
-                is_parent = target.closest('[data-widget=dropdown]').length > 0 ? true : false;
-            }
-        } else {
-            //console.log(1);
-        }
-        this.$document.on('click.facade', function(e) {
-            console.log(e.target);
-        });     
+        var target, parent_found;
         
-        //console.log(this.$document);
-        widget_clicked = '';
+        if (event) target = $(event.target);
+        if (target) parent_found = target.closest('.dropdown-panel').length;
 
+        if (!target || !parent_found) {
 
-        // if (!parent_found || event == 'undefined') {
-        //     console.log(event);
-        //     $('body').removeAttr('has-dropdown-active');
-        //     // Find active popup and remove state and active class
-        //     this.$elem.find('a[data-popup-state=true]').
-        //         attr('data-popup-state', false).
-        //         removeClass('active');
-        //     // Find active dropdown and remove show class
-        //     this.$elem.find('.dropdown[last-active=true]').
-        //         attr('last-active', false).
-        //         removeClass('show');                 
-        // }
+            $('body').removeAttr('has-dropdown-active');
+
+            // Find active popup and remove state and active class
+            this.$elem.find('a.active').
+                attr('data-popup-state', false).
+                removeClass('active');
+
+            // Find active dropdown and remove show class
+            this.$elem.find('.dropdown[last-active=true]').
+                attr('last-active', false).
+                removeClass('show');   
+        } 
 
     },
 

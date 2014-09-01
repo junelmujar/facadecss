@@ -136,50 +136,63 @@
 
 									<div data-widget="dropdown" data-widget-name="filter_a">
 										
-										<a href="#">
-											<small>Graph Filter</small>
+										<a href="#" role="info">
+											<small><i class="fa fa-question-circle"></i> About</small>
 										</a>
 
 										<div class="dropdown dropdown-panel">
-											<h3>Graph Filter</h3>
-											<form action="#" method="POST" class="form">
+											<h3>Top Ten Callers</h3>
+											<p>
+											This graph displays the top ten
+											callers based on volume on a per day
+											basis.
+											</p>
 
-												<div class="control-group">
-												<label for="from">From</label>
-												<input type="text" name="date1" placeholder="Keyword..." class="stretch">
-												</div>
-												
-												<div class="control-group">
-												<label for="to">To</label>
-												<input type="text" name="date2" placeholder="Keyword..." class="stretch">
-												</div>
-												
-												<script type="text/javascript">
-													$(function(){
-														$('*[name=date1]').appendDtpicker({
-															dateOnly            : false, 
-															closeOnSelected     : true, 
-															calendarMouseScroll : false,
-															amPmInTimeList      : true
-														});
-														$('*[name=date2]').appendDtpicker({
-															dateOnly            : false, 
-															closeOnSelected     : true, 
-															calendarMouseScroll : false,
-															amPmInTimeList      : true
-														});											
-													});
-												</script>	
-		
-												<button class="button-primary pull-right">Submit</button>	
-
-											</form>
 										</div>		
 									</div>	
 
 								</span>
 							</div>
+
+
+						<div data-widget="drawer" data-widget-name="filters" class="drawer drawer-inline square-edge margin-less" >
+							<a href="#" class="drawer-toggle"><i class="fa fa-reorder"></i></a>
+							<div class="drawer-title">
+								Filter
+							</div>
+							<div class="drawer-content">
+								<form action="" class="form center-text">
+
+									From:
+									<input type="text" name="date1" placeholder="Keyword...">
+									To:
+									<input type="text" name="date2" placeholder="Keyword...">
+									<hr>
+									<button class="button-primary">Submit</button>	
+
+									<script type="text/javascript">
+										$(function(){
+											$('*[name=date1]').appendDtpicker({
+												dateOnly            : false, 
+												closeOnSelected     : true, 
+												calendarMouseScroll : false,
+												amPmInTimeList      : true
+											});
+											$('*[name=date2]').appendDtpicker({
+												dateOnly            : true, 
+												closeOnSelected     : true, 
+												calendarMouseScroll : false
+											});											
+										});
+									</script>			
+								</form>
+							</div>
+						</div>						
+
+
 							<div class="panel-content">
+
+
 
 								<div id="placeholder" style="height: 400px;"></div>
 
@@ -240,7 +253,69 @@
 								<a href="#" role="button" class="pull-left">Hide</a>	
 								<a href="#" role="button" class="button-primary pull-right">Button</a>	
 							</div>
-						</div>					
+						</div>	
+
+			            <div data-widget="accordion" class="accordion-widget" active-id="#one">
+			                <div class="accordion-item">
+			                    <a data-accordion-id="#one" href="#" rel='tooltip' title="An Accordion">
+			                        Accordion 1
+			                    </a>
+			                    <div class="accordion-body">
+			                    	<ul>
+			                    		<li><a href="#">This is link</a></li>
+			                    		<li><a href="#">This is another link</a></li>
+			                    		<li><a href="#">This is of course another link</a></li>
+			                    	</ul>
+			                    </div>
+			                </div>
+			                <div class="accordion-item">
+			                    <a data-accordion-id="#two" href="#" rel='tooltip' title="An Accordion?">
+			                        Accordion 2
+			                    </a>
+			                    <div class="accordion-body">
+			                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo autem hic atque numquam omnis id iste esse eius, officiis velit reprehenderit? Explicabo, optio placeat facere ratione architecto ad fugit consequuntur?
+			                    </div>
+			                </div>
+			                <div class="accordion-item">
+			                    <a data-accordion-id="#three" href="#" rel='tooltip' title="An Accordion Too">
+			                        Accordion 3
+			                    </a>
+			                    <div class="accordion-body">
+			                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo autem hic atque numquam omnis id iste esse eius, officiis velit reprehenderit? Explicabo, optio placeat facere ratione architecto ad fugit consequuntur?
+			                    </div>
+			                </div>		                
+			            </div>	
+
+ 						<div data-widget="accordion" class="accordion-widget" active-id="#one">
+			                <div class="accordion-item">
+			                    <a data-accordion-id="#one" href="#" rel='tooltip' title="An Accordion">
+			                        Accordion 1
+			                    </a>
+			                    <div class="accordion-body">
+			                    	<ul>
+			                    		<li><a href="#">This is link</a></li>
+			                    		<li><a href="#">This is another link</a></li>
+			                    		<li><a href="#">This is of course another link</a></li>
+			                    	</ul>
+			                    </div>
+			                </div>
+			                <div class="accordion-item">
+			                    <a data-accordion-id="#two" href="#" rel='tooltip' title="An Accordion?">
+			                        Accordion 2
+			                    </a>
+			                    <div class="accordion-body">
+			                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo autem hic atque numquam omnis id iste esse eius, officiis velit reprehenderit? Explicabo, optio placeat facere ratione architecto ad fugit consequuntur?
+			                    </div>
+			                </div>
+			                <div class="accordion-item">
+			                    <a data-accordion-id="#three" href="#" rel='tooltip' title="An Accordion Too">
+			                        Accordion 3
+			                    </a>
+			                    <div class="accordion-body">
+			                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo autem hic atque numquam omnis id iste esse eius, officiis velit reprehenderit? Explicabo, optio placeat facere ratione architecto ad fugit consequuntur?
+			                    </div>
+			                </div>		                
+			            </div>											
 					</div>
 					<div class="col-6">
 
@@ -286,7 +361,7 @@
 									data-widget     ='selectlist'  
 									data-widget-name='option_a'
 									data-mode       ='single' 
-									data-height     ='250'
+									data-height     ='150'
 									data-width      ='100%'>
 									<input type="hidden" role="data-value" name="test1" value='B' />
 									<ul role="list">
