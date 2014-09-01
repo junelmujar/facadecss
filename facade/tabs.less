@@ -3,7 +3,6 @@
 	list-style              : none;
 	margin                  : 0;
 	padding                 : 15px 0 0 15px;
-	overflow                : hidden;
 	display                 : block;
 	border-bottom           : 1px solid @color-border;
 	border-top-left-radius  : @border-radius - 1;
@@ -11,16 +10,15 @@
 	background              : lighten(@color-border, 10%);
 	.center-text;
 	li {
-		float:left;
-		display: inline-block;
+		float   : left;
+		display : inline-block;
 		a {
-			display                 : block;
+			position                : relative;
+			display                 : inline-block;
 			padding                 : 8px 20px;
 			text-decoration         : none;
 			margin-right            : 5px;
-			font-weight             : bold;
-			color                   : darken(@color-border, 15%);
-			background              : darken(@color-light, 5%);
+			color                   : lighten(@color-default, 25%);
 			border-top-left-radius  : @border-radius;
 			border-top-right-radius : @border-radius;
 			border-top              : 1px solid @color-border;
@@ -33,7 +31,7 @@
 		}
 		a:hover {
 			background : lighten(@color-border, 25%);
-			color      : @color-inverse;
+			color      : @color-primary;
 		}
 	}
 	li.active a {
@@ -42,12 +40,27 @@
 	}
 }
 
+/* Micro Clearfix via CSS-Tricks */
+.tabs:before,
+.tabs:after {
+    content: "";
+    display: table;
+} 
+.tabs:after {
+    clear: both;
+}
+.tabs {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+
 .tabs.tabs-simple {
 	background : none;
 	margin     : 0;
 	padding    : 0;
 	li {
 		a {
+			position     : relative;
 			margin-right : 0;
 			border       : 0;
 			border-right : 1px solid @color-border;
@@ -56,7 +69,11 @@
 			background : lighten(@color-border, 25%);
 			color      : @color-primary;
 		}
-	}	
+	}
+	li.active a {
+		background :lighten(@color-border, 15%);
+		color      : @color-primary;
+	}
 }
 
 .tab-container {

@@ -35,18 +35,18 @@
 	background: @background;
 }
 
-.button_clicked(@background) {
-	.border(1px, darken(@background, 10%), @border-radius);
-	background: darken(@background, 5%);
-}
-
-.button_hover(@background) {
-	.border(1px, darken(@background, 5%), @border-radius);
+.button_hover(@background, @border) {
+	.border(1px, darken(@border, 5%), @border-radius);
 	background: lighten(@background, 5%);
 }
 
+.button_clicked(@background, @border) {
+	.border(1px, darken(@border, 20%), @border-radius);
+	background: darken(@background, 5%);
+}
 
-@button-default-bg     : darken(@color-light, 5%);
+
+@button-default-bg     : @color-light;
 @button-default-color  : @color-default;
 @button-default-border : @color-border;
 @button-default-shadow : none; 
@@ -57,11 +57,11 @@ a[role=button], button, input[type=submit], input[type=reset] {
 }
 
 a[role=button]:hover, button:hover, input[type=submit]:hover, input[type=reset]:hover {
-	.button_hover(@button-default-bg);
+	.button_hover(@button-default-bg, @button-default-border);
 }
 
 a[role=button]:active, button:active, input[type=submit]:active, input[type=reset]:active {
-	.button_clicked(@button-default-bg);
+	.button_hover(@button-default-bg, @button-default-border);
 }
 
 
@@ -80,11 +80,11 @@ a[role=button].button-primary, button.button-primary, input[type=submit].button-
 }
 
 a[role=button].button-primary:hover, button.button-primary:hover, input[type=submit].button-primary:hover, input[type=reset].button-primary:hover {
-	.button_hover(@button-primary-bg);
+	.button_hover(@button-primary-bg, @button-primary-border);
 }
 
 a[role=button].button-primary:active, button.button-primary:active, input[type=submit].button-primary:active, input[type=reset].button-primary:active {
-	.button_clicked(@button-primary-bg);
+	.button_clicked(@button-primary-bg, @button-primary-border);
 }
 
 
@@ -102,11 +102,11 @@ a[role=button].button-info, button.button-info, input[type=submit].button-info, 
 }
 
 a[role=button].button-info:hover, button.button-info:hover, input[type=submit].button-info:hover, input[type=reset].button-info:hover {
-	.button_hover(@button-info-bg);
+	.button_hover(@button-info-bg, @button-info-border);
 }
 
 a[role=button].button-info:active, button.button-info:active, input[type=submit].button-info:active, input[type=reset].button-info:active {
-	.button_clicked(@button-info-bg);
+	.button_clicked(@button-info-bg, @button-info-border);
 }
 
 
@@ -124,11 +124,11 @@ a[role=button].button-success, button.button-success, input[type=submit].button-
 }
 
 a[role=button].button-success:hover, button.button-success:hover, input[type=submit].button-success:hover, input[type=reset].button-success:hover {
-	.button_hover(@button-success-bg);
+	.button_hover(@button-success-bg, @button-success-border);
 }
 
 a[role=button].button-success:active, button.button-success:active, input[type=submit].button-success:active, input[type=reset].button-success:active {
-	.button_clicked(@button-success-bg);
+	.button_clicked(@button-success-bg, @button-success-border);
 }
 
 
@@ -146,11 +146,11 @@ a[role=button].button-warning, button.button-warning, input[type=submit].button-
 }
 
 a[role=button].button-warning:hover, button.button-warning:hover, input[type=submit].button-warning:hover, input[type=reset].button-warning:hover {
-	.button_hover(@button-warning-bg);
+	.button_hover(@button-warning-bg, @button-warning-border);
 }
 
 a[role=button].button-warning:active, button.button-warning:active, input[type=submit].button-warning:active, input[type=reset].button-warning:active {
-	.button_clicked(@button-warning-bg);
+	.button_clicked(@button-warning-bg, @button-warning-border);
 }
 
 
@@ -169,11 +169,11 @@ a[role=button].button-danger, button.button-danger, input[type=submit].button-da
 }
 
 a[role=button].button-danger:hover, button.button-danger:hover, input[type=submit].button-danger:hover, input[type=reset].button-danger:hover {
-	.button_hover(@button-danger-bg);
+	.button_hover(@button-danger-bg, @button-danger-border);
 }
 
 a[role=button].button-danger:active, button.button-danger:active, input[type=submit].button-danger:active, input[type=reset].button-danger:active {
-	.button_clicked(@button-danger-bg);
+	.button_clicked(@button-danger-bg, @button-danger-border);
 }
 
 .button-split-default(@color) {

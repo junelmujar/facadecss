@@ -28,13 +28,15 @@
 		span,
 		a {
 			.button_default_properties;
-			//.button(darken(@color-light, 5%), lighten(@color-default, 15%));	
+			.button(@button-default-bg, @button-default-color, @button-default-border, @button-default-shadow);
 			text-shadow: 1px 1px 0px @color-light;			
 		}
 		a:hover {
-			//.button(lighten(@color-light, 2%), @color-default);	
-			text-shadow: 1px 1px 0px @color-light;
+			.button_hover(@button-default-bg, @button-default-border);
 		}
+		a:focus {
+			.button_clicked(@button-default-bg, @button-default-border);
+		}		
 		span {
 			color: @color-inverse;
 		}
