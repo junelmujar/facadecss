@@ -36,6 +36,7 @@
 }
 
 .table.table-bordered-rows {
+	border-bottom: 1px solid lighten(@color-border, 10%) !important;
 	thead {
 		tr th {
 			border-bottom: none;
@@ -43,7 +44,7 @@
 	}
 	tbody {
 		tr td {
-			border-top: 1px solid lighten(@color-stripes, 15%);
+			border-top: 1px solid lighten(@color-border, 10%) !important;
 		}
 	}
 }
@@ -52,7 +53,7 @@
 .table.table-striped {
 	tbody {
 		tr:nth-child(odd) td {
-			background: @color-stripes;
+			background: @color-stripes !important;
 		}
 	}
 }

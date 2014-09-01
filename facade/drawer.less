@@ -44,7 +44,7 @@
 
 	.drawer-title.open,
 	.drawer-title {
-		color               : @color-primary;
+		color               : @color-default;
 		padding             : 5px 10px;
 		border-bottom       : 1px solid lighten(@color-border, 15%);
 		-moz-user-select    : none;
@@ -54,6 +54,9 @@
 	.drawer-title.close {
 		border-bottom : 0px;
 	}
+	.drawer-title > i[class^=fa] {
+		color     : @color-default-fill;
+	}		
 }
 
 .drawer.drawer-inverse {
