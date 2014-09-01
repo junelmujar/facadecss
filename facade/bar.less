@@ -8,19 +8,6 @@
 	margin-bottom : 1.5em;
 	padding       : 10px;
 
-	// min-height    : 60px;
-	// .box-sizing;
-	// * {
-	// 	margin: 0 !important;
-	// }
-
-	a[role=button],
-	button,
-	input[type=submit],
-	input[type=reset] {
-		height : 36px;
-	}		
-
 	.bar-menu {
 		float      : left;
 		display    : inline-block;
@@ -68,22 +55,29 @@
 }
 
 .bar.bar-inverse {
-	background: @color-inverse;
-	border    : 1px solid darken(@color-inverse, 5%);
-	
-	.bar-text {
-		display: inline-block;
-		color: @color-light;
-		padding: 7px 10px;
-	}
+	background : #2f87c1; //lighten(@color-info, 20%);
+	color      : @color-light;
 	.bar-menu {
 		li {
 			a {
-				color : lighten(@color-primary, 30%);
+				display         : inline-block;
+				padding         : 7px 15px;
+				text-decoration : none;
+				font-weight     : bold;
+				color           : darken(@color-light, 20%);
+				text-decoration: 1px 1px 0px @color-inverse;
+			}
+			a:hover {
+				background : @color-inverse;
+				color      : @color-light;
 			}
 		}
 		li.active > a {
 			box-shadow: none;
+			color: @color-light;
+		}
+		li.active a:hover {
+			background: lighten(@color-info, 10%);
 		}
 	}	
 }

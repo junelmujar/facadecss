@@ -12,7 +12,7 @@
 // @color-success      : #1ee271;
 // @color-inverse      : #494949;
 
-@color-primary      : #616161;
+@color-primary      : #2f87c1; //#616161;
 @color-secondary    : #507493;
 @color-default      : #303333;
 @color-links        : #3584c9;
@@ -25,15 +25,18 @@
 @color-warning      : #faa62d;
 @color-success      : #5bb12f;
 @color-inverse      : #222222;
+@color-a: #d1d8e5;
+@color-stripes      : #f5f7fa;
 
-@color-border       : lighten(@color-default, 50%);
+@widget-margin      : 0 0 25px;
+@color-border       : darken(@color-a, 5%);
 
 @border-radius      : 0px;
 @font-size			: 300 14px/22px 'Noto Sans','Open Sans', arial;
 
-@box-shadow : 1px 1px 5px rgba(0, 0, 0, 0.15);
-@box-shadow-large: 1px 1px 15px rgba(0, 0, 0, 0.15);
-@box-shadow-tight: 1px 1px 3px rgba(0, 0, 0, 0.15);
+@box-shadow       : 0px 3px 3px -2px lighten(@color-border, 5%);
+@box-shadow-large : 1px 1px 15px rgba(0, 0, 0, 0.15);
+@box-shadow-tight : 1px 1px 3px rgba(0, 0, 0, 0.15);
 
 .color-primary {
 	color: @color-primary;

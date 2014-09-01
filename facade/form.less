@@ -8,12 +8,12 @@ input[type=password],
 input[type=search] {
 	.box-sizing;
 	border        : 1px solid @color-border;
-	padding       : 9px;
+	padding       : 7px;
 	min-width     : 200px;
 	border-radius : @border-radius;
 	color         : @color-default;
 	outline       : none !important;
-	background    : darken(@color-light, 3%) !important;
+	//background    : darken(@color-light, 3%) !important;
 	font          : @font-size;
 }
 select {
@@ -23,7 +23,6 @@ select {
 	font          : @font-size;
 }
 textarea {
-	background    : darken(@color-light, 3%) !important;
 	border        : 1px solid @color-border;
 	border-radius : @border-radius;
 	width         : 350px;
@@ -60,9 +59,9 @@ textarea:focus {
 
 .form {
 	label {
-		font-weight : bold;
-		display     : block;
-		margin      : 0 0 0.5em;
+		display : block;
+		margin  : 0 0 0.5em;
+		color   : lighten(@color-default, 25%);
 	}
 	.control-group {
 		margin   : 0 0 0.8em;	

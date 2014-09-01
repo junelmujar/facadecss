@@ -43,7 +43,7 @@
 	}
 	tbody {
 		tr td {
-			border-top: 1px solid lighten(@color-border, 15%);
+			border-top: 1px solid lighten(@color-stripes, 15%);
 		}
 	}
 }
@@ -52,7 +52,7 @@
 .table.table-striped {
 	tbody {
 		tr:nth-child(odd) td {
-			background: darken(@color-light, 2%);
+			background: @color-stripes;
 		}
 	}
 }
@@ -60,7 +60,7 @@
 .table.table-hover {
 	tbody {
 		tr:hover td {
-			background: darken(@color-light, 7%);
+			background: darken(@color-stripes, 3%);
 		}
 	}
 }

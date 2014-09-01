@@ -1,12 +1,14 @@
 
 .tabs {
-	list-style   : none;
-	margin       : 0;
-	padding      : 15px 0 0 15px;
-	overflow     : hidden;
-	display      : block;
-	border-bottom: 1px solid @color-border;
-	background   : darken(@color-light, 10%);	
+	list-style              : none;
+	margin                  : 0;
+	padding                 : 15px 0 0 15px;
+	overflow                : hidden;
+	display                 : block;
+	border-bottom           : 1px solid @color-border;
+	border-top-left-radius  : @border-radius - 1;
+	border-top-right-radius : @border-radius - 1;	
+	background              : lighten(@color-border, 10%);
 	.center-text;
 	li {
 		float:left;
@@ -24,7 +26,6 @@
 			border-top              : 1px solid @color-border;
 			border-left             : 1px solid @color-border;
 			border-right            : 1px solid @color-border;
-			box-shadow              : inset 0 1px 0px lighten(@color-border, 30%);
 			text-shadow             : 1px 1px 0px lighten(@color-border, 30%);
 			* {
 				pointer-events: none;
@@ -36,18 +37,38 @@
 		}
 	}
 	li.active a {
-		color: @color-default-fill;
-		background: @color-light;
+		color      : @color-default-fill;
+		background : @color-light;
 	}
 }
 
+.tabs.tabs-simple {
+	background : none;
+	margin     : 0;
+	padding    : 0;
+	li {
+		a {
+			margin-right : 0;
+			border       : 0;
+			border-right : 1px solid @color-border;
+		}
+		a:hover {
+			background : lighten(@color-border, 25%);
+			color      : @color-primary;
+		}
+	}	
+}
+
 .tab-container {
-	margin: 0 0 25px;
-	border : 1px solid @color-border;
+	margin        : 0 0 25px;
+	border        : 1px solid @color-border;
 	border-radius : @border-radius;
+	box-shadow    : @box-shadow;		
 	.tab-content {
-		background: @color-light;
-		padding: 20px;
-		display: none;
+		background                 : @color-light;
+		border-bottom-left-radius  : @border-radius - 1;
+		border-bottom-right-radius : @border-radius - 1;	
+		padding                    : 20px;
+		display                    : none;
 	}
 }

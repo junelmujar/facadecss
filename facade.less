@@ -20,3 +20,56 @@
 @import "facade/selectlist.less";
 @import "facade/navlist.less";
 @import "facade/login.less";
+@import "facade/pager.less";
+
+@main-nav-bg : #2f87c1;
+
+.main-nav {
+	.bar {
+		background: @main-nav-bg;
+		.border-less;
+		.margin-less;
+		.square-edge;
+		.bar-menu {
+			li {
+				a {
+					display         : inline-block;
+					padding         : 7px 15px;
+					text-decoration : none;
+					font-weight     : bold;
+					color           : #c3deef;
+					text-shadow : 1px 1px 0px darken(@main-nav-bg, 5%);
+				}
+				a:hover {
+					background : @color-inverse;
+					color      : @color-light;
+				}
+			}
+			li.active > a {
+				background: darken(@main-nav-bg, 5%);
+			}
+			li > a:hover {
+				background: lighten(@main-nav-bg, 5%);				
+			}
+			li.active > a {
+				box-shadow: none;
+				color: @color-light;
+			}
+			li.active a:hover {
+				background: darken(@main-nav-bg, 10%);
+			}
+		}		
+	}
+	.drawer {
+		.border-less;
+		.margin-less;
+		.square-edge;
+		border-bottom: 1px solid #c8d0de !important;
+		.drawer-title {
+			background: #dfe4ee;
+		}
+		.drawer-title.open {
+			border-bottom: 1px solid #c8d0de !important;
+		}
+	}
+}

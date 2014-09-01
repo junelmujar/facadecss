@@ -1,0 +1,67 @@
+/*----------------------------------------------------------
+|        
+|  Pager Style       
+|
+ ----------------------------------------------------------*/	
+
+.ms-pagination {
+	text-align : center;
+	margin     : @widget-margin;
+	span {
+		span.active {
+			.button_default_properties;
+		}
+	}
+}
+
+.pagination {
+
+	margin   : @widget-margin;
+	padding  : 0;
+	display  : inline-block;
+	
+	li {
+		display       : inline-block;
+		list-style    : none;
+		float         : left;
+		margin-right  : 5px;
+		span,
+		a {
+			.button_default_properties;
+			//.button(darken(@color-light, 5%), lighten(@color-default, 15%));	
+			text-shadow: 1px 1px 0px @color-light;			
+		}
+		a:hover {
+			//.button(lighten(@color-light, 2%), @color-default);	
+			text-shadow: 1px 1px 0px @color-light;
+		}
+		span {
+			color: @color-inverse;
+		}
+	}	
+
+	li.active {
+		background: @color-light;
+		span {
+			color: @color-warning !important;
+		}
+	}	
+
+}
+
+.pagination:before,
+.pagination:after {
+    content: "";
+    display: table;
+} 
+.pagination:after {
+    clear: both;
+}
+.pagination {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+
+.pagination.centered {
+	margin: 0 auto 25px auto !important;
+}

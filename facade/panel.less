@@ -1,38 +1,63 @@
+
+@panel-title-font-size       : 18px;
+@panel-title-default-padding : 15px;
+@panel-icon-color            : @color-default-fill;
+
 .panel {
 	
-	border        : 1px solid rgba(0, 0, 0, .3);
+	border        : 1px solid @color-border;
 	border-radius : @border-radius;
 	background    : @color-light;
-	margin-bottom : 25px;
 	box-shadow    : @box-shadow;
 	margin-bottom : 25px;
 
 	.panel-title {
-	
-		border-bottom : 1px solid @color-border;
-		padding       : 15px;
-		font-size     : 18px;
-		color         : @color-secondary;
-		clear         :both;
-		i.fa {
-			color  : @color-default-fill;
-		}
+		border-bottom           : 1px solid @color-border;
+		border-top-left-radius  : @border-radius - 1;
+		border-top-right-radius : @border-radius - 1;
+		padding                 : @panel-title-default-padding;
+		font-size               : @panel-title-font-size;
+		color                   : @color-primary;
 	}
-	.panel-title.panel-title-small {
-	
-		padding     : 10px 15px;
-	
+
+	.panel-title > i[class^=fa] {
+		color     : @color-default-fill;
+	}	
+
+	.panel-title.small {
+		font-size   : @panel-title-font-size - 2;
+		padding     : @panel-title-default-padding - 5;
 	}
+	
+	.panel-title.small > i[class^=fa] {
+		font-size : @panel-title-font-size;
+	}	
+
+
+	/* Micro Clearfix via CSS-Tricks */
+	.panel-title:before,
+	.panel-title:after {
+	    content: "";
+	    display: table;
+	} 
+	.panel-title:after {
+	    clear: both;
+	}
+	.panel-title {
+	    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+	}
+
+
 	.panel-footer {
-	
 		.clear;
 		border-top : 1px solid @color-border;
 		padding    : 15px;
-	
 	}
+
 	.panel-content {
 		padding: 15px;
 	}		
+
 	.table {
 		margin-top: 1px !important;
 		margin-bottom: 1px !important;
