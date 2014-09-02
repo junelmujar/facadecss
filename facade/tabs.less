@@ -77,10 +77,10 @@
 }
 
 .tab-container {
-	margin        : 0 0 25px;
-	border        : 1px solid @color-border;
-	border-radius : @border-radius;
-	box-shadow    : @box-shadow;		
+	.margin(0 0 25px);
+	.border(1px solid @color-border);
+	.radius(@border-radius);
+	.box-shadow(@box-shadow, darken(@color-background, 15%));
 	.tab-content {
 		background                 : @color-light;
 		border-bottom-left-radius  : @border-radius - 1;

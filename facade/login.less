@@ -1,31 +1,40 @@
+/* Login form local variables */
+
+@form-login-width         : 400px;
+@form-login-height        : 240px;  
+@form-login-inner-padding : 20px;
+@form-login-header-size   : 32px;
+
+/* Login form implementation */
 .form-login {
-	display       : block;
-	width         : 400px;
-	position      : fixed;
 	top           : 50%; 
 	left          : 50%;
-	margin-top    : -240px;
-	margin-left   : -200px;
+	width         : @form-login-width;
+	display       : block;
+	position      : fixed;
+	margin-top    : -1 * @form-login-height;
+	margin-left   : -1 * @form-login-width / 2;
 	.panel {
-		border     : 0px;
-		box-shadow : 0px 10px 20px -5px darken(@color-border, 10%);
+		position    : relative;
+		padding-top : 80px;
+		box-shadow  : @box-shadow-large;
 		.form-login-header {
 			.notice;
-			font-weight   : normal;
-			font-size     : 32px;
-			margin-bottom : 0px !important;
+			.margin-less;
+			top         : -1px;
+			right       : -1px;
+			left        : -1px;
+			display     : block;
+			position    : absolute;
+			font-weight : normal;
+			font-size   : @form-login-header-size;
 			small {
-				font-size : 60%;
 				color     : @color-info !important;
+				font-size : 60%;
 			}
 		}
 		.panel-content {
-			height  : 240px;
-			padding : 20px;
+			padding : @form-login-inner-padding;
 		}
 	}
-}
-
-.document-login {
-	background: @color-default-fill;
 }

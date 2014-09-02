@@ -1,42 +1,42 @@
 
 .bar {
 
-	position      : relative;
-	background    : darken(@color-light, 2%);
-	border        : 1px solid @color-border;
-	border-radius : @border-radius;
-	margin-bottom : 1.5em;
-	padding       : 10px;
+	.fill(darken(@color-light, 2%));
+	.border(1px solid @color-border);
+	.radius(@border-radius);
+	.margin(0 0 1.5em 0);
+	.padding(10px);
+	.position(relative);
 
 	.bar-menu {
-		float      : left;
-		display    : inline-block;
-		padding    : 0;
-		margin     : 0;
+		.pull-left;
+		.margin(0);
+		.padding(0);
+		.inline-block;
 		list-style : none;
 		li {
-			float        : left;
-			display      : inline-block;
-			margin-right : 5px !important;
+			.pull-left;
+			.inline-block;
+			.margin(0 5px 0 0);
 			a {
-				display         : inline-block;
-				padding         : 7px 15px;
-				text-decoration : none;
-				color           : lighten(@color-primary, 10%);
+				.inline-block;
+				.padding(7px 15px);
+				.clean-link;
+				.text(lighten(@color-primary, 10%));
 			}
 			a:hover {
-				background: darken(@color-light, 10%);
-				color: @color-inverse;
-				border-radius: @border-radius;				
+				.fill(darken(@color-light, 10%));
+				.text(@color-inverse);
+				.radius(@border-radius);				
 			}
 		}
 		li.active > a {
 			font-weight   : bold;
-			border-radius : @border-radius;
-			background    : @color-info;
-			color         : @color-light;
+			.radius(@border-radius);
+			.fill(@color-info);
+			.text(@color-light);
+			.box-shadow(inset 0px 1px 1px -1px, rgba(0, 0, 0, 0.25));
 			text-shadow   : 1px 1px 0px rgba(0, 0, 0, 0.25);
-			box-shadow    : inset 0px 1px 0px rgba(0, 0, 0, 0.25);
 		}
 	}
 }
@@ -54,30 +54,30 @@
     zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
 
-.bar.bar-inverse {
-	background : #2f87c1; //lighten(@color-info, 20%);
-	color      : @color-light;
-	.bar-menu {
-		li {
-			a {
-				display         : inline-block;
-				padding         : 7px 15px;
-				text-decoration : none;
-				font-weight     : bold;
-				color           : darken(@color-light, 20%);
-				text-decoration: 1px 1px 0px @color-inverse;
-			}
-			a:hover {
-				background : @color-inverse;
-				color      : @color-light;
-			}
-		}
-		li.active > a {
-			box-shadow: none;
-			color: @color-light;
-		}
-		li.active a:hover {
-			background: lighten(@color-info, 10%);
-		}
-	}	
-}
+// .bar.bar-inverse {
+// 	background : #2f87c1; //lighten(@color-info, 20%);
+// 	color      : @color-light;
+// 	.bar-menu {
+// 		li {
+// 			a {
+// 				display         : inline-block;
+// 				padding         : 7px 15px;
+// 				text-decoration : none;
+// 				font-weight     : bold;
+// 				color           : darken(@color-light, 20%);
+// 				text-decoration: 1px 1px 0px @color-inverse;
+// 			}
+// 			a:hover {
+// 				background : @color-inverse;
+// 				color      : @color-light;
+// 			}
+// 		}
+// 		li.active > a {
+// 			box-shadow: none;
+// 			color: @color-light;
+// 		}
+// 		li.active a:hover {
+// 			background: lighten(@color-info, 10%);
+// 		}
+// 	}	
+// }

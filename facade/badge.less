@@ -1,14 +1,14 @@
 .badge-defaults {
-	border-radius : 100%;
-	display       : inline-block;
+	.fill(darken(@color-light, 10%));
+	.text(@color-default);	
+	.radius(100%);
+	.inline-block;
+	.center-text;
+	.padding(5px 5px 5px 4px);
 	line-height   : 12px;
 	font-size     : 11px;
-	text-align    : center;
 	font-weight   : bold !important;
-	padding       : 5px 5px 5px 4px;
 	min-width     : 16px;
-	background    : darken(@color-light, 10%);
-	color         : @color-default;	
 }
 
 .badge {
@@ -16,26 +16,26 @@
 }
 
 .badge.badge-inverse {
-	background    : @color-inverse;
-	color         : @color-light;
+	.fill(@color-inverse);
+	.text(@color-light);
 }
 
 .badge.badge-success {
-	background    : @color-success;
-	color         : @color-light;
+	.fill(@color-success);
+	.text(@color-light);
 }
 
 .badge.badge-warning {
-	background    : @color-warning;
-	color         : @color-light;
+	.fill(@color-warning);
+	.text(@color-light);
 }
 
 .badge.badge-danger {
-	background    : @color-danger;
-	color         : @color-light;
+	.fill(@color-danger);
+	.text(@color-light);
 }
 
 .badge.badge-info {
-	background    : @color-info;
-	color         : @color-light;
+	.fill(@color-info);
+	.text(@color-light);
 }

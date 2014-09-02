@@ -1,37 +1,36 @@
 .accordion-widget {
 	
-	background: @color-light;
-	border : 1px solid @color-border;
-	margin: @widget-margin;
-
-	.border-radius(@border-radius);
+	.fill(@color-light);
+	.margin(@widget-margin);
+	.border(1px solid @color-border);
+	.radius(@border-radius);
 	
 	.accordion-item > a {
-		padding         : 10px 15px;
-		position        : relative;
-		display         : block;
-		text-decoration : none;
-		color           : lighten(@color-default, 10%);
-		border-top      : 1px solid lighten(@color-border, 10%);
+		.bt(1px solid lighten(@color-border, 10%));
+		.block;
+		.text(lighten(@color-default, 10%));
+		.padding(10px 15px);
+		.position(relative);
+		.clean-link;
 	}
 	.accordion-item > .accordion-body {
-		display       : none;
-		padding       : 15px 25px;
+		.hidden;
+		.padding(15px 25px);
 		line-height   : 1.5;
 	}
 	.accordion-item:last-child > a {
-		.border-radius(0 0 @border-radius @border-radius);
+		.radius(0 0 @border-radius @border-radius);
 	}
 
 	.accordion-item > a:hover {
-		position   : 	relative;	
-		color: @color-primary;
+		.text(@color-primary);
+		.position(relative);
 	}
 
 	.accordion-item > a:after,
 	.accordion-item > a:hover:after {
-		position    : absolute;
-		display     : inline-block;
+		.position(absolute);
+		.inline-block;
 		right       : 15px;
 		top         : 10px;
 		font-family : Fontawesome;
@@ -40,14 +39,14 @@
 	}
 
 	.accordion-item > a[data-accordion-mode=open] {
-		color         : @color-primary;
-		border-bottom : 1px solid lighten(@color-border, 10%);
-		position      : relative;
+		.bb(1px solid lighten(@color-border, 10%));
+		.text(@color-primary);
+		.position(relative);
 	}
 
 	.accordion-item > a[data-accordion-mode=open]:after { 
-		position    : absolute;
-		display     : inline-block;
+		.position(absolute);
+		.inline-block;
 		right       : 15px;
 		top         : 10px;
 		font-family : Fontawesome;
@@ -55,16 +54,16 @@
 	}
 
 	.accordion-item:first-child > a {
-		border-top: 0;
-		.border-radius(@border-radius @border-radius 0 0);
+		.bt(0);
+		.radius(@border-radius @border-radius 0 0);
 	}
 
 	.accordion-item:last-child {
 		.accordion-body {
-			.border-radius(0 0 @border-radius @border-radius);
+			.radius(0 0 @border-radius @border-radius);
 		}
 		a[data-accordion-mode=open] {
-			border-radius: 0;
+			.radius(0);
 		}
 	}
 }

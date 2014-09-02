@@ -26,51 +26,49 @@
 
 .main-nav {
 	.bar {
-		background: @main-nav-bg;
+		.fill(@main-nav-bg);
 		.border-less;
 		.margin-less;
 		.square-edge;
 		.bar-menu {
 			li {
 				a {
-					display         : inline-block;
-					padding         : 7px 15px;
-					text-decoration : none;
-					font-weight     : bold;
-					color           : #c3deef;
-					text-shadow : 1px 1px 0px darken(@main-nav-bg, 5%);
+					.padding(7px 15px);
+					.clean-link;
+					.inline-block;
+					.text(#c3deef, 1px 1px 0px darken(@main-nav-bg, 5%), bold);
 				}
 				a:hover {
-					background : @color-inverse;
-					color      : @color-light;
+					.fill(@color-inverse);
+					.text(@color-light, none, bold);
 				}
 			}
 			li.active > a {
-				background: darken(@main-nav-bg, 5%);
+				.fill(darken(@main-nav-bg, 5%));
 			}
 			li > a:hover {
-				background: lighten(@main-nav-bg, 5%);				
+				.fill(lighten(@main-nav-bg, 5%));				
 			}
 			li.active > a {
-				box-shadow: none;
-				color: @color-light;
+				.text(@color-light, 1px 1px 0px darken(@main-nav-bg, 10%), bold);
+				.box-shadow(none);
 			}
 			li.active a:hover {
-				background: darken(@main-nav-bg, 10%);
+				.fill(darken(@main-nav-bg, 10%));
 			}
 		}		
 	}
 	.drawer {
+		.bb(1px solid #c8d0de);
 		.border-less;
 		.margin-less;
 		.square-edge;
-		border-bottom: 1px solid #c8d0de !important;
 		.drawer-title {
-			background: #dfe4ee;
-			color: lighten(@color-default, 10%);
+			.fill(#dfe4ee);
+			.text(lighten(@color-default, 10%));
 		}
 		.drawer-title.open {
-			border-bottom: 1px solid #c8d0de !important;
+			.bb(1px solid #c8d0de);
 		}
 	}
 }

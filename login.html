@@ -16,38 +16,52 @@
 	<link rel="stylesheet" href="facade.css" />
 	<script src="lib/jquery-2.1.0.min.js"></script>
 
-	<body class="document-login1">
+	<body>
 
 		<div class="form-login">
+
 			<form action="dashboard.html" class="form">
-			<div class="panel">
-				<div class="form-login-header">
-					LCS <small>System Login</small>
-				</div>
-				<div class="panel-content">
-					<div class="control-group">
-						<label for="username">Username</label>
-						<input type="text" name="username" class="stretch" placeholder="Enter username...">
+
+				<div class="panel">
+					
+					<div class="form-login-header">
+						Awesome App <small>System Login</small>
 					</div>
-					<div class="control-group">
-						<label for="password">Password</label>
-						<input type="password" name="password" class="stretch" placeholder="Enter password...">
+
+					<div class="panel-content">
+						<div class="control-group">
+							<label for="username">Username</label>
+							<input type="text" name="username" class="stretch" placeholder="Enter username...">
+							<div class="validation validation-error">
+								<i class="fa fa-warning"></i> Please enter a username
+							</div>
+						</div>
+						<div class="control-group">
+							<label for="password">Password</label>
+							<input type="password" name="password" class="stretch" placeholder="Enter password...">
+							<div class="validation validation-error">
+								<i class="fa fa-warning"></i> Please enter a password
+							</div>
+						</div>
+						<div class="control-group">
+							<label for="password">Select Site</label>
+							<select name="" id="" class="stretch">
+								<option value="1">Site A</option>
+								<option value="2">Site B</option>
+								<option value="3">Site C</option>
+							</select>
+						</div>					
 					</div>
-					<div class="control-group">
-						<label for="password">Select Site</label>
-						<select name="" id="" class="stretch">
-							<option value="1">Site A</option>
-							<option value="2">Site B</option>
-							<option value="3">Site C</option>
-						</select>
-					</div>					
+
+					<div class="panel-footer">
+						<a href="#" role="button">Reset</a>
+						<input type="submit" value="Login" class="button-primary pull-right">
+					</div>
+
 				</div>
-				<div class="panel-footer">
-					<a href="#" role="button">Reset</a>
-					<input type="submit" value="Login" class="button-primary pull-right">
-				</div>
-			</div>
+			
 			</form>
+
 		</div>
 
 	</body>

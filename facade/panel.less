@@ -1,51 +1,63 @@
+/* Panel local variables */
 
 @panel-title-font-size       : 18px;
 @panel-title-default-padding : 15px;
 @panel-icon-color            : @color-default-fill;
 
+/* Panel implementation */
 .panel {
 	
-	border        : 1px solid @color-border;
-	border-radius : @border-radius;
-	background    : @color-light;
-	box-shadow    : @box-shadow;
-	margin-bottom : 25px;
+	.fill(@color-light);
+	.margin(@widget-margin);
+	.border(1px solid @color-border; @border-radius);
+	.box-shadow(@box-shadow, darken(@color-background, 15%));
 
 	.panel-title {
-		border-bottom           : 1px solid @color-border;
+
+		.bb(1px solid @color-border);
+		.text(@color-default);
+		.padding(@panel-title-default-padding);
+		.position(relative);
+
+		font-size               : @panel-title-font-size;
 		border-top-left-radius  : @border-radius - 1;
 		border-top-right-radius : @border-radius - 1;
-		padding                 : @panel-title-default-padding;
-		font-size               : @panel-title-font-size;
-		color                   : @color-default;
-		position                : relative;
+
 		.panel-controls {
+
 			ul {
-				background: @color-light;
-				display  : inline-block;
-				position : absolute;
-				margin   : 0;
-				padding  : 0;
-				top      : 0px;
-				right    : 0;
+
+				.fill(@color-light);
+				.position(absolute);
+				.margin-less;
+				.inline-block;
+
+				top        : 0;
+				right      : 0;
+				padding    : 0;
+
 				li {
+					
+					.pull-left;
+					.padding(0);
 					list-style : none;
-					padding    : 0;
-					float      : left;
+
 					a {
-						display         : inline-block;
-						padding         : @panel-title-default-padding;
-						color           : @color-default;
-						border-left     : 1px solid @color-border;
-						text-decoration : none;
+						
+						.bl(1px solid @color-border);
+						.text(@color-default);
+						.padding(@panel-title-default-padding);
+						.inline-block;
+						.clean-link;
+
 						i[class^=fa] {
-							display : inline-block;
-							margin  : 0 3px;
-							color   : @color-default-fill;
+							.text(@color-default-fill);
+							.margin(0 3px);
+							.inline-block;
 						}	
 					}
 					a:hover {
-						background: lighten(@color-border, 15%);
+						.fill(lighten(@color-border, 15%));
 					}
 				}
 			}
@@ -53,24 +65,24 @@
 	}
 
 	.panel-title > i[class^=fa] {
-		color     : @color-default-fill;
+		.text(@color-default-fill);
 	}	
 
 	.panel-title.small {
 		font-size   : @panel-title-font-size - 2;
-		padding     : @panel-title-default-padding - 5;
+		.padding(@panel-title-default-padding - 5);
 		.panel-controls { 
 			li a {
-				padding: (@panel-title-default-padding - 5)  @panel-title-default-padding;
+				.padding((@panel-title-default-padding - 5)  @panel-title-default-padding);
 				i[class^=fa] { 
-					font-size: 14px;
+					font-size: @font-icon-size;
 				}
 			}
 		}
 	}
 	
 	.panel-title.small > i[class^=fa] {
-		font-size : @panel-title-font-size;
+		font-size: @font-icon-size;
 	}	
 
 
@@ -90,16 +102,15 @@
 
 	.panel-footer {
 		.clear;
-		border-top : 1px solid @color-border;
-		padding    : 15px;
+		.border(1px 0 0 0 @color-border);
+		.padding(15px);
 	}
 
 	.panel-content {
-		padding: 15px;
+		.padding(15px);
 	}		
 
 	.table {
-		margin-top: 1px !important;
-		margin-bottom: 1px !important;
+		.margin(1px 0 1px 0);
 	}
 }

@@ -1,7 +1,7 @@
 body {
 	color       : @color-default;
 	font        : @font-size;
-	background  : #eceff3;
+	background  : @color-background;
 }
 
 a {
@@ -44,7 +44,7 @@ hr {
 }
 
 .hidden {
-	display: none !important;
+	display: none;
 }
 
 .center {
@@ -94,10 +94,20 @@ hr {
 	float: left;
 }
 
-.border-radius (@radii) {
-	-webkit-border-radius: @radii !important;
-	-moz-border-radius: @radii !important;
-	border-radius: @radii !important;
+.inline-block {
+	display: inline-block;
+}
+
+.block {
+	display: block;	
+}
+
+.position(@position: relative) {
+	position: @position;
+}
+
+.clean-link {
+	text-decoration: none;
 }
 
 .margin-less {
@@ -148,4 +158,67 @@ hr {
 	margin: 0 20px 0 10px;
 	font-size: 20px;
 	line-height: 36px;
+}
+
+
+.text(@color: @default; @shadow : none; @weight: normal) {
+	color       : @color;
+	text-shadow : @shadow;
+	font-weight : @weight;
+}
+
+.fill(@color) {
+	background: @color;
+}
+
+.margin(@margins...) {
+	margin: @margins;
+}
+
+.padding(@padding...) {
+	padding: @padding !important;
+}
+
+.radius( @radius : 5px ) {
+
+    -webkit-border-radius: @radius;
+     -khtml-border-radius: @radius;
+       -moz-border-radius: @radius;
+        -ie-border-radius: @radius;
+         -o-border-radius: @radius;
+            border-radius: @radius;
+
+}
+
+.border(@border: 1px solid @color-border; @radius: @border-radius) {
+	.radius(@radius);
+	border : @border;
+}
+
+.bl(@border: 1px solid @color-border; @radius: @border-radius) {
+	.radius(@radius);
+	border-left : @border;
+}
+
+.br(@border: 1px solid @color-border; @radius: @border-radius) {
+	.radius(@radius);
+	border-right :@border;
+}
+
+.bt(@border: 1px solid @color-border; @radius: @border-radius) {
+	.radius(@radius);
+	border-top : @border;
+}
+
+.bb(@border: 1px solid @color-border; @radius: @border-radius) {
+	.radius(@radius);
+	border-bottom :@border !important;
+}
+
+.box-shadow(@style, @color) when (iscolor(@color)) {
+	-webkit-box-shadow: @style @color;
+	box-shadow:         @style @color;
+}
+.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+	.box-shadow(@style, rgba(0, 0, 0, @alpha));
 }
