@@ -1,50 +1,38 @@
 .table {
-	width: 100%;
-	margin: 0 0 1.5em 0;
+	.stretch;
+	.margin(0 0 1.5em 0);
 	thead {
 		tr th {
-			padding: 10px;
-			border-bottom: 1px solid @color-border !important;
+			.bb(1px solid darken(@color-border, 5%));
+			.padding(10px);
 		}
 	}
 	tbody {
 		tr td {
-			padding: 5px 10px;
-			position: relative;
+			.relative;
+			.padding(5px 10px);
 		}
 	}
 }
 
 .table.table-bordered {
-	border-radius : @border-radius !important;
-	border        : 1px solid @color-border;
-	thead {
-		tr th {
-			border-bottom: none;
-			.vertical-gradient(@color-light, lighten(@color-default-fill, 5%));
-		}
-	}
+	.border(1px solid @color-border, @border-radius);
 	tbody {
 		tr td {
-			border-top: 1px solid lighten(@color-border, 10%);
-			border-right: 1px solid lighten(@color-border, 10%);
+			.bt(1px solid lighten(@color-border, 10%));
+			.br(1px solid @color-border);
 		}
 		tr:last-child {
-			border-right: none;
+			.br(none);
 		}
 	}
 }
 
 .table.table-bordered-rows {
-	border-bottom: 1px solid lighten(@color-border, 10%) !important;
-	thead {
-		tr th {
-			border-bottom: none;
-		}
-	}
+	.bb(1px solid lighten(@color-border, 10%));
 	tbody {
 		tr td {
-			border-top: 1px solid lighten(@color-border, 10%) !important;
+			.bt(1px solid lighten(@color-border, 10%));
 		}
 	}
 }
@@ -53,7 +41,7 @@
 .table.table-striped {
 	tbody {
 		tr:nth-child(odd) td {
-			background: @color-stripes !important;
+			.fill(@color-stripes);
 		}
 	}
 }
@@ -61,7 +49,7 @@
 .table.table-hover {
 	tbody {
 		tr:hover td {
-			background: darken(@color-stripes, 3%);
+			.fill(darken(@color-stripes, 3%));
 		}
 	}
 }

@@ -10,7 +10,7 @@
 	.fill(@color-light);
 	.margin(@widget-margin);
 	.border(1px solid @color-border; @border-radius);
-	.box-shadow(@box-shadow, darken(@color-background, 15%));
+	.shadow(@box-shadow, darken(@color-background, 15%));
 
 	.panel-title {
 
@@ -30,17 +30,16 @@
 				.fill(@color-light);
 				.position(absolute);
 				.margin-less;
+				.padding-less;
 				.inline-block;
 
 				top        : 0;
 				right      : 0;
-				padding    : 0;
-
+				
 				li {
 					
 					.pull-left;
-					.padding(0);
-					list-style : none;
+					.clean-list;
 
 					a {
 						

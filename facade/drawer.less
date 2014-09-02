@@ -1,19 +1,20 @@
 .drawer {
 
+	.fill(@color-light);
+	.border(1px solid @color-border);
+	.radius(@border-radius);
+	.position(relative);
+
 	min-height    : 5px;
-	background    : @color-light;
-	border        : 1px solid @color-border;
-	border-radius : @border-radius;
-	position      : relative;
 	z-index       : 8000;
 
 	.drawer-toggle {
-		text-decoration : none;
-		position        : absolute;
-		padding         : 5px 10px !important;
+		.clean-link;
+		.position(absolute);
+		.padding(5px 10px);
+		.text(@color-default);
 		right           : 0px;
 		top             : 0px;
-		color           : @color-default;
 		* {
 			pointer-events:none;
 		}
@@ -22,11 +23,11 @@
 		.radius(0 0 @border-radius @border-radius);
 	}
 	.drawer-toggle:active {
-		color: @color-primary;
+		.text(@color-primary);
 	}
 	.drawer-content {
-		display: none;
-		padding: 20px;
+		.hidden;
+		.padding(20px);
 	}
 	
 	/* Micro Clearfix via CSS-Tricks */
@@ -44,48 +45,23 @@
 
 	.drawer-title.open,
 	.drawer-title {
-		color               : @color-default;
-		padding             : 5px 10px;
-		border-bottom       : 1px solid lighten(@color-border, 15%);
-		-moz-user-select    : none;
-		-webkit-user-select : none;
-		-ms-user-select     : none;		
+		.text(@color-default);
+		.padding(5px 10px);
+		.bb(1px solid lighten(@color-border, 15%));
+		.prevent-select;
 	}
 	.drawer-title.close {
-		border-bottom : 0px;
+		.bb(0);
 	}
 	.drawer-title > i[class^=fa] {
-		color     : @color-default-fill;
+		.text(@color-default-fill);
 	}		
 }
 
-.drawer.drawer-inverse {
-	border-top    : 1px solid lighten(@color-inverse, 5%);
-	border-bottom : 1px solid darken(@color-inverse, 10%);
-	border-left   : 0px;
-	border-right  : 0px;
-	background    : darken(@color-inverse, 5%);
-	color         : darken(@color-light, 25%);
-	.drawer-toggle {
-		color : @color-light;
-	}
-	.drawer-title.open,
-	.drawer-title {
-		padding       : 5px 10px;
-		border-bottom : 1px solid darken(@color-inverse, 10%);
-	}	
-	.drawer-content {
-		border-top : 1px solid lighten(@color-inverse, 5%);
-	}
-	.drawer-title.close {
-		border-bottom : 0px;
-	}	
-}
-
 .drawer.drawer-inline {
-	border: 0;
+	.border-less;
 	.drawer-title,
 	.drawer-content {
-		border-bottom : 1px solid @color-border;	
+		.bb(1px solid @color-border);	
 	}
 }

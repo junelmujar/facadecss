@@ -98,6 +98,14 @@ hr {
 	display: inline-block;
 }
 
+.text-normal {
+	font-weight: normal;
+}
+
+.text-bold {
+	font-weight: bold;
+}
+
 .block {
 	display: block;	
 }
@@ -110,8 +118,22 @@ hr {
 	text-decoration: none;
 }
 
+.clean-list {
+	list-style: none;
+	.margin-less;
+	.padding-less;
+}
+
 .margin-less {
 	margin: 0 !important;
+}
+
+.no-fill {
+	background: none;
+}
+
+.padding-less {
+	padding: 0 !important;
 }
 
 .border-less {
@@ -128,6 +150,24 @@ hr {
 		z-index: 9600;
 	}
 }
+
+.inline-block {
+	display: inline-block;
+}
+
+.block {
+	display: block;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.relative {
+	position: relative;
+}
+
+
 
 .vertical-gradient (@color-top, @color-bottom) {
     background-color: mix(@color-top, @color-bottom, 60%);
@@ -190,35 +230,44 @@ hr {
 
 }
 
-.border(@border: 1px solid @color-border; @radius: @border-radius) {
+.border(@border: 1px solid @color-border, @radius: @border-radius) {
 	.radius(@radius);
 	border : @border;
 }
 
-.bl(@border: 1px solid @color-border; @radius: @border-radius) {
+.bl(@border: 1px solid @color-border, @radius: @border-radius) {
 	.radius(@radius);
-	border-left : @border;
+	border-left : @border !important;
 }
 
-.br(@border: 1px solid @color-border; @radius: @border-radius) {
+.br(@border: 1px solid @color-border, @radius: @border-radius) {
 	.radius(@radius);
-	border-right :@border;
+	border-right :@border !important;
 }
 
-.bt(@border: 1px solid @color-border; @radius: @border-radius) {
+.bt(@border: 1px solid @color-border, @radius: @border-radius) {
 	.radius(@radius);
-	border-top : @border;
+	border-top : @border !important;
 }
 
-.bb(@border: 1px solid @color-border; @radius: @border-radius) {
+.bb(@border: 1px solid @color-border, @radius: @border-radius) {
 	.radius(@radius);
 	border-bottom :@border !important;
 }
 
-.box-shadow(@style, @color) when (iscolor(@color)) {
+.shadow(@style, @color) when (iscolor(@color)) {
 	-webkit-box-shadow: @style @color;
-	box-shadow:         @style @color;
+			box-shadow: @style @color;
 }
-.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
-	.box-shadow(@style, rgba(0, 0, 0, @alpha));
+.shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+	.shadow(@style, rgba(0, 0, 0, @alpha));
+}
+.prevent-select {
+	-webkit-user-select : none;
+	   -moz-user-select : none;
+		-ms-user-select : none;		
+			user-select : none;	
+}
+.layer(@index) {
+	z-index: @index;
 }

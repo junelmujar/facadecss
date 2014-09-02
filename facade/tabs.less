@@ -1,42 +1,43 @@
 
 .tabs {
+	.block;
+	.margin-less;
+	.center-text;
+	.padding(15px 0 0 15px);
+	.fill(lighten(@color-border, 10%));
+	.bb(1px solid @color-border);
+
 	list-style              : none;
-	margin                  : 0;
-	padding                 : 15px 0 0 15px;
-	display                 : block;
-	border-bottom           : 1px solid @color-border;
 	border-top-left-radius  : @border-radius - 1;
 	border-top-right-radius : @border-radius - 1;	
-	background              : lighten(@color-border, 10%);
-	.center-text;
+
 	li {
-		float   : left;
-		display : inline-block;
+		.pull-left;
+		.inline-block;
 		a {
-			position                : relative;
-			display                 : inline-block;
-			padding                 : 8px 20px;
-			text-decoration         : none;
-			margin-right            : 5px;
-			color                   : lighten(@color-default, 25%);
+			.relative;
+			.clean-link;
+			.inline-block;
+			.padding(8px 20px);
+			.margin(0 5px 0);
+			.text(@color-default, 1px 1px 0px lighten(@color-background, 30%));
+			.bt(1px solid @color-border);
+			.bl(1px solid @color-border);
+			.br(1px solid @color-border);
 			border-top-left-radius  : @border-radius;
 			border-top-right-radius : @border-radius;
-			border-top              : 1px solid @color-border;
-			border-left             : 1px solid @color-border;
-			border-right            : 1px solid @color-border;
-			text-shadow             : 1px 1px 0px lighten(@color-border, 30%);
 			* {
 				pointer-events: none;
 			}
 		}
 		a:hover {
-			background : lighten(@color-border, 25%);
-			color      : @color-primary;
+			.fill(lighten(@color-border, 25%));
+			.text(@color-primary);
 		}
 	}
 	li.active a {
-		color      : @color-default-fill;
-		background : @color-light;
+		.text(@color-default-fill);
+		.fill(@color-light);
 	}
 }
 
@@ -53,26 +54,24 @@
     zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
 
-
 .tabs.tabs-simple {
-	background : none;
-	margin     : 0;
-	padding    : 0;
+	.no-fill;
+	.margin-less;
+	.padding-less;
 	li {
 		a {
-			position     : relative;
-			margin-right : 0;
-			border       : 0;
-			border-right : 1px solid @color-border;
+			.margin-less;
+			.border-less;
+			.br(1px solid @color-border);
 		}
 		a:hover {
-			background : lighten(@color-border, 25%);
-			color      : @color-primary;
+			.fill(lighten(@color-border, 25%));
+			.text(@color-primary);
 		}
 	}
 	li.active a {
-		background :lighten(@color-border, 15%);
-		color      : @color-primary;
+		.fill(lighten(@color-border, 15%));
+		.text(@color-primary);
 	}
 }
 
@@ -80,12 +79,12 @@
 	.margin(0 0 25px);
 	.border(1px solid @color-border);
 	.radius(@border-radius);
-	.box-shadow(@box-shadow, darken(@color-background, 15%));
+	.shadow(@box-shadow, darken(@color-background, 15%));
+	.fill(@color-light);
 	.tab-content {
-		background                 : @color-light;
+		.hidden;
+		.padding(20px);
 		border-bottom-left-radius  : @border-radius - 1;
 		border-bottom-right-radius : @border-radius - 1;	
-		padding                    : 20px;
-		display                    : none;
 	}
 }

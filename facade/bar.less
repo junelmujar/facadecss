@@ -6,22 +6,22 @@
 	.radius(@border-radius);
 	.margin(0 0 1.5em 0);
 	.padding(10px);
-	.position(relative);
+	.relative;
 
 	.bar-menu {
+
 		.pull-left;
-		.margin(0);
-		.padding(0);
 		.inline-block;
-		list-style : none;
+		.clean-list;
+
 		li {
 			.pull-left;
 			.inline-block;
 			.margin(0 5px 0 0);
 			a {
 				.inline-block;
-				.padding(7px 15px);
 				.clean-link;
+				.padding(7px 15px);
 				.text(lighten(@color-primary, 10%));
 			}
 			a:hover {
@@ -31,12 +31,11 @@
 			}
 		}
 		li.active > a {
-			font-weight   : bold;
-			.radius(@border-radius);
 			.fill(@color-info);
-			.text(@color-light);
-			.box-shadow(inset 0px 1px 1px -1px, rgba(0, 0, 0, 0.25));
-			text-shadow   : 1px 1px 0px rgba(0, 0, 0, 0.25);
+			.text(@color-light, 1px 1px 0px rgba(0, 0, 0, 0.25));
+			.text-bold;
+			.radius(@border-radius);
+			.shadow(inset 0px 1px 1px -1px, rgba(0, 0, 0, 0.25));
 		}
 	}
 }
@@ -53,31 +52,3 @@
 .bar {
     zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
-
-// .bar.bar-inverse {
-// 	background : #2f87c1; //lighten(@color-info, 20%);
-// 	color      : @color-light;
-// 	.bar-menu {
-// 		li {
-// 			a {
-// 				display         : inline-block;
-// 				padding         : 7px 15px;
-// 				text-decoration : none;
-// 				font-weight     : bold;
-// 				color           : darken(@color-light, 20%);
-// 				text-decoration: 1px 1px 0px @color-inverse;
-// 			}
-// 			a:hover {
-// 				background : @color-inverse;
-// 				color      : @color-light;
-// 			}
-// 		}
-// 		li.active > a {
-// 			box-shadow: none;
-// 			color: @color-light;
-// 		}
-// 		li.active a:hover {
-// 			background: lighten(@color-info, 10%);
-// 		}
-// 	}	
-// }

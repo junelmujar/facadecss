@@ -1,66 +1,76 @@
 *[data-widget=selectlist],
 .selectlist {
-	//box-shadow    : inset 0px 1px 2px rgba(0, 0, 0, 0.15);
-	border        : 1px solid @color-border;
-	border-radius : @border-radius;
-	margin-bottom : 20px;
+
+	.border(1px solid @color-border);
+	.radius(@border-radius);
+	.margin(@widget-margin);
+
 	ul {
-		margin        : 0px;
-		padding       : 0;
-		list-style    : none;
+		
+		.clean-list;
+		.radius(@border-radius);
+
 		height        : 250px;
 		overflow-y    : auto;
 		overflow-x    : none;
-		border-radius : @border-radius;
 
 		li {
 			a {
-				font            : @font-size;
-				user-select     : none;
-				display         : block;
-				padding         : 10px 15px;
-				text-decoration : none;
-				position        : relative;
-				color           : @color-default;
-				border-bottom   : 1px solid lighten(@color-border, 5%);
+				
+				.block;
+				.relative;
+				.clean-link;
+				.prevent-select;
+				.padding(10px 15px);
+				.text(@color-default);
+				.bb(1px solid lighten(@color-border, 5%));
+				
+				font: @font-size;
+
 			}
 			a:before {
-				position      : absolute;
-				display       : inline-block;
+
+				.absolute;
+				.inline-block;
+				.border(1px solid @color-border, 100%);
+
 				width         : 22px;
 				height        : 22px;
 				bottom        : 10px;
 				top           : 10px;
 				right         : 10px;
-				border        : 1px solid @color-border;
-				border-radius : 100%;
 				content       : '';
 			}
-			a.multi:before {
-				border-radius: @border-radius;
-			}
 			a:hover {
-				background: @color-stripes;
+				.fill(@color-stripes);
 			}
 			a.checked {
-				background: darken(@color-stripes, 5%);
+				.fill(darken(@color-stripes, 5%));
 			}
 			a.checked:before {
-				background : @color-primary;
-				border     : 1px solid darken(@color-primary, 15%);
+				.fill(@color-primary);
+				.border(1px solid darken(@color-primary, 15%), 100%);
 			}
 			a.checked:after {
-				position    : absolute;
-				display     : inline-block;
+				.absolute;
+				.inline-block;
+				.text(@color-light, 1px 1px 1px darken(@color-info, 5%));
+				.radius(100%);
 				width       : 20px;
 				bottom      : 10px;
 				top         : 11px;
 				right       : 9px;
 				content     : '\f00c';
-				color       : @color-light;
-				text-shadow : 1px 1px 1px darken(@color-info, 5%);
 				font-family : Fontawesome;
-			}			
+			}		
+
+			a.multi:before {
+				.radius(@border-radius);
+			}
+			a.multi.checked:after {
+				.radius(@border-radius);	
+			}
+
 		}
 	}
 }

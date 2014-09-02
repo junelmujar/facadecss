@@ -51,7 +51,7 @@
 			}
 			li.active > a {
 				.text(@color-light, 1px 1px 0px darken(@main-nav-bg, 10%), bold);
-				.box-shadow(none);
+				.shadow(none);
 			}
 			li.active a:hover {
 				.fill(darken(@main-nav-bg, 10%));
@@ -59,8 +59,8 @@
 		}		
 	}
 	.drawer {
-		.bb(1px solid #c8d0de);
 		.border-less;
+		.bb(1px solid #c8d0de);
 		.margin-less;
 		.square-edge;
 		.drawer-title {
@@ -70,5 +70,8 @@
 		.drawer-title.open {
 			.bb(1px solid #c8d0de);
 		}
+	}
+	.drawer[data-state=open] {
+		.shadow(@box-shadow-large, rgba(0, 0, 0, 0.25));
 	}
 }

@@ -6,12 +6,12 @@
 	.radius(@border-radius);
 	
 	.accordion-item > a {
-		.bt(1px solid lighten(@color-border, 10%));
 		.block;
-		.text(lighten(@color-default, 10%));
-		.padding(10px 15px);
-		.position(relative);
+		.relative;
 		.clean-link;
+		.padding(10px 15px);
+		.text(lighten(@color-default, 10%));
+		.bt(1px solid lighten(@color-border, 10%));
 	}
 	.accordion-item > .accordion-body {
 		.hidden;
@@ -24,12 +24,12 @@
 
 	.accordion-item > a:hover {
 		.text(@color-primary);
-		.position(relative);
+		.relative;
 	}
 
 	.accordion-item > a:after,
 	.accordion-item > a:hover:after {
-		.position(absolute);
+		.absolute;
 		.inline-block;
 		right       : 15px;
 		top         : 10px;
@@ -41,11 +41,11 @@
 	.accordion-item > a[data-accordion-mode=open] {
 		.bb(1px solid lighten(@color-border, 10%));
 		.text(@color-primary);
-		.position(relative);
+		.relative;
 	}
 
 	.accordion-item > a[data-accordion-mode=open]:after { 
-		.position(absolute);
+		.absolute;
 		.inline-block;
 		right       : 15px;
 		top         : 10px;
