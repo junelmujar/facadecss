@@ -122,7 +122,7 @@
 							Pinned Reports
 						</div>	
 						<div class="panel-content">
-							<ul class="list-bordered">
+							<ul class="list-bordered margin-less">
 								<li><a href="">Pin Code Report</a></li>
 								<li><a href="">Daily Report</a></li>
 								<li><a href="">Top Ten Users Report</a></li>
@@ -130,36 +130,47 @@
 							</ul>					
 						</div>	
 					</div>
-			            <div data-widget="accordion" class="accordion-widget" active-id="#one">
-			                <div class="accordion-item">
-			                    <a data-accordion-id="#one" href="#" rel='tooltip' title="An Accordion">
-			                        Accordion 1
-			                    </a>
-			                    <div class="accordion-body">
-			                    	<ul>
-			                    		<li><a href="#">This is link</a></li>
-			                    		<li><a href="#">This is another link</a></li>
-			                    		<li><a href="#">This is of course another link</a></li>
-			                    	</ul>
-			                    </div>
-			                </div>
-			                <div class="accordion-item">
-			                    <a data-accordion-id="#two" href="#" rel='tooltip' title="An Accordion?">
-			                        Accordion 2
-			                    </a>
-			                    <div class="accordion-body">
-			                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo autem hic atque numquam omnis id iste esse eius, officiis velit reprehenderit? Explicabo, optio placeat facere ratione architecto ad fugit consequuntur?
-			                    </div>
-			                </div>
-			                <div class="accordion-item">
-			                    <a data-accordion-id="#three" href="#" rel='tooltip' title="An Accordion Too">
-			                        Accordion 3
-			                    </a>
-			                    <div class="accordion-body">
-			                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo autem hic atque numquam omnis id iste esse eius, officiis velit reprehenderit? Explicabo, optio placeat facere ratione architecto ad fugit consequuntur?
-			                    </div>
-			                </div>		                
-			            </div>	
+
+		            <div data-widget="accordion" class="accordion-widget" active-id="#one">
+		                <div class="accordion-item">
+		                    <a data-accordion-id="#one" href="#" rel='tooltip' title="An Accordion">
+		                        Accordion 1
+		                    </a>
+		                    <div class="accordion-body">
+		                    	<ul>
+		                    		<li><a href="#">This is link</a></li>
+		                    		<li><a href="#">This is another link</a></li>
+		                    		<li><a href="#">This is of course another link</a></li>
+		                    	</ul>
+		                    </div>
+		                </div>
+		                <div class="accordion-item">
+		                    <a data-accordion-id="#two" href="#" rel='tooltip' title="An Accordion?">
+		                        Accordion 2
+		                    </a>
+		                    <div class="accordion-body">
+		                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo autem hic atque numquam omnis id iste esse eius, officiis velit reprehenderit? Explicabo, optio placeat facere ratione architecto ad fugit consequuntur?
+		                    </div>
+		                </div>
+		                <div class="accordion-item">
+		                    <a data-accordion-id="#three" href="#" rel='tooltip' title="An Accordion Too">
+		                        Accordion 3
+		                    </a>
+		                    <div class="accordion-body">
+		                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo autem hic atque numquam omnis id iste esse eius, officiis velit reprehenderit? Explicabo, optio placeat facere ratione architecto ad fugit consequuntur?
+		                    </div>
+		                </div>		                
+		            </div>	
+
+					<div class="notice">
+						<h3>Yo!</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus culpa, magni maxime modi quam repudiandae. 
+						</p>
+						<p>
+							<a href="#" role="button" class="button-success">Got it?</a>
+						</p>
+					</div>
 
 				</div>
 
@@ -172,18 +183,35 @@
 						</div>
 					
 						<div class="panel-content">
-							<form action="" class="form" style="margin: 20px;">
+							<form action="" class="form">
 								<div class="control-group">
 									<label for="">Label 1</label>
 									<input type="text" class="stretch">
+									<span class="validation validation-error">
+										<i class="fa fa-exclamation"></i> This is a sample error message
+									</span>
 								</div>
 								<div class="control-group">
 									<label for="">Label 2</label>
 									<input type="text" class="stretch">
-								</div>		
+									<span class="validation validation-success">
+										<i class="fa fa-check"></i> This is a sample success message
+									</span>	
+								</div>
+								<div class="control-group">
+									<label for="">Label 3</label>
+									<input type="text" class="stretch">
+									<span class="validation validation-info">
+										<i class="fa fa-info"></i> This is a sample info message
+									</span>
+								</div>										
 								<div class="control-group">
 									<label for="">Description</label>
 									<textarea class="stretch" name="" id="" cols="30" rows="5"></textarea>
+									<span class="validation validation-warning">
+										<i class="fa fa-circle-o"></i> This is a sample warning message
+									</span>
+
 								</div>																
 							</form>
 						</div>

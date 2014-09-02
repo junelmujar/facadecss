@@ -1,3 +1,9 @@
+@input-padding        : 7px;
+@input-shadow-inner   : inset 0px 1px 2px rgba(0, 0, 0, 0.075);
+@input-shadow-focus   : inset 0px 0px 3px darken(@color-border, 5%);
+@input-bottom-margin  : 5px;
+@input-select-padding : @input-padding + 1;
+
 select, 
 input[type=date]
 input[type=email],
@@ -7,28 +13,25 @@ input[type=text],
 input[type=password],
 input[type=search] {
 	.box-sizing;
-	border        : 1px solid @color-border;
-	padding       : 7px;
-	min-width     : 200px;
-	border-radius : @border-radius;
-	color         : @color-default;
-	outline       : none !important;
-	//background    : darken(@color-light, 3%) !important;
 	font          : @font-size;
+	color         : @color-default;
+	padding       : @input-padding;
+	border        : 1px solid @color-border;
+	border-radius : @border-radius;
+	outline       : none !important;
 }
 select {
-	padding    : 8px;
-	background : darken(@color-light, 3%) !important;
+	font       : @font-size;
 	outline    : none !important;	
-	font          : @font-size;
+	padding    : @input-select-padding;
+	background : darken(@color-light, 3%) !important;
 }
 textarea {
+	font          : @font-size;
+	outline       : none !important;	
 	border        : 1px solid @color-border;
 	border-radius : @border-radius;
-	width         : 350px;
-	padding       : 8px;	
-	outline       : none !important;	
-	font          : @font-size;
+	padding       : @input-select-padding;	
 }
 
 input[type=date],
@@ -40,7 +43,8 @@ input[type=password],
 input[type=search],
 select,
 textarea {
-	box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.075);
+	box-shadow    : @input-shadow-inner;
+	margin-bottom : @input-bottom-margin;
 }
 
 input[type=date]:focus,
@@ -52,8 +56,8 @@ input[type=password]:focus,
 input[type=search]:focus,
 select:focus,
 textarea:focus {
-	box-shadow: inset 0px 0px 3px darken(@color-border, 5%);
-	border: 1px solid darken(@color-border, 5%);
+	box-shadow : @input-shadow-focus;
+	border     : 1px solid darken(@color-border, 5%);
 }
 
 
@@ -69,3 +73,22 @@ textarea:focus {
 	}
 }
 
+.validation {
+	font-weight: bold;
+}
+
+.validation.validation-error {
+	color: @color-danger;
+}
+
+.validation.validation-info {
+	color: @color-primary;
+}
+
+.validation.validation-warning {
+	color: @color-warning;
+}
+
+.validation.validation-success {
+	color: @color-success;
+}

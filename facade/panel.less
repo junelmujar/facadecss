@@ -18,6 +18,38 @@
 		padding                 : @panel-title-default-padding;
 		font-size               : @panel-title-font-size;
 		color                   : @color-default;
+		position                : relative;
+		.panel-controls {
+			ul {
+				background: @color-light;
+				display  : inline-block;
+				position : absolute;
+				margin   : 0;
+				padding  : 0;
+				top      : 0px;
+				right    : 0;
+				li {
+					list-style : none;
+					padding    : 0;
+					float      : left;
+					a {
+						display         : inline-block;
+						padding         : @panel-title-default-padding;
+						color           : @color-default;
+						border-left     : 1px solid @color-border;
+						text-decoration : none;
+						i[class^=fa] {
+							display : inline-block;
+							margin  : 0 3px;
+							color   : @color-default-fill;
+						}	
+					}
+					a:hover {
+						background: lighten(@color-border, 15%);
+					}
+				}
+			}
+		}
 	}
 
 	.panel-title > i[class^=fa] {
@@ -27,6 +59,14 @@
 	.panel-title.small {
 		font-size   : @panel-title-font-size - 2;
 		padding     : @panel-title-default-padding - 5;
+		.panel-controls { 
+			li a {
+				padding: (@panel-title-default-padding - 5)  @panel-title-default-padding;
+				i[class^=fa] { 
+					font-size: 14px;
+				}
+			}
+		}
 	}
 	
 	.panel-title.small > i[class^=fa] {
