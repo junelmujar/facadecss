@@ -1,13 +1,11 @@
-/*
- * 'Highly configurable' mutable plugin boilerplate
- * Author: @markdalgleish
- * Further changes, comments: @addyosmani
- * Licensed under the MIT license
- */
-
-// Note that with this pattern, as per Alex Sexton's, the plugin logic
-// hasn't been nested in a jQuery plugin. Instead, we just use
-// jQuery for its instantiation.
+/* Accordion Widget                                                         */
+/* Author: Junel Mujar                                                      */
+/* --------------------------------------------------------------------------
+    defaultItem     - Open an accordion item based on index (starts at 0)
+    groupToggle     - Hide all accordion item except the clicked item  
+    collapsedState  - Collapse all accordion items on render
+    animated        - If true, animate hide/show operations using Velocity
+----------------------------------------------------------------------------*/
 
 ;(function( $, window, document, undefined ){
 
@@ -27,6 +25,7 @@
         defaultItem    : 'none',
         groupToggle    : true,
         collapsedState : true
+        animated       : false // Requires Velocity
     },
 
     init: function() {

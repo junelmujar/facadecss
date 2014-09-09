@@ -1,13 +1,7 @@
-/*
- * 'Highly configurable' mutable plugin boilerplate
- * Author: @markdalgleish
- * Further changes, comments: @addyosmani
- * Licensed under the MIT license
- */
-
-// Note that with this pattern, as per Alex Sexton's, the plugin logic
-// hasn't been nested in a jQuery plugin. Instead, we just use
-// jQuery for its instantiation.
+/* ------------------------------------------------------------------------- */
+/* Widget: Drawer                                                            */
+/* Author: Junel Mujar                                                       */
+/* ------------------------------------------------------------------------- */
 
 ;(function( $, window, document, undefined ){
 
@@ -24,7 +18,8 @@
   PluginDrawer.prototype = {
 
     defaults: {
-        open: false
+		open     : false,
+		animated : false // Requires Velocity
     },
 
     init: function() {
@@ -48,9 +43,7 @@
         if (this.config.open) {
             that.$elem.children('.drawer-content').show();
         }
-
     }
-
   }
 
   PluginDrawer.defaults = PluginDrawer.prototype.defaults;
