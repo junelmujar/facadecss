@@ -20,7 +20,8 @@
 	<script src="vendor/flot/jquery.flot.categories.min.js"></script>
 	<script src="vendor/flot/jquery.flot.resize.min.js"></script>
 
-	<script src="vendor/datepicker/simple-datetimepicker.js"></script>
+	<link rel="stylesheet" href="vendor/datetimepicker/bootstrap-datetimepicker.min.css" />
+	<script src="vendor/datetimepicker/bootstrap-datetimepicker.js"></script>
 
 	<body>
 
@@ -130,7 +131,7 @@
 					</div>
 
 								<div class="tab-container">
-									<ul class="tabs tabs-simple1" data-widget="tabs">
+									<ul class="tabs tabs-simple" data-widget="tabs">
 										<li class="active"><a href="#" data-target="#tab1"><i class="fa fa-cog"></i> Cog</a></li>
 										<li><a href="#" data-target="#tab2"><i class="fa fa-wrench"></i> Wrench</a></li>
 										<li><a href="#" data-target="#tab3"><i class="fa fa-reorder"></i> Burger</a></li>
@@ -166,7 +167,7 @@
 							</div>
 						</div>
 
-						<div data-widget="drawer" data-state="open" data-widget-name="filters" class="drawer drawer-inline">
+						<div data-widget="drawer" data-widget-name="filters" class="drawer drawer-inline">
 							<a href="#" class="drawer-toggle"><i class="fa fa-search"></i></a>
 							<div class="drawer-title">
 								<i class="fa fa-cog"></i> Data Filters
@@ -182,21 +183,20 @@
 									<input type="text" name="date2" placeholder="Keyword...">
 									<button class="button-primary pull-right">Submit</button>	
 
-									
-
 									<script type="text/javascript">
 										$(function(){
-											$('*[name=date1]').appendDtpicker({
-												dateOnly            : false, 
-												closeOnSelected     : true, 
-												calendarMouseScroll : false,
-												amPmInTimeList      : true
-											});
-											$('*[name=date2]').appendDtpicker({
-												dateOnly            : true, 
-												closeOnSelected     : true, 
-												calendarMouseScroll : false
-											});											
+											// $('*[name=date1]').appendDtpicker({
+											// 	dateOnly            : false, 
+											// 	closeOnSelected     : true, 
+											// 	calendarMouseScroll : false,
+											// 	amPmInTimeList      : true
+											// });
+											// $('*[name=date2]').appendDtpicker({
+											// 	dateOnly            : true, 
+											// 	closeOnSelected     : true, 
+											// 	calendarMouseScroll : false
+											// });											
+											 $("*[name=date1]").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
 										});
 									</script>			
 								</form>
@@ -404,7 +404,6 @@
 	<script src="widgets/popover.js"></script>
 	<script src="widgets/switch.js"></script>
 	<script src="widgets/drawer.js"></script>
-	<script src="widgets/layout.js"></script>
 	<script src="widgets/modal.js"></script>
 	<script src="widgets/notice.js"></script>
 	<script src="widgets/tabs.js"></script>

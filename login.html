@@ -15,10 +15,135 @@
 	<link rel="stylesheet" href="vendor/fluidable/fluidable-min.css" />
 	<link rel="stylesheet" href="facade.css" />
 	<script src="lib/jquery-2.1.0.min.js"></script>
+	<script src="widgets/jquery/drawer.js"></script>
+	<script src="widgets/jquery/accordion.js"></script>
+	<script>
+		$(document).ready(function() {
+			
+			var x = $('#main_drawer').drawer();
+			var p = $('#sub_drawer').drawer();
+			var z = $('#sub_drawer2').drawer();
+
+			x.on('toggled.facade', function(o, state) {
+				// if (state) {
+				// 	$(o.target).children('.drawer-title').css('background','red');
+				// } else {
+				// 	$(o.target).children('.drawer-title').css('background','green');
+				// }
+			});	    
+
+			var a = $('#accordion').accordion();
+			a.on('toggle.facade', function(o, index) {
+				//console.log(o,index);
+				y.trigger('close.facade', 1);
+			});
+
+			var y = $('#accordion2').accordion({ collapsedState: true });
+			y.on('toggle.facade', function(o, index) {
+				//console.log(o,index);
+			});
+			y.trigger('open.facade', 1);
+
+		});
+	</script>
+	<style>
+
+		.drawer {
+			margin: 25px;
+		}
+		.drawer-title {
+			cursor: pointer;
+		}
+		.drawer-content {
+			display: block;
+			overflow: hidden;
+		}
+
+		.accordion {
+			border-top: 1px solid #ccc;
+			border-left: 1px solid #ccc;
+			border-right: 1px solid #ccc;
+			background: #fff;
+			margin: 25px;
+		}
+		.accordion > .accordion-item > .accordion-title,
+		.accordion > .accordion-item > .accordion-content {
+			border-bottom: 1px solid #ccc;
+			padding: 5px 10px;
+		}
+		.accordion > .accordion-item > .accordion-content {
+			display: none;
+		}
+		.accordion > .accordion-item > .accordion-title {
+			cursor: pointer;
+		}
+
+	</style>
 
 	<body>
+		
+		<div id="main_drawer" class="drawer" data-plugin-options='{"open":false}'>
+			<div class="drawer-title">This is a title</div>
+			<div class="drawer-content">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus aliquid perferendis soluta quam temporibus praesentium vero voluptate autem, dolore expedita. Maxime dolor expedita molestiae eum assumenda doloribus ea mollitia cum!
 
-		<div class="form-login">
+				<div id="sub_drawer" class="drawer" data-plugin-options='{"open":true}'>
+					<div class="drawer-title">This is a title</div>
+					<div class="drawer-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus aliquid perferendis soluta quam temporibus praesentium vero voluptate autem, dolore expedita. Maxime dolor expedita molestiae eum assumenda doloribus ea mollitia cum!
+					</div>
+				</div>
+
+				<div id="sub_drawer2" class="drawer" data-plugin-options='{"open":true}'>
+					<div class="drawer-title">This is a title 2</div>
+					<div class="drawer-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus aliquid perferendis soluta quam temporibus praesentium vero voluptate autem, dolore expedita. Maxime dolor expedita molestiae eum assumenda doloribus ea mollitia cum!
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+
+		<div id="accordion" class="accordion" data-plugin-options='{ "groupToggle":false }'>
+			<div class="accordion-item">
+				<div class="accordion-title">
+					This is a header
+				</div>
+				<div class="accordion-content">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, error quos atque! Odit exercitationem itaque aliquam ipsam repellat eligendi non, perspiciatis excepturi similique a nulla atque, maiores nobis, reprehenderit numquam.
+				</div>
+			</div>
+			<div class="accordion-item">
+				<div class="accordion-title">
+					This is a header
+				</div>
+				<div class="accordion-content">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, error quos atque! Odit exercitationem itaque aliquam ipsam repellat eligendi non, perspiciatis excepturi similique a nulla atque, maiores nobis, reprehenderit numquam.
+				</div>
+			</div>			
+		</div>
+
+		<div id="accordion2" class="accordion" data-plugin-options='{ "groupToggle":true }'>
+			<div class="accordion-item">
+				<div class="accordion-title">
+					This is a header
+				</div>
+				<div class="accordion-content">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, error quos atque! Odit exercitationem itaque aliquam ipsam repellat eligendi non, perspiciatis excepturi similique a nulla atque, maiores nobis, reprehenderit numquam.
+				</div>
+			</div>
+			<div class="accordion-item">
+				<div class="accordion-title">
+					This is a header
+				</div>
+				<div class="accordion-content">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, error quos atque! Odit exercitationem itaque aliquam ipsam repellat eligendi non, perspiciatis excepturi similique a nulla atque, maiores nobis, reprehenderit numquam.
+				</div>
+			</div>			
+		</div>
+
+<!-- 		<div class="form-login">
 
 			<form action="dashboard.html" class="form">
 
@@ -62,7 +187,7 @@
 			
 			</form>
 
-		</div>
+		</div> -->
 
 	</body>
 

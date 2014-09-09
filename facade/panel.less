@@ -66,13 +66,13 @@
 	.panel-title > i[class^=fa] {
 		.text(@color-default-fill);
 	}	
-
+  
 	.panel-title.small {
 		font-size   : @panel-title-font-size - 2;
-		.padding(@panel-title-default-padding - 5);
+		.padding(@panel-title-default-padding - 10 @panel-title-default-padding - 5);
 		.panel-controls { 
 			li a {
-				.padding((@panel-title-default-padding - 5)  @panel-title-default-padding);
+				.padding((@panel-title-default-padding - 10)  @panel-title-default-padding);
 				i[class^=fa] { 
 					font-size: @font-icon-size;
 				}
@@ -110,6 +110,6 @@
 	}		
 
 	.table {
-		.margin(1px 0 1px 0);
+		.margin(0);
 	}
 }

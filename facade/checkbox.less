@@ -1,18 +1,19 @@
 [data-widget~=checkbox] {
 	
-	margin-bottom: 10px;
+	.margin(0 0 10px 0);
+
 	.checkbox-toggle {
 
-		.inline-block;
 		.fill(lighten(@color-inverse, 50%));
 		.shadow(inset 0px 0px 2px rgba(0, 0, 0, 0.5));
 		.radius(@border-radius);
+		.margin(0 10px 0 0);
+		.inline-block;
 
 		width          : 24px;
 		position       : relative;
 		height         : 23px;
 		vertical-align : middle;
-		margin-right   : 10px;
 
 	}
 	.checkbox-toggle.checked {

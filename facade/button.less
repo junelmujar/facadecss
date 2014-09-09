@@ -1,19 +1,23 @@
-@button-padding     : 6px 15px;
+//@button-padding     : 6px 16px;
 
 .button_default_properties {
-	display         : inline-block !important;
+
 	*zoom           : 1; /* trigger hasLayout for IE7 and below */
 	*display        : inline; /* the star targets only IE7 and below */	
-	text-decoration : none;
-	user-select     : none;
-	cursor          : pointer;
+
 	font            : @font-size;
-	padding         : @button-padding;
 	outline         : none;
+	cursor          : pointer;
+
+	.clean-link;
+	.inline-block;
+	.prevent-select;
+	.button-default-padding;
+
 	i[class^=fa] {
-		color          : @color-secondary;
+		.text(@color-secondary);
+		.no-events;
 		font-size      : 14px;
-		pointer-events : none;
 	}		
 }
 
@@ -21,18 +25,18 @@
 .button(@background, @color, @border, @shadow) {
 	.text(@color, @shadow);
 	.fill(@background);
-	.box-sizing;
 	.border(1px solid @border; @border-radius);
+	.box-sizing;
 }
 
 .button_hover(@background, @border) {
-	.border(1px solid darken(@border, 5%); @border-radius);
 	.fill(lighten(@background, 5%));
+	.border(1px solid darken(@border, 5%); @border-radius);
 }
 
 .button_clicked(@background, @border) {
-	.border(1px solid darken(@border, 20%); @border-radius);
 	.fill(darken(@background, 5%));
+	.border(1px solid darken(@border, 20%); @border-radius);
 }
 
 
@@ -167,26 +171,36 @@ a[role=button].button-danger:active, button.button-danger:active, input[type=sub
 }
 
 .button-split-default(@color) {
-	.position(relative);
+
 	padding-right: 45px !important;
+	.position(relative);
+
 	i[class^=fa] {
+
+		.bl(1px solid rgba(0, 0, 0, 0.15));
 		.text(@color-light);
 		.fill(rgba(0, 0, 0, 0.05));
 		.position(absolute);
 		.center-text;
+
 		top                        : -1px;
 		right                      : -1px;
 		bottom                     : -1px;
 		width                      : 35px;
 		
-		border-left                : 1px solid rgba(0, 0, 0, 0.15);
 		border-top-right-radius    : @border-radius;
 		border-bottom-right-radius : @border-radius;
 		padding-top                : 12px;
 	}	
 }
 
-a.button-split,
+a.button-primary.button-split,
+.button-primary.button-split {
+	.button-split-default(@color-inverse);
+}
+
+
+a[role="button"].button-split,
 .button-split {
 	.button-split-default(@color-inverse);
 }
@@ -207,16 +221,14 @@ a.button-split,
 	.button-split-default(@color-light);
 }
 
-
-
 .button-small {
-	padding     : 3px 10px !important;
+	.button-small-padding;
 	font-size   : 13px;
 	line-height : 13px;
 }
 
-.button-large {
-	padding     : 15px !important;
-	font-size   : 20px;
-	line-height : 20px;
-}
+// .button-large {
+// 	.button-large-padding;
+// 	font-size   : 20px;
+// 	line-height : 20px;
+// }

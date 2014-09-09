@@ -4,27 +4,30 @@
 	.border(1px solid @color-border);
 	.radius(@border-radius);
 	.position(relative);
+	.layerindex(8000);
 
 	min-height    : 5px;
-	z-index       : 8000;
 
 	.drawer-toggle {
+
+		right           : 0px;
+		top             : 0px;
+
 		.clean-link;
 		.position(absolute);
 		.padding(5px 10px);
 		.text(@color-default);
-		right           : 0px;
-		top             : 0px;
-		* {
-			pointer-events:none;
-		}
+		* { .no-events; }
 	}
+
 	.drawer-toggle:hover {
 		.radius(0 0 @border-radius @border-radius);
 	}
+	
 	.drawer-toggle:active {
 		.text(@color-primary);
 	}
+	
 	.drawer-content {
 		.hidden;
 		.padding(20px);
@@ -45,14 +48,16 @@
 
 	.drawer-title.open,
 	.drawer-title {
+		.bb(1px solid lighten(@color-border, 15%));
 		.text(@color-default);
 		.padding(5px 10px);
-		.bb(1px solid lighten(@color-border, 15%));
 		.prevent-select;
 	}
+	
 	.drawer-title.close {
 		.bb(0);
 	}
+
 	.drawer-title > i[class^=fa] {
 		.text(@color-default-fill);
 	}		
