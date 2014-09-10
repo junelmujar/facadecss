@@ -24,11 +24,8 @@
     },
 
     init: function() {
-        // Introduce defaults that can be extended either
-        // globally or using an object literal.
         this.config = $.extend({}, this.defaults, this.options, this.metadata);
         this.setup();
-
         return this;
     },
 
@@ -43,6 +40,7 @@
 			obj.
 				css('border-bottom', '1px solid lightgray').
 				css('height', 'auto !important');
+			this.origHeight = obj.height();
 		} );
 	},
 
@@ -60,13 +58,16 @@
     setup: function() {
 
         var that = this;
-        this.origHeight = this.$elem.children('.drawers-content').height();
+
+        if (!this.origHeight) this.origHeight = this.$elem.children('.drawers-content').height();
 
         this.$elem.children('.drawers-title').on('click', function(event) {
         	
         	event.preventDefault();
+
             var content = that.$elem.children('.drawers-content');
 
+            // Perform animation if true
             if (that.config.animated) {
 	            if (that.config.open) {
 	            	that.hide(content, that.config.duration);
@@ -77,9 +78,13 @@
 	        	content.toggle();
 	        }
 
-            that.config.open = !that.config.open;
-            that.$elem.trigger('toggle.drawer', [that.config.open]);
+	        // Update origHeight & state
+			that.origHeight = $(this).siblings().height();
+			that.config.open= !that.config.open;
 
+			// Emit an event
+            that.$elem.trigger('toggle.drawer', [that.config.open]);
+			
         });
 
         if (this.config.open) {
