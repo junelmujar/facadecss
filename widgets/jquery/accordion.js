@@ -24,7 +24,7 @@
     defaults: {
         defaultItem    : 'none',
         groupToggle    : true,
-        collapsedState : true
+        collapsedState : true,
         animated       : false // Requires Velocity
     },
 
@@ -52,8 +52,8 @@
                     });
                 } 
             
-            $(this).siblings().toggle();
-            that.$elem.trigger('toggle.facade', [$(this).parent().index()]);
+            $(this).siblings().toggle('fast');
+            that.$elem.trigger('toggle.accordion', [$(this).parent().index()]);
         });
 
         // Toggle an item or open all accordion items on load 
@@ -67,12 +67,14 @@
         }
 
         // Open accordion item
-        this.$elem.on('open.facade', function(event, index) {
+        this.$elem.on('open.accordion', function(event, index) {
+            event.preventDefault();
             $(items[index]).children('.accordion-content').show();
         });
 
         // Hide accordion item
-        this.$elem.on('close.facade', function(event, index) {
+        this.$elem.on('close.accordion', function(event, index) {
+            event.preventDefault();
             $(items[index]).children('.accordion-content').hide();
         });
     }

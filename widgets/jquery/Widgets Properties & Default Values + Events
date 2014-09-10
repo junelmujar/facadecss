@@ -1,0 +1,27 @@
+Widgets Properties & Default Values + Events
+
+/* ------------------------------------------------------------------------------------- */
+	drawer
+/* ------------------------------------------------------------------------------------- */
+	open     : false,			//.open or close drawer on render
+	animated : false			// animate action
+	duration : 150				// animation duration
+
+	events/triggers:
+		open.facade
+		close.facade
+		toggle.facade
+
+
+/* ------------------------------------------------------------------------------------- */
+	accordion
+/* ------------------------------------------------------------------------------------- */
+    defaultItem    : 'none',	// opened item on initial render
+    groupToggle    : true,  	// close all except current clicked
+    collapsedState : true, 		// collapse accordion
+    animated       : false 		// animate action
+
+	events/triggers:
+		open.facade, index
+		close.facade, index
+		toggle.facade    
