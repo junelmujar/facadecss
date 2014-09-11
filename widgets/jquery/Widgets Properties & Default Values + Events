@@ -16,10 +16,11 @@ Widgets Properties & Default Values + Events
 /* ------------------------------------------------------------------------------------- */
 	accordion
 /* ------------------------------------------------------------------------------------- */
-    defaultItem    : 'none',	// opened item on initial render
-    groupToggle    : true,  	// close all except current clicked
-    collapsedState : true, 		// collapse accordion
-    animated       : false 		// animate action
+	defaultActive  : 'none',	// opened item on initial render
+	groupToggle    : true,  	// close all except current clicked
+	collapsedState : true, 		// collapse accordion
+	animated       : false 		// animate action
+	duration       : 150		// animation duration
 
 	events/triggers:
 		open.facade, index

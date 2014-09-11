@@ -32,10 +32,10 @@
 	// Slide animation function
 	slide: function( obj, speed ) {
 		obj.velocity({
-			'opacity': 100,
-			'padding-top': 10,
-			'padding-bottom': 10,
-			'height': this.origHeight
+			'opacity'        : 100,
+			'padding-top'    : 10,
+			'padding-bottom' : 10,
+			'height'         : this.origHeight
 		}, speed, function() {
 			obj.
 				css('border-bottom', '1px solid lightgray').
@@ -46,10 +46,10 @@
 
 	hide: function(obj, speed) {
 		obj.velocity({
-			'opacity': 0,
-			'height': 0,
-			'padding-top': 0,
-			'padding-bottom': 0
+			'opacity'        : 0,
+			'height'         : 0,
+			'padding-top'    : 0,
+			'padding-bottom' : 0
 		}, speed, function() {
 			obj.css('border-bottom', 0);
 		} );
