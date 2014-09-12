@@ -80,20 +80,26 @@
 			margin: 25px;
 			overflow: hidden;
 		}
+		.accordion > .accordion-item {
+			overflow: hidden;
+		}
 		.accordion > .accordion-item > .accordion-title,
 		.accordion > .accordion-item > .accordion-content {
+			background: #fff;
 			border-bottom: 1px solid #ccc;
 			padding: 10px;
+			overflow: hidden;
 		}
 		.accordion > .accordion-item > .accordion-content {
 			overflow: hidden;
 		}
 		.accordion > .accordion-item > .accordion-title {
 			cursor: pointer;
+			background: white;
 			--moz-user-select: none;
 			-webkit-user-select: none;			
 		}
-		.accordion > .accordion-item > .accordion-title.active {
+		.accordion > .accordion-item.open > .accordion-title {
 			color:red;
 		}
 
@@ -167,7 +173,7 @@
 					This is a header
 				</div>
 				<div class="accordion-content">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, error quos atque! Odit exercitationem itaque aliquam ipsam repellat eligendi non, perspiciatis excepturi similique a nulla atque, maiores nobis, reprehenderit numquam.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, error quos atque! Odit exercitationem itaque aliquam ipsam repellat eligendi non, perspiciatis excepturi similique a nulla atque, maiores nobis, reprehenderit numquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, error quos atque! Odit exercitationem itaque aliquam ipsam repellat eligendi non, perspiciatis excepturi similique a nulla atque, maiores nobis, reprehenderit numquam.
 				</div>
 			</div>
 			<div class="accordion-item">

@@ -3,9 +3,9 @@ Widgets Properties & Default Values + Events
 /* ------------------------------------------------------------------------------------- */
 	drawer
 /* ------------------------------------------------------------------------------------- */
-	open     : false,			//.open or close drawer on render
-	animated : false			// animate action
-	duration : 150				// animation duration
+	collapsed : false,			// open or close drawer on render
+	animated  : false			// animate action
+	duration  : 150				// animation duration
 
 	events/triggers:
 		open.facade

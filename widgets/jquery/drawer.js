@@ -2,126 +2,99 @@
 /* Widget: Drawer                                                            */
 /* Author: Junel Mujar                                                       */
 /* ------------------------------------------------------------------------- */
-
 ;(function( $, window, document, undefined ){
 
-  // our plugin constructor
-  var PluginDrawer = function( elem, options ){
+    // our plugin constructor
+    var PluginDrawer = function( elem, options ) {
 
-      this.elem     = elem;
-      this.$elem    = $(elem);
-      this.options  = options;
-      this.metadata = this.$elem.data( "plugin-options" );
-    };
+          this.elem     = elem;
+          this.$elem    = $(elem);
+          this.options  = options;
+          this.metadata = this.$elem.data( "plugin-options" );
+        };
 
-  // the plugin prototype
-  PluginDrawer.prototype = {
+    // the plugin prototype
+    PluginDrawer.prototype = {
 
-    defaults: {
-		open     : false,
-		duration : 250,
-		animated : false // Requires Velocity
-    },
+        defaults: {
+            collapsed : false,
+            duration  : 250,
+            animated  : false // Requires Velocity
+        },
 
-    init: function() {
-        this.config = $.extend({}, this.defaults, this.options, this.metadata);
-        this.setup();
-        return this;
-    },
+        init: function() {
+            this.config = $.extend({}, this.defaults, this.options, this.metadata);
+            this.setup();
+            return this;
+        },
 
-	// Slide animation function
-	slide: function( obj, speed ) {
-		obj.velocity({
-			'opacity'        : 100,
-			'padding-top'    : 10,
-			'padding-bottom' : 10,
-			'height'         : this.origHeight
-		}, speed, function() {
-			obj.
-				css('border-bottom', '1px solid lightgray').
-				css('height', 'auto !important');
-			this.origHeight = obj.height();
-		} );
-	},
+    	// Slide animation function
+    	slide: function( obj, speed ) {
+            var height; 
+            height = obj.children('.drawers-title').outerHeight() + obj.children('.drawers-content').outerHeight();        
+    		obj.velocity({
+                'height' : height
+    		}, speed, function() {
+    			obj.removeAttr('style');
+    		} );
+    	},
 
-	hide: function(obj, speed) {
-		obj.velocity({
-			'opacity'        : 0,
-			'height'         : 0,
-			'padding-top'    : 0,
-			'padding-bottom' : 0
-		}, speed, function() {
-			obj.css('border-bottom', 0);
-		} );
-	},
+    	hide: function(obj, speed) {
+    		obj.velocity({
+                'height' : obj.children('.drawers-title').outerHeight(),
+    		}, speed);
+    	},
 
-    setup: function() {
+        setup: function() {
 
-        var that = this;
+            var that = this;
 
-        if (!this.origHeight) this.origHeight = this.$elem.children('.drawers-content').height();
+            this.$elem.addClass('open');
 
-        this.$elem.children('.drawers-title').on('click', function(event) {
-        	
-        	event.preventDefault();
+            this.$elem.children('.drawers-title').on('click', function(event) {
+            	
+            	event.preventDefault();
 
-            var content = that.$elem.children('.drawers-content');
+                var item = $(this).parent();
 
-            // Perform animation if true
-            if (that.config.animated) {
-	            if (that.config.open) {
-	            	that.hide(content, that.config.duration);
-	            } else {
-	            	that.slide(content, that.config.duration);
-	            }            
-	        } else {
-	        	content.toggle();
-	        }
+                // Perform animation if true
+                if (!that.config.animated) that.config.duration = 0;
 
-	        // Update origHeight & state
-			that.origHeight = $(this).siblings().height();
-			that.config.open= !that.config.open;
+                if (item.hasClass('open')) {
+                    item.removeClass('open');
+                    that.hide(item, that.config.duration);
+                } else {
+                    item.addClass('open');
+                    that.slide(item, that.config.duration);
+                }     
 
-			// Emit an event
-            that.$elem.trigger('toggle.drawer', [that.config.open]);
-			
-        });
+    			// Emit an event
+                that.$elem.trigger('toggle.drawer', [that.config.collapsed]);
+            });
 
-        if (this.config.open) {
-            that.$elem.children('.drawers-content').show();
+            if (this.config.collapsed) {
+                this.$elem.removeClass('open');
+                this.$elem.hide();
+            }
+
+            // Open drawer
+            this.$elem.on('open.drawer', function(event) {
+            	event.preventDefault();
+            });
+
+            // Hide drawer
+            this.$elem.on('close.drawer', function(event) {
+            	event.preventDefault();
+            });
         }
-
-        // Open drawer
-        this.$elem.on('open.drawer', function(event) {
-        	event.preventDefault();
-        	if (that.config.animated) {
-        		that.show(that.$elem.children('.drawers-content'), that.config.duration);
-        	} else {
-            	that.$elem.children('.drawers-content').show();
-            }
-        	that.config.open = true;
-        });
-
-        // Hide drawer
-        this.$elem.on('close.drawer', function(event) {
-        	event.preventDefault();
-        	if (that.config.animated) {
-        		that.hide(that.$elem.children('.drawers-content'), that.config.duration);
-        	} else {
-            	that.$elem.children('.drawers-content').hide();
-            }
-        	that.config.open = false;
-        });
-
     }
-  }
 
-  PluginDrawer.defaults = PluginDrawer.prototype.defaults;
+    PluginDrawer.defaults = PluginDrawer.prototype.defaults;
 
-  $.fn.drawer = function(options) {
-    return this.each(function() {
-      new PluginDrawer(this, options).init();
-    });
-  };
+    $.fn.drawer = function(options) {
+        return this.each(function() {
+            new PluginDrawer(this, options).init();
+        });
+    };
 
 })( jQuery, window , document );
